@@ -1,4 +1,6 @@
-![](logo.jpg)
+<p align="center">
+  <img src="https://dl.dropboxusercontent.com/s//9faymjz344zrup4/logo.jpg">
+</p>
 
 ### Platform
 Mobile Game (Android & iOS)
