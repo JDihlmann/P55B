@@ -2,3 +2,6 @@ The purpose of this document is to keepthe crew updated and the progress organiz
 
 30.11.2018: Mike
 - Added progress log to project.
+- Created a new Minigame scene.
+  - Added planet and ingredients to the scene.
+  - Added ingredients movement script for auto rotation and orbit.
