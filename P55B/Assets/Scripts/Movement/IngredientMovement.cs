@@ -61,7 +61,7 @@ public class IngredientMovement : MonoBehaviour {
 		// Stops the momentum of the object:
 		rbody.velocity = Vector3.zero;
 		rbody.angularVelocity = Vector3.zero;
-		gravAttrac.enabled = false;
+		// gravAttrac.enabled = false;
 	}
 
 	#endregion
