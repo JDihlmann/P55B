@@ -9,14 +9,28 @@ public class Blackhole : MonoBehaviour {
 
 	//[Space]
 	[Header("Variables")]
-	public int[] ingredientCounter = new int[4];
-	#endregion
 
-	#region Methods
-	private void OnTriggerEnter(Collider other)
+	IngredientsData data = SaveSystem.LoadIngredients();
+	public int[] ingredientCounter = new int[4];
+	
+	
+
+    #endregion
+
+    #region Methods
+	void Awake()
+	{
+		if (data != null)
+			{
+				ingredientCounter = data.ingredients;
+			}
+	}
+
+    private void OnTriggerEnter(Collider other)
 	{
 		if (other.tag == "Moveable")
 		{
+			
 			IngredientMovement movement = other.GetComponent<IngredientMovement>();
 			Ingredient ingredient = other.GetComponent<Ingredient>();
 			// Disables player input:
@@ -25,19 +39,22 @@ public class Blackhole : MonoBehaviour {
 
 			// Increment counter:
 			ingredientCounter[ingredient.index] += 1;
-			
-			// Adds force to the center of the blackhole (TODO)
-			/*
+            SaveSystem.SaveIngredients(this);
+
+
+            // Adds force to the center of the blackhole (TODO)
+            /*
 			Vector3 direction = planet.transform.position - transform.position;
 			direction = direction.normalized;
 			rbody.AddForce(1000 * direction);
 			*/
 
-			// Destroy Object
-			Destroy(other.gameObject);
+            // Destroy Object
+            Destroy(other.gameObject);
 		}
 	}
-
+    
+    
 	#endregion
 
 }
