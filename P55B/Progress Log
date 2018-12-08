@@ -8,3 +8,14 @@ The purpose of this document is to keepthe crew updated and the progress organiz
 
 01.12.2018: Mike
 - Connected Android phone to Unity.
+
+03.12.2018: Mike
+- Added blackhole.
+- Added counter.
+- Added random Ingredients.
+- Added flick motion.
+
+07.12.2018: Mike
+- Added Ingredient Spawner.
+- Added Outline (Border)
+- TODO: Singleton for Ingredient Storage.
