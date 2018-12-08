@@ -10,8 +10,8 @@ public class Blackhole : MonoBehaviour {
 	//[Space]
 	[Header("Variables")]
 
-	IngredientsData data = SaveSystem.LoadIngredients();
-	public int[] ingredientCounter = new int[4];
+    IngredientsData data = SaveSystem.LoadIngredients();
+    public int[] ingredientCounter = new int[4];
 	
 	
 

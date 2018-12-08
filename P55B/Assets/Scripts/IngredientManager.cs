@@ -9,6 +9,8 @@ public class IngredientManager : MonoBehaviour
 
     private static List<IngredientObject> Ingredients;
 
+    private static IngredientsData data;
+
     private void Awake()
     {
         if (Instance != null)
@@ -20,12 +22,24 @@ public class IngredientManager : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(gameObject);
         }
-        BuildDatabase();
+        data = SaveSystem.LoadIngredients();
+        BuildDatabase(data);
     }
 
-    private void BuildDatabase(){
+    private void BuildDatabase(IngredientsData data)
+    {
+
+        int[] savedData = new int[] { 0, 0, 0, 0 };
+
+        if (data != null) {
+            savedData = data.ingredients;
+
+        }
         Ingredients = new List<IngredientObject>(){
-            new IngredientObject("Strawberry", 1, 5, 0, Color.red),
+            new IngredientObject("Strawberry", 1, 5, savedData[0], Color.red),
+            new IngredientObject("Blueberry", 1, 5, savedData[1], Color.blue),
+            new IngredientObject("Apple", 1, 5, savedData[2], Color.green),
+            new IngredientObject("Banana", 1, 5, savedData[3], Color.yellow),
         };
     }
 
