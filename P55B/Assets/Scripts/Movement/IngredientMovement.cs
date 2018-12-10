@@ -53,12 +53,11 @@ public class IngredientMovement : MonoBehaviour
 		{
 			orbitSpeed = 0f;
 			rbody.AddForce(300 * velocity);
+
+			// TODO Add more gravity to object:
+			// rbody.mass = 0.01f;
 		}
 
-		if (playerTouchCount == 2)
-		{
-			// TODO: Set ingredient to broken
-		}
 	}
 
 	public void StopMovement()
