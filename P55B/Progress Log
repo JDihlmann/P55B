@@ -1,0 +1,25 @@
+The purpose of this document is to keepthe crew updated and the progress organized.
+
+30.11.2018: Mike
+- Added progress log to project.
+- Created a new Minigame scene.
+  - Added planet and ingredients to the scene.
+  - Added ingredients movement script for auto rotation and orbit.
+
+01.12.2018: Mike
+- Connected Android phone to Unity.
+
+03.12.2018: Mike
+- Added blackhole.
+- Added counter.
+- Added random Ingredients.
+- Added flick motion.
+
+07.12.2018: Mike
+- Added Ingredient Spawner.
+- Added Outline (Border)
+
+10.12.2018: Mike
+- Added Spawner Maximum
+- Added compatibility with Mia Storage array
+- Added TextMeshPro for UI
