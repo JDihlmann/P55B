@@ -124,9 +124,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b23dc02ffa851bd4a91e83d3d544ed9a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ingredientName: 
+  m_Name:
+  m_EditorClassIdentifier:
+  ingredientName:
   index: 0
 --- !u!114 &114951578234912508
 MonoBehaviour:
@@ -137,8 +137,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bf081fef4bc2311478ccd712296e6a8f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   planet: {fileID: 0}
   orbitSpeed: 50
   rotationSpeed: -5

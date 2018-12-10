@@ -23,3 +23,6 @@ The purpose of this document is to keepthe crew updated and the progress organiz
 - Added Spawner Maximum
 - Added compatibility with Mia Storage array
 - Added TextMeshPro for UI
+
+09.12.2018: ???
+- TODO: Singleton for Ingredient Storage.
