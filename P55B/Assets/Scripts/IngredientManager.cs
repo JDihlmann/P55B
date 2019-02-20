@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 public class IngredientManager : MonoBehaviour
@@ -8,6 +9,8 @@ public class IngredientManager : MonoBehaviour
     public static IngredientManager Instance;
 
     public static List<IngredientObject> Ingredients;
+
+    public static List<ItemObject> Items;
 
     private static IngredientsData data;
 
@@ -29,6 +32,10 @@ public class IngredientManager : MonoBehaviour
     private void BuildDatabase(IngredientsData data)
     {
 
+        // get Items from the Test JSON File
+        string dataAsJson = File.ReadAllText("Assets/Scripts/Test.json");
+        Items = new List<ItemObject>(JsonHelper.FromJson<ItemObject>(dataAsJson));
+
         int[] savedData = new int[] { 0, 0, 0, 0 };
 
         if (data != null) {
@@ -45,6 +52,11 @@ public class IngredientManager : MonoBehaviour
 
     public static List<IngredientObject> GetIngredients(){
         return Ingredients;
+    }
+
+    public static List<ItemObject> GetItems()
+    {
+        return Items;
     }
 
 }
