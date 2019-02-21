@@ -24,5 +24,13 @@ The purpose of this document is to keepthe crew updated and the progress organiz
 - Added compatibility with Mia Storage array
 - Added TextMeshPro for UI
 
-09.12.2018: ???
+09.12.2018: Mike
 - TODO: Singleton for Ingredient Storage.
+
+21.02.2019: Mike
+- Added GameSystem, Customer, Worker and Recipe scripts.
+- Added Worker initialization: Workers are defined by Ids in a database.
+- Added Recipe initialization: Recipes are defined by Ids in a database.
+- GameSystem stores all available recipes.
+- Added Customer beverage choice: Chooses best match out of GameSystem recipeList.
+- TODO: Process customer choice to the right worker
