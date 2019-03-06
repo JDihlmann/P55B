@@ -29,8 +29,11 @@ public class FloorGrid_Instantiate : MonoBehaviour {
 		float tileWidthZ = tile.transform.localScale.x;
 		float tileHeight = tile.transform.localScale.y;
 
+		// Tile local position
+		float tilePosY = tile.transform.localPosition.y;
+
 		// Starting position
-		float startPosY = (tileHeight/2);
+		float startPosY = (tileHeight/2) + tilePosY;
 		float startPosX = -(width/2) + (tileWidthX/2);
 		float startPosZ = -(length/2) + (tileWidthZ/2);
 

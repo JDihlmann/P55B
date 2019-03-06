@@ -21,9 +21,9 @@ GameObject:
   - component: {fileID: 4827622691182508}
   - component: {fileID: 33619859672436348}
   - component: {fileID: 23795101135041354}
-  - component: {fileID: 65173661013580626}
-  - component: {fileID: 114263586506252992}
-  - component: {fileID: 114607505621522708}
+  - component: {fileID: 65279749600651706}
+  - component: {fileID: 114600555326133064}
+  - component: {fileID: 114072629375602480}
   m_Layer: 9
   m_Name: Tile
   m_TagString: Untagged
@@ -37,8 +37,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1347509100825144}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0, y: -0.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -86,7 +86,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1347509100825144}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!65 &65173661013580626
+--- !u!65 &65279749600651706
 BoxCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -98,7 +98,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114263586506252992
+--- !u!114 &114072629375602480
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1347509100825144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b39577d9e04558e49abded29acf65d9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  position: {x: -1, y: -1}
+--- !u!114 &114600555326133064
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -111,15 +123,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileDefault: {fileID: 2100000, guid: cfc015982b8b2b54db56017441f92d89, type: 2}
   tileHighlight: {fileID: 2100000, guid: 29d663c3e60e4ab4eb50d2aac211444a, type: 2}
---- !u!114 &114607505621522708
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1347509100825144}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b39577d9e04558e49abded29acf65d9f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  position: {x: -1, y: -1}
