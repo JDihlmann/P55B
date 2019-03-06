@@ -33,4 +33,7 @@ The purpose of this document is to keepthe crew updated and the progress organiz
 - Added Recipe initialization: Recipes are defined by Ids in a database.
 - GameSystem stores all available recipes.
 - Added Customer beverage choice: Chooses best match out of GameSystem recipeList.
-- TODO: Process customer choice to the right worker
+
+06.03.2019: Mike
+- Customer is working based on States.
+- TODO: Worker AI
