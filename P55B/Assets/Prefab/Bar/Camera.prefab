@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 81996277525450572}
   - component: {fileID: 114938746398044644}
   - component: {fileID: 114223878407778726}
+  - component: {fileID: 114467227922561470}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -81,7 +82,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.9333334, g: 1, b: 1, a: 0}
+  m_BackGroundColor: {r: 1, g: 1, b: 1, a: 0}
   m_projectionMatrixMode: 1
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
@@ -96,7 +97,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 12
+  orthographic size: 6
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -130,6 +131,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f309b43c888df144a7c40208a87f9e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114467227922561470
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1220639510619120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba6af5eaa8d821f4e93093fd37ee3484, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  renderShadows: 1
+  requiresDepthTexture: 0
+  requiresColorTexture: 0
+  m_Version: 1
 --- !u!114 &114938746398044644
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -142,4 +158,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   center: {x: 0, y: 0, z: 0}
-  speed: 4
+  speed: 2
