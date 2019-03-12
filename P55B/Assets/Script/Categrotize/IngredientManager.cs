@@ -8,7 +8,7 @@ public class IngredientManager : MonoBehaviour
 
     public static IngredientManager Instance;
 
-    public static List<IngredientObject> Ingredients;
+    public static List<IngredientObject> Ingredient;
 
     public static List<ItemObject> Items;
 
@@ -33,7 +33,7 @@ public class IngredientManager : MonoBehaviour
     {
 
         // get Items from the Test JSON File
-        string dataAsJson = File.ReadAllText("Assets/Scripts/Test.json");
+        string dataAsJson = File.ReadAllText("Assets/Script/Categrotize/Test.json");
         Items = new List<ItemObject>(JsonHelper.FromJson<ItemObject>(dataAsJson));
 
         int[] savedData = new int[] { 0, 0, 0, 0 };
@@ -42,7 +42,7 @@ public class IngredientManager : MonoBehaviour
             savedData = data.ingredients;
 
         }
-        Ingredients = new List<IngredientObject>(){
+        Ingredient = new List<IngredientObject>(){
             new IngredientObject("Strawberry", 1, 5, savedData[0], Color.red),
             new IngredientObject("Blueberry", 1, 5, savedData[1], Color.blue),
             new IngredientObject("Apple", 1, 5, savedData[2], Color.green),
@@ -51,7 +51,7 @@ public class IngredientManager : MonoBehaviour
     }
 
     public static List<IngredientObject> GetIngredients(){
-        return Ingredients;
+        return Ingredient;
     }
 
     public static List<ItemObject> GetItems()
