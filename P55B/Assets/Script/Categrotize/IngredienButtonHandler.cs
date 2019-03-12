@@ -16,7 +16,7 @@ public class IngredienButtonHandler : MonoBehaviour {
 
     void BackToMain()
     {
-        SceneManager.LoadScene("Main");
+        SceneManager.LoadScene("Planet");
     }
 
 }

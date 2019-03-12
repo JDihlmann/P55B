@@ -24,9 +24,9 @@ public class IngredientManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
+            data = SaveSystem.LoadIngredients();
+            BuildDatabase(data);
         }
-        data = SaveSystem.LoadIngredients();
-        BuildDatabase(data);
     }
 
     private void BuildDatabase(IngredientsData data)
