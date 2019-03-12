@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour {
 
     [SerializeField]
-    private int money;
+    private static int money;
 
     public static GameManager instance;
 
@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour {
 
     }
 
-    public int GetMoney()
+    public static int GetMoney()
     {
         return money;
     }
