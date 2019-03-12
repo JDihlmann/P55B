@@ -19,7 +19,7 @@ public class InregdientsUI : MonoBehaviour {
         ingredientList[0].UpdateCount(2);
         FillList();
 	}
-	
+
     void FillList() {
         for (int i = 0; i < ingredientList.Count; i++){
             GameObject holder = Instantiate(ingredientHolderPrefab, grid);
