@@ -36,4 +36,21 @@ The purpose of this document is to keepthe crew updated and the progress organiz
 
 06.03.2019: Mike
 - Customer is working based on States.
-- TODO: Worker AI
+
+07.03.2019: Mike
+- Worker AI functioning.
+- Drink selection functioning.
+- Customer states and transitions functioning.
+- Fixed duplicate recipes in recipe list.
+
+TODO:
+- Add movement + destination instead of timer for next state
+- Add timer for actions instead of instant action
+- Add worker stats to drinks
+- Add tips from customer
+- Add customer feedback at the end
+
+HOW TO:
+- ADD WORKER PRESETS: Switch case with Id in InitializeWorker(int)
+- ADD CUSTOMER PRESETS: Switch case with Id in InitializeCustomer(int)
+- ADD RECIPE PRESETS: Switch case with Id in Recipe(int)
