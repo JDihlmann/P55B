@@ -37,6 +37,10 @@ public class ItemHolder : MonoBehaviour, IPointerDownHandler, IPointerUpHandler 
     public void OnPointerUp(PointerEventData eventData)
     {
         Reset();
+        if (!eventData.dragging)
+        {
+            OpenModal();
+        }
     }
 
     private void Update()
@@ -47,10 +51,7 @@ public class ItemHolder : MonoBehaviour, IPointerDownHandler, IPointerUpHandler 
             if(pointerDownTimer >= requiredHoldTime)
             {
                 Reset();
-                modalWindow.transform.SetAsLastSibling();
-                GameObject holder = Instantiate(modalWindow, this.gameObject.transform.parent.parent);
-                ModalWindowHolder holderScript = holder.GetComponent<ModalWindowHolder>();
-                holderScript.titel.text = item.ItemName;
+                Debug.Log("long click");
             }
         }
     }
@@ -59,6 +60,14 @@ public class ItemHolder : MonoBehaviour, IPointerDownHandler, IPointerUpHandler 
     {
         pointerDown = false;
         pointerDownTimer = 0;
+    }
+
+    private void OpenModal()
+    {
+        modalWindow.transform.SetAsLastSibling();
+        GameObject holder = Instantiate(modalWindow, this.gameObject.transform.parent.parent.parent.parent.parent);
+        ModalWindowHolder holderScript = holder.GetComponent<ModalWindowHolder>();
+        holderScript.titel.text = item.ItemName;
     }
 
 }
