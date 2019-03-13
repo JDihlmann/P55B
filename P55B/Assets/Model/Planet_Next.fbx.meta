@@ -1,0 +1,190 @@
+fileFormatVersion: 2
+guid: 479efa33d6078f346afac61763ffbe0b
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Alien
+    100002: Alien1
+    100004: Atmosphere
+    100006: Bar
+    100008: Bridge
+    100010: Chair
+    100012: Chair1
+    100014: Couch_Idea
+    100016: Floor
+    100018: Fontain
+    100020: Helpi
+    100022: Lillipad_L
+    100024: Lillipad_L_Leaf
+    100026: Lillipad_M
+    100028: Lillipad_S
+    100030: Planet
+    100032: //RootNode
+    100034: Table
+    100036: TileMesh
+    100038: Water
+    100040: Water_Floor
+    400000: Alien
+    400002: Alien1
+    400004: Atmosphere
+    400006: Bar
+    400008: Bridge
+    400010: Chair
+    400012: Chair1
+    400014: Couch_Idea
+    400016: Floor
+    400018: Fontain
+    400020: Helpi
+    400022: Lillipad_L
+    400024: Lillipad_L_Leaf
+    400026: Lillipad_M
+    400028: Lillipad_S
+    400030: Planet
+    400032: //RootNode
+    400034: Table
+    400036: TileMesh
+    400038: Water
+    400040: Water_Floor
+    2100000: lambert1
+    2300000: Alien
+    2300002: Alien1
+    2300004: Atmosphere
+    2300006: Bar
+    2300008: Bridge
+    2300010: Chair
+    2300012: Chair1
+    2300014: Couch_Idea
+    2300016: Floor
+    2300018: Fontain
+    2300020: Helpi
+    2300022: Lillipad_L
+    2300024: Lillipad_L_Leaf
+    2300026: Lillipad_M
+    2300028: Lillipad_S
+    2300030: Planet
+    2300032: Table
+    2300034: TileMesh
+    2300036: Water
+    2300038: Water_Floor
+    3300000: Alien
+    3300002: Alien1
+    3300004: Atmosphere
+    3300006: Bar
+    3300008: Bridge
+    3300010: Chair
+    3300012: Chair1
+    3300014: Couch_Idea
+    3300016: Floor
+    3300018: Fontain
+    3300020: Helpi
+    3300022: Lillipad_L
+    3300024: Lillipad_L_Leaf
+    3300026: Lillipad_M
+    3300028: Lillipad_S
+    3300030: Planet
+    3300032: Table
+    3300034: TileMesh
+    3300036: Water
+    3300038: Water_Floor
+    4300000: Alien
+    4300002: Alien1
+    4300004: Floor
+    4300006: Water
+    4300008: Planet
+    4300010: Atmosphere
+    4300012: Water_Floor
+    4300014: Bridge
+    4300016: Lillipad_L
+    4300018: Lillipad_S
+    4300020: Lillipad_M
+    4300022: Lillipad_L_Leaf
+    4300024: Fontain
+    4300026: Bar
+    4300028: Helpi
+    4300030: TileMesh
+    4300032: Couch_Idea
+    4300034: Chair
+    4300036: Table
+    4300038: Chair1
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

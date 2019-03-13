@@ -5,10 +5,10 @@ ModelImporter:
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: lambert2
+    2100000: lambert1
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Tile
+    4300000: TileMesh
   externalObjects: {}
   materials:
     importMaterials: 1
