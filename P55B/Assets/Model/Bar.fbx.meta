@@ -1,14 +1,21 @@
 fileFormatVersion: 2
-guid: 4a3005439cde33a40a3d4b1a91793ae7
+guid: 4586d3292daeb8348be58a6c5448a7a4
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Bar
+    100004: Helpi
     400000: //RootNode
+    400002: Bar
+    400004: Helpi
     2100000: lambert1
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: pCube5
+    2300000: Bar
+    2300002: Helpi
+    3300000: Bar
+    3300002: Helpi
+    4300000: Bar
+    4300002: Helpi
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -40,7 +47,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 100
     meshCompression: 0
     addColliders: 0
     importVisibility: 1

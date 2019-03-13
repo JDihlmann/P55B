@@ -1,51 +1,14 @@
 fileFormatVersion: 2
-guid: f5205af0dbacd3d429acff1d8178c657
+guid: 855c90a69f8825440be39f77a7219a71
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: Bridge
-    100002: Chair
-    100004: Chair1
-    100006: Lillipad_L
-    100008: Lillipad_M
-    100010: Lillipad_S
-    100012: //RootNode
-    100014: Planet
-    100016: Table
-    400000: Bridge
-    400002: Chair
-    400004: Chair1
-    400006: Lillipad_L
-    400008: Lillipad_M
-    400010: Lillipad_S
-    400012: Planet
-    400014: //RootNode
-    400016: Table
+    100000: //RootNode
+    400000: //RootNode
     2100000: lambert1
-    2300000: Bridge
-    2300002: Chair
-    2300004: Chair1
-    2300006: Lillipad_L
-    2300008: Lillipad_M
-    2300010: Lillipad_S
-    2300012: Planet
-    2300014: Table
-    3300000: Bridge
-    3300002: Chair
-    3300004: Chair1
-    3300006: Lillipad_L
-    3300008: Lillipad_M
-    3300010: Lillipad_S
-    3300012: Planet
-    3300014: Table
-    4300000: Planet
-    4300002: Bridge
-    4300004: Lillipad_L
-    4300006: Lillipad_S
-    4300008: Lillipad_M
-    4300010: Chair
-    4300012: Table
-    4300014: Chair1
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Atmosphere
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -77,7 +40,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 100
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importVisibility: 1

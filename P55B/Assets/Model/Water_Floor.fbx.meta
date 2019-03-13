@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e27ec509f6fc2d0418f4a5a6bbbd9dee
+guid: 2ffd9a8e656153b4cb72d123aaf6c492
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -8,7 +8,7 @@ ModelImporter:
     2100000: lambert1
     2300000: //RootNode
     3300000: //RootNode
-    4300000: pSphere2
+    4300000: Water_Floor
   externalObjects: {}
   materials:
     importMaterials: 1

@@ -4046,7 +4046,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &653039969
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5726,7 +5726,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &841171907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9127,6 +9127,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114938746398044644, guid: c47f407abe2c2a64891be31d3e3f17e1,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114223878407778726, guid: c47f407abe2c2a64891be31d3e3f17e1,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c47f407abe2c2a64891be31d3e3f17e1, type: 2}
   m_IsPrefabAsset: 0
@@ -10333,7 +10343,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1783923856
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10394,7 +10404,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1796043941
 MonoBehaviour:
   m_ObjectHideFlags: 0
