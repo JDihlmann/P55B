@@ -15,6 +15,9 @@ public class ObjectGrid_Operations : MonoBehaviour {
 	// Empty integer object element
 	private Vector2Int emptyIntObjectElement;
 
+	// Blocked Space
+	private Vector2Int[] blockedSpace; 
+
 	void Start () {
 		// Object Grid instantiatet grids
 		ObjectGrid_Instantiate objectGridInstantiate = GetComponent<ObjectGrid_Instantiate>();
@@ -25,6 +28,11 @@ public class ObjectGrid_Operations : MonoBehaviour {
 		// Size
 		width = integerObjectGrid.GetLength(0);
 		length = integerObjectGrid.GetLength(1);
+
+		// Blocked Space By Center Bar 
+		// TODO: Fix if grid changes size
+		blockedSpace = new Vector2Int[]{new Vector2Int(4,4), new Vector2Int(4,5), new Vector2Int(5,4), new Vector2Int(5,5)};
+		if (width != 10 || length != 10) { Debug.LogError("Center Bar position wrong");} 
 	}
 
 	// Get gameobject at position 
@@ -72,10 +80,13 @@ public class ObjectGrid_Operations : MonoBehaviour {
 			// Out of boundy y position
 			if(relativePos.y < 0 || relativePos.y >= length)
 				return false; 
-			
-			// TODO: ERROR HERE
+
+			// Position empty
 			if (!IsPositionEmpty(integerObjectGrid[relativePos.x, relativePos.y]))
 				return false; 
+
+			if (IsPositionBlocked(relativePos))
+				return false;
 		} 
 
 		return true; 
@@ -110,6 +121,16 @@ public class ObjectGrid_Operations : MonoBehaviour {
 	// Position empty
 	public bool IsPositionEmpty(Vector2Int pos) {
 		return pos == emptyIntObjectElement;
+	}
+
+	// Position blocked
+	public bool IsPositionBlocked(Vector2Int pos) {
+		foreach  (Vector2Int blockedPos in blockedSpace) {
+			if (pos == blockedPos)
+				return true;
+		}
+
+		return false; 
 	}
 
 	private Object_Values GetObjectValues(GameObject obj) {

@@ -25,7 +25,6 @@ public class ObjectGrid_Placement : MonoBehaviour {
 	// Grid operation
 	private ObjectGrid_Operations objectGridOperations; 
 
-
 	// Initial click bool
 	private bool initalClick = true;
 	private bool initalClickHitObject = false; 
