@@ -6,9 +6,7 @@ public class IngredientSpawner : MonoBehaviour {
 
 	#region Variables
 	[Header("Components")]
-	public Transform planet;
-	public GameObject spawnee;
-	public IngredientMovement movement;
+	public GameObject ingredient;
 	[Space]
 	[Header("Variables")]
 	public bool stopSpawning = false;
@@ -16,46 +14,32 @@ public class IngredientSpawner : MonoBehaviour {
 	public float spawnTime;
 	public float spawnDelay;
 	public static int objectCounter;
+    public Vector3[] spawnPoints = { new Vector3(-25, -10, -4.5f), new Vector3(-25, -5, -4.5f), new Vector3(-25, 5, -4.5f), new Vector3(-25, 10, -4.5f) };
 	#endregion
 
 	#region Methods
-	// Use this for initialization
+	// Use this for initialization 
 	void Start ()
 	{
 		objectCounter = GameObject.FindGameObjectsWithTag("Moveable").Length;
-
-		movement = gameObject.GetComponent<IngredientMovement>();
 		InvokeRepeating("SpawnObject", spawnTime, spawnDelay);
 	}
 
-	private void Update()
-	{
-		movement.orbitSpeed = Random.Range(-1000, 1000);
-	}
 
 	public void SpawnObject()
 	{
 		if (objectCounter < spawnMaximum)
 		{
-			CreateObject(spawnee);
+            int spawnPointIndex = Random.Range(0, spawnPoints.Length);
+            Instantiate(ingredient, spawnPoints[spawnPointIndex], new Quaternion(0.0f, 0.0f, 0.0f, 1.0f));
 
-		}
+        }
 		if (stopSpawning)
 		{
 			CancelInvoke("SpawnObject");
 		}
 	}
 
-	public GameObject CreateObject(GameObject spawnee)
-	{
-		objectCounter += 1;
-		GameObject createdObject = Instantiate(spawnee, transform.position, transform.rotation) as GameObject;
-		IngredientMovement mover = createdObject.GetComponent<IngredientMovement>();
-		mover.planet = planet;
-		mover.orbitSpeed = Random.Range(40, 80);
-
-		return createdObject;
-	}
 
 	#endregion
 

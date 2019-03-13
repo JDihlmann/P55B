@@ -29,8 +29,13 @@ public class IngredientMovement : MonoBehaviour
 		RotateAround();
 	}
 
-	// Own Axis Rotation
-	public void RotateWithin()
+    private void OnBecameInvisible()
+    {
+        Destroy(this.gameObject);
+    }
+
+    // Own Axis Rotation
+    public void RotateWithin()
 	{
 		float angle = Time.deltaTime * rotationSpeed;
 		Vector3 rotation = new Vector3(angle, angle, angle);
@@ -40,8 +45,8 @@ public class IngredientMovement : MonoBehaviour
 	// Orbit Axis Rotation
 	public void RotateAround()
 	{
-		float speed = orbitSpeed * Time.deltaTime;
-		transform.RotateAround(planet.position, Vector3.back, speed);
+        float speed = 5.0f;
+        transform.position += Vector3.right * Time.deltaTime * speed;
 	}
 
 
