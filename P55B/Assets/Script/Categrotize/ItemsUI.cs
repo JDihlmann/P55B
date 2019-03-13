@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.EventSystems;
 
 public class ItemsUI : MonoBehaviour
 {
@@ -25,11 +27,14 @@ public class ItemsUI : MonoBehaviour
     {
         for (int i = 0; i < itemsList.Count; i++)
         {
+            Debug.Log(itemsList[i]);
             GameObject holder = Instantiate(itemHolderPrefab, grid);
             ItemHolder holderScript = holder.GetComponent<ItemHolder>();
-            holderScript.itemName.text = itemsList[i].ItemName;
-            holderScript.itemID = itemsList[i].ItemID;
-            holderScript.happinessFactor.text = itemsList[i].HappinessFactor.ToString();
+            holderScript.item = itemsList[i];
+            //holderScript.itemName.text = itemsList[i].ItemName;
+            //holderScript.itemID = itemsList[i].ItemID;
+            //holderScript.happinessFactor.text = itemsList[i].HappinessFactor.ToString();
         }
     }
+
 }

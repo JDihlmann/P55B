@@ -129,6 +129,33 @@ MonoBehaviour:
   itemID: 0
   itemName: {fileID: 114896059237547892}
   happinessFactor: {fileID: 114445263331533476}
+  item:
+    ItemName: 
+    ItemID: 0
+    Cost: 0
+    Color: {r: 0, g: 0, b: 0, a: 0}
+    HappinessFactor: 0
+    Description: 
+    Bought: 0
+  onLongClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 224990035683078238, guid: 800afd72201f54a1f90dfc287fd2a4b8,
+          type: 2}
+        m_MethodName: SetAsFirstSibling
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  modalWindow: {fileID: 1664300195470432, guid: 800afd72201f54a1f90dfc287fd2a4b8,
+    type: 2}
 --- !u!114 &114891448918945786
 MonoBehaviour:
   m_ObjectHideFlags: 1

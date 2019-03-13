@@ -5,7 +5,7 @@
       "ItemID": 0,
       "Cost": 5,
       "Color": "Color.red",
-      "HappinessFactor": 10,
+      "HappinessFactor": 3,
       "Description":  "Rusty table",
       "Bought": false
     },

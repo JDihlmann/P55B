@@ -24,7 +24,7 @@ public class Ingredient : MonoBehaviour
 
 	public void GenerateRandomIndex()
 	{
-		index = Random.Range(0, 4);
+		index = Random.Range(0, 5);
 	}
 
 	public void SetIngredient()
@@ -47,6 +47,10 @@ public class Ingredient : MonoBehaviour
 				ingredientName = "Pineapple";
 				ingredientRenderer.material.color = Color.yellow;
 				break;
+            case 4:
+                ingredientName = "Bug";
+                ingredientRenderer.material.color = Color.grey;
+                break;
 			default:
 				Debug.Log("No such index found.");
 				break;
