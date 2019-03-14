@@ -25,11 +25,14 @@ public class ItemHolder : MonoBehaviour, IPointerDownHandler, IPointerUpHandler 
 
     public GameObject modalWindow;
 
+    private Sprite sprite;
+
     private void Start()
     {
         itemName.text = item.ItemName;
         happinessFactor.text = item.HappinessFactor.ToString();
-        image.sprite = Resources.Load<Sprite>("Sprites/"+item.Image);
+        sprite = Resources.Load<Sprite>("Sprites/"+item.Image);
+        image.sprite = sprite;
     }
 
     public void OnPointerDown(PointerEventData eventData)
@@ -71,6 +74,7 @@ public class ItemHolder : MonoBehaviour, IPointerDownHandler, IPointerUpHandler 
         GameObject holder = Instantiate(modalWindow, this.gameObject.transform.parent.parent.parent.parent.parent);
         ModalWindowHolder holderScript = holder.GetComponent<ModalWindowHolder>();
         holderScript.titel.text = item.ItemName;
+        holderScript.image.sprite = sprite;
     }
 
 }
