@@ -90,7 +90,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -6613,7 +6613,7 @@ Prefab:
     - target: {fileID: 224200510528362310, guid: 80409d925e5fe4bc8933a28357a5a2cb,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0.00002210392
+      value: -0.000003210091
       objectReference: {fileID: 0}
     - target: {fileID: 224379963801718408, guid: 80409d925e5fe4bc8933a28357a5a2cb,
         type: 2}
@@ -6803,6 +6803,47 @@ Prefab:
         type: 2}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114451500779495250, guid: 80409d925e5fe4bc8933a28357a5a2cb,
+        type: 2}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 1ae0ad0e4e77c454995bebb1e757c8dd,
+        type: 3}
+    - target: {fileID: 114451500779495250, guid: 80409d925e5fe4bc8933a28357a5a2cb,
+        type: 2}
+      propertyPath: m_FontData.m_FontSize
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 224702553362991270, guid: 80409d925e5fe4bc8933a28357a5a2cb,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 315.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 224702553362991270, guid: 80409d925e5fe4bc8933a28357a5a2cb,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 111.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114451500779495250, guid: 80409d925e5fe4bc8933a28357a5a2cb,
+        type: 2}
+      propertyPath: m_FontData.m_MaxSize
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 114451500779495250, guid: 80409d925e5fe4bc8933a28357a5a2cb,
+        type: 2}
+      propertyPath: m_Text
+      value: ITEMS
+      objectReference: {fileID: 0}
+    - target: {fileID: 114544604400959546, guid: 80409d925e5fe4bc8933a28357a5a2cb,
+        type: 2}
+      propertyPath: m_Spacing
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 114544604400959546, guid: 80409d925e5fe4bc8933a28357a5a2cb,
+        type: 2}
+      propertyPath: m_Padding.m_Top
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114377601737109730, guid: 80409d925e5fe4bc8933a28357a5a2cb, type: 2}
