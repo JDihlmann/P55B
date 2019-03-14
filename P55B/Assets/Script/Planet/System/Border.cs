@@ -4,15 +4,25 @@ using UnityEngine;
 
 public class Border : MonoBehaviour {
 
-	#region Variables
-	//[Header("Components")]
+    #region Variables
+    //[Header("Components")]
 
-	//[Space]
-	//[Header("Variables")]
+    //[Space]
+    //[Header("Variables")]
+    private Camera cam;
+    private float width;
+    private float height;
+    #endregion
 
-	#endregion
+    #region Methods
+    void Start()
+    {
+        cam = Camera.main;
+        height = cam.ScreenToWorldPoint(new Vector3(0,Screen.height, 15.5f)).y;
+        width = cam.ScreenToWorldPoint(new Vector3(Screen.width, 0, 15.5f)).x;
+        transform.localScale = new Vector3(2f*width, 2f*height, 3f);
+    }
 
-	#region Methods
 	private void OnTriggerExit(Collider other)
 	{
 		if (other.tag == "Moveable")

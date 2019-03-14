@@ -8,7 +8,7 @@ public class IngredientManager : MonoBehaviour
 
     public static IngredientManager Instance;
 
-    public static List<IngredientObject> Ingredient;
+    public static List<IngredientObject> Ingredients;
 
     public static List<ItemObject> Items;
 
@@ -42,7 +42,7 @@ public class IngredientManager : MonoBehaviour
             savedData = data.ingredients;
 
         }
-        Ingredient = new List<IngredientObject>(){
+        Ingredients = new List<IngredientObject>(){
             new IngredientObject("Strawberry", 1, 5, savedData[0], Color.red),
             new IngredientObject("Blueberry", 1, 5, savedData[1], Color.blue),
             new IngredientObject("Apple", 1, 5, savedData[2], Color.green),
@@ -51,7 +51,7 @@ public class IngredientManager : MonoBehaviour
     }
 
     public static List<IngredientObject> GetIngredients(){
-        return Ingredient;
+        return Ingredients;
     }
 
     public static List<ItemObject> GetItems()

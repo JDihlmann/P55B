@@ -40,14 +40,14 @@ public class Blackhole : MonoBehaviour {
             if (ingredient.index == 4)
             {
                 destroyedIngredient = Random.Range(0, 4);
-                IngredientManager.Ingredient[destroyedIngredient].Count -= 1;
-                ingredientCounter[destroyedIngredient] = IngredientManager.Ingredient[destroyedIngredient].Count;
+                IngredientManager.Ingredients[destroyedIngredient].Count -= 1;
+                ingredientCounter[destroyedIngredient] = IngredientManager.Ingredients[destroyedIngredient].Count;
             }
             else
             {
-                IngredientManager.Ingredient[ingredient.index].UpdateCount(1);
+                IngredientManager.Ingredients[ingredient.index].UpdateCount(1);
                 // Next line is for Debug purposes:
-                ingredientCounter[ingredient.index] = IngredientManager.Ingredient[ingredient.index].Count;
+                ingredientCounter[ingredient.index] = IngredientManager.Ingredients[ingredient.index].Count;
             }
 			// Save Counter
 			SaveSystem.SaveIngredients(this);

@@ -20,19 +20,16 @@ public class IngredientMovement : MonoBehaviour
 	#region Methods
 	void Start()
 	{
-		rbody = gameObject.GetComponent<Rigidbody>();
-	}
+		rbody = gameObject.GetComponent<Rigidbody>();   
+    }
 
 	void Update()
 	{
 		RotateWithin();
-		RotateAround();
+		MoveRight();
 	}
 
-    private void OnBecameInvisible()
-    {
-        Destroy(this.gameObject);
-    }
+
 
     // Own Axis Rotation
     public void RotateWithin()
@@ -43,9 +40,9 @@ public class IngredientMovement : MonoBehaviour
 	}
 
 	// Orbit Axis Rotation
-	public void RotateAround()
+	public void MoveRight()
 	{
-        float speed = 5.0f;
+        float speed = 8.0f;
         transform.position += Vector3.right * Time.deltaTime * speed;
 	}
 
