@@ -730,9 +730,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ingredient: {fileID: 1800037291656436, guid: c51f650d563c7a942be6bfa1ead3a3eb, type: 2}
   stopSpawning: 0
-  spawnMaximum: 5
   spawnTime: 1
-  spawnDelay: 4
+  spawnDelay: 1
   spawnPoints:
   - {x: -25, y: -10, z: -4.5}
   - {x: -25, y: -5, z: -4.5}
@@ -794,7 +793,7 @@ Transform:
   m_GameObject: {fileID: 542743738}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -4.5}
-  m_LocalScale: {x: 30, y: 50, z: 3}
+  m_LocalScale: {x: 50, y: 50, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
