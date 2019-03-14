@@ -13,6 +13,7 @@ public class ItemObject
     public int HappinessFactor;
     public string Description;
     public bool Bought;
+    public string Image;
     //public string ItemName { get; set; }
     //public int ItemID { get; set; }
     //public int Cost { get; set; }

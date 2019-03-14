@@ -11,7 +11,9 @@ public class ItemHolder : MonoBehaviour, IPointerDownHandler, IPointerUpHandler 
     [SerializeField]
     private Text itemName;
     [SerializeField]
-    public Text happinessFactor;
+    private Text happinessFactor;
+    [SerializeField]
+    private Image image;
 
     public ItemObject item; 
 
@@ -27,6 +29,7 @@ public class ItemHolder : MonoBehaviour, IPointerDownHandler, IPointerUpHandler 
     {
         itemName.text = item.ItemName;
         happinessFactor.text = item.HappinessFactor.ToString();
+        image.sprite = Resources.Load<Sprite>("Sprites/"+item.Image);
     }
 
     public void OnPointerDown(PointerEventData eventData)
