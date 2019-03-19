@@ -1,0 +1,144 @@
+﻿{
+  "Items": [
+    {
+      "ItemName": "CHAIR",
+      "ItemID": 0,
+      "Cost": 5,
+      "Color": "Color.red",
+      "HappinessFactor": 3,
+      "Description": "Rusty table",
+      "Bought": false,
+      "Image": "Chair"
+    },
+    {
+      "ItemName": "PLANET",
+      "ItemID": 0,
+      "Cost": 5,
+      "Color": "Color.red",
+      "HappinessFactor": 10,
+      "Description": "Rusty chair",
+      "Bought": false,
+      "Image": "Plant"
+    },
+    {
+      "ItemName": "PLANET",
+      "ItemID": 0,
+      "Cost": 5,
+      "Color": "Color.red",
+      "HappinessFactor": 10,
+      "Description": "Rusty chair",
+      "Bought": false,
+      "Image": "Plant"
+    },
+    {
+      "ItemName": "PLANET",
+      "ItemID": 0,
+      "Cost": 5,
+      "Color": "Color.red",
+      "HappinessFactor": 10,
+      "Description": "Rusty chair",
+      "Bought": false,
+      "Image": "Plant"
+    },
+    {
+      "ItemName": "PLANET",
+      "ItemID": 0,
+      "Cost": 5,
+      "Color": "Color.red",
+      "HappinessFactor": 10,
+      "Description": "Rusty chair",
+      "Bought": false,
+      "Image": "Plant"
+    },
+    {
+      "ItemName": "PLANET",
+      "ItemID": 0,
+      "Cost": 5,
+      "Color": "Color.red",
+      "HappinessFactor": 10,
+      "Description": "Rusty chair",
+      "Bought": false,
+      "Image": "Plant"
+    },
+    {
+      "ItemName": "PLANET",
+      "ItemID": 0,
+      "Cost": 5,
+      "Color": "Color.red",
+      "HappinessFactor": 10,
+      "Description": "Rusty chair",
+      "Bought": false,
+      "Image": "Plant"
+    },
+    {
+      "ItemName": "PLANET",
+      "ItemID": 0,
+      "Cost": 5,
+      "Color": "Color.red",
+      "HappinessFactor": 10,
+      "Description": "Rusty chair",
+      "Bought": false,
+      "Image": "Plant"
+    },
+    {
+      "ItemName": "PLANET",
+      "ItemID": 0,
+      "Cost": 5,
+      "Color": "Color.red",
+      "HappinessFactor": 10,
+      "Description": "Rusty chair",
+      "Bought": false,
+      "Image": "Plant"
+    },
+    {
+      "ItemName": "PLANET",
+      "ItemID": 0,
+      "Cost": 5,
+      "Color": "Color.red",
+      "HappinessFactor": 10,
+      "Description": "Rusty chair",
+      "Bought": false,
+      "Image": "Plant"
+    },
+    {
+      "ItemName": "PLANET",
+      "ItemID": 0,
+      "Cost": 5,
+      "Color": "Color.red",
+      "HappinessFactor": 10,
+      "Description": "Rusty chair",
+      "Bought": false,
+      "Image": "Plant"
+    },
+    {
+      "ItemName": "PLANET",
+      "ItemID": 0,
+      "Cost": 5,
+      "Color": "Color.red",
+      "HappinessFactor": 10,
+      "Description": "Rusty chair",
+      "Bought": false,
+      "Image": "Plant"
+    },
+    {
+      "ItemName": "PLANET",
+      "ItemID": 0,
+      "Cost": 5,
+      "Color": "Color.red",
+      "HappinessFactor": 10,
+      "Description": "Rusty chair",
+      "Bought": false,
+      "Image": "Plant"
+    },
+    {
+      "ItemName": "PLANET",
+      "ItemID": 0,
+      "Cost": 5,
+      "Color": "Color.red",
+      "HappinessFactor": 10,
+      "Description": "Rusty chair",
+      "Bought": false,
+      "Image": "Plant"
+    }
+  ]
+}

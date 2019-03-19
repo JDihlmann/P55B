@@ -33,7 +33,8 @@ public class IngredientManager : MonoBehaviour
     {
 
         // get Items from the Test JSON File
-        string dataAsJson = File.ReadAllText("Assets/Script/Categrotize/Test.json");
+        string dataAsJson = Resources.Load<TextAsset>("JSON/Items").ToString();
+        //string dataAsJson = File.ReadAllText("Assets/Script/Categrotize/Test.json");
         Items = new List<ItemObject>(JsonHelper.FromJson<ItemObject>(dataAsJson));
 
         int[] savedData = new int[] { 0, 0, 0, 0 };
