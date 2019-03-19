@@ -41,7 +41,7 @@ Transform:
   m_GameObject: {fileID: 1800037291656436}
   m_LocalRotation: {x: -0.35355338, y: 0.35355338, z: 0.1464466, w: 0.8535535}
   m_LocalPosition: {x: 0, y: 7.25, z: -4.5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -140,8 +140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planet: {fileID: 0}
-  orbitSpeed: 50
-  rotationSpeed: -5
+  rotationSpeed: 50
   playerTouchCount: 0
 --- !u!135 &135872752650138432
 SphereCollider:
