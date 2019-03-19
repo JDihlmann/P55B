@@ -11,8 +11,7 @@ public class IngredientMovement : MonoBehaviour
 	private Rigidbody rbody;
 	[Space]
 	[Header("Variables")]
-	public float orbitSpeed = 50f;
-	public float rotationSpeed = -5f;
+	public float rotationSpeed;
 	[HideInInspector]
 	public int playerTouchCount = 0;
 	#endregion
@@ -53,7 +52,6 @@ public class IngredientMovement : MonoBehaviour
 
 		if (playerTouchCount < 2)
 		{
-			orbitSpeed = 0f;
 			rbody.AddForce(300 * velocity);
 
 			// TODO Add more gravity to object:
