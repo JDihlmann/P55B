@@ -75,6 +75,8 @@ public class ItemHolder : MonoBehaviour, IPointerDownHandler, IPointerUpHandler 
         ModalWindowHolder holderScript = holder.GetComponent<ModalWindowHolder>();
         holderScript.titel.text = item.ItemName;
         holderScript.image.sprite = sprite;
+        //holderScript.image.SetNativeSize();
+        holderScript.image.preserveAspect = true;
     }
 
 }

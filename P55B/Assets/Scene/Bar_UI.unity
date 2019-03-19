@@ -1851,7 +1851,7 @@ Prefab:
     - target: {fileID: 114691177248931762, guid: 80409d925e5fe4bc8933a28357a5a2cb,
         type: 2}
       propertyPath: m_AspectRatio
-      value: 1000
+      value: 92.338005
       objectReference: {fileID: 0}
     - target: {fileID: 224599423272088318, guid: 80409d925e5fe4bc8933a28357a5a2cb,
         type: 2}
@@ -1937,6 +1937,11 @@ Prefab:
         type: 2}
       propertyPath: m_SizeDelta.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224034975502066200, guid: 80409d925e5fe4bc8933a28357a5a2cb,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80409d925e5fe4bc8933a28357a5a2cb, type: 2}
