@@ -22,7 +22,6 @@ public class IngredientSpawner : MonoBehaviour {
     private Vector3 spawnpoint5 = new Vector3();
     private Vector3 spawnpoint6 = new Vector3();
     private Vector3 spawnpoint7 = new Vector3();
-    private Vector3 spawnpoint8 = new Vector3();
 
     #endregion
 
@@ -34,13 +33,12 @@ public class IngredientSpawner : MonoBehaviour {
         cam = Camera.main;
         spawnpoint1 = cam.ScreenToWorldPoint(new Vector3(0, 1.4f*Screen.height / 5, 15.5f));
         spawnpoint2 = cam.ScreenToWorldPoint(new Vector3(0, 1.8f * Screen.height / 5, 15.5f));
-        spawnpoint3 = cam.ScreenToWorldPoint(new Vector3(0, 2.1f*Screen.height / 5, 15.5f));
-        spawnpoint4 = cam.ScreenToWorldPoint(new Vector3(0, 3*Screen.height / 5, 15.5f));
-        spawnpoint5 = cam.ScreenToWorldPoint(new Vector3(0, 3.4f * Screen.height / 5, 15.5f));
-        spawnpoint6 = cam.ScreenToWorldPoint(new Vector3(0, 3.8f * Screen.height / 5, 15.5f));
-        spawnpoint7 = cam.ScreenToWorldPoint(new Vector3(0, 4.2f * Screen.height / 5, 15.5f));
-        spawnpoint8 = cam.ScreenToWorldPoint(new Vector3(0, 4.6f * Screen.height / 5, 15.5f));
-        spawnPoints =  new Vector3[]{spawnpoint1, spawnpoint2 , spawnpoint3 , spawnpoint4, spawnpoint5, spawnpoint6, spawnpoint7, spawnpoint8 };
+        spawnpoint3 = cam.ScreenToWorldPoint(new Vector3(0, 3.1f*Screen.height / 5, 15.5f));
+        spawnpoint4 = cam.ScreenToWorldPoint(new Vector3(0, 3.4f * Screen.height / 5, 15.5f));
+        spawnpoint5 = cam.ScreenToWorldPoint(new Vector3(0, 3.8f * Screen.height / 5, 15.5f));
+        spawnpoint6 = cam.ScreenToWorldPoint(new Vector3(0, 4.2f * Screen.height / 5, 15.5f));
+        spawnpoint7 = cam.ScreenToWorldPoint(new Vector3(0, 4.6f * Screen.height / 5, 15.5f));
+        spawnPoints =  new Vector3[]{spawnpoint1, spawnpoint2 , spawnpoint3 , spawnpoint4, spawnpoint5, spawnpoint6, spawnpoint7, };
     }
 
     private void Update()

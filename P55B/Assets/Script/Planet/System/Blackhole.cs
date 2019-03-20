@@ -29,8 +29,8 @@ public class Blackhole : MonoBehaviour {
 	{
 		if (other.tag == "Moveable")
 		{
-
-			IngredientMovement movement = other.GetComponent<IngredientMovement>();
+            Destroy(other.gameObject);
+            IngredientMovement movement = other.GetComponent<IngredientMovement>();
 			Ingredient ingredient = other.GetComponent<Ingredient>();
 			// Disables player input:
 			// Stops the momentum of the object (Only for TODO pull animation):
@@ -53,7 +53,6 @@ public class Blackhole : MonoBehaviour {
 			SaveSystem.SaveIngredients(this);
 
 			// Destroy Object TODO? Replace with animation pulling into black hole
-			Destroy(other.gameObject);
 			IngredientSpawner.objectCounter -= 1;
 		}
 	}
