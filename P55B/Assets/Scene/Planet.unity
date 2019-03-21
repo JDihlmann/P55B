@@ -769,7 +769,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f23b56a39a03c4446bf0d527a9feb5de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ingredient: {fileID: 1800037291656436, guid: c51f650d563c7a942be6bfa1ead3a3eb, type: 2}
+  ingredientLeft: {fileID: 1800037291656436, guid: c51f650d563c7a942be6bfa1ead3a3eb,
+    type: 2}
+  ingredientRight: {fileID: 1810396551835710, guid: ba32e20c2924b804d867fbb5601d88a0,
+    type: 2}
   spawnTime: 1
   spawnDelay: 1.3
 --- !u!1 &542743738
