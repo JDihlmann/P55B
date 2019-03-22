@@ -12,6 +12,7 @@ public class IngredientMovement : MonoBehaviour
 	[Space]
 	[Header("Variables")]
 	public float rotationSpeed;
+    public float speed;
 	[HideInInspector]
 	public int playerTouchCount = 0;
 	#endregion
@@ -41,7 +42,6 @@ public class IngredientMovement : MonoBehaviour
 	// Orbit Axis Rotation
 	public void MoveRight()
 	{
-        float speed = 8.0f;
         transform.position += Vector3.right * Time.deltaTime * speed;
 	}
 

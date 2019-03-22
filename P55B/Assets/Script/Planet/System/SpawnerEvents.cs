@@ -43,9 +43,11 @@ public class SpawnerEvents : MonoBehaviour {
     }
 
     IEnumerator SetLowSpawnrate()
-    {        
+    {
+        Debug.Log("LowSoon"); //TODO Change to some kind of Alert
+        yield return new WaitForSecondsRealtime(10f);
+        Debug.Log("LowNow");
         spawner.spawnDelay = 5f;
-        Debug.Log("Low");
         yield return new WaitForSecondsRealtime(30f);
         spawner.spawnDelay = 1.3f;
         eventInProgress = false;
@@ -53,8 +55,10 @@ public class SpawnerEvents : MonoBehaviour {
 
     IEnumerator SetHighSpawnrate()
     {
+        Debug.Log("HighSoon"); //TODO Change to some kind of Alert
+        yield return new WaitForSecondsRealtime(10f);
+        Debug.Log("HighNow");
         spawner.spawnDelay = 0.5f;
-        Debug.Log("High");
         yield return new WaitForSecondsRealtime(30f);
         spawner.spawnDelay = 1.3f;
         eventInProgress = false;
