@@ -16,6 +16,8 @@ public class RecipeHolder : MonoBehaviour, IPointerDownHandler, IPointerUpHandle
     private Text price;
     [SerializeField]
     private Image image;
+    [SerializeField]
+    private Image priceTag;
 
     public RecipeObject recipe;
 
@@ -33,6 +35,7 @@ public class RecipeHolder : MonoBehaviour, IPointerDownHandler, IPointerUpHandle
     {
         name.text = recipe.Name;
         price.text = recipe.Price.ToString();
+        priceTag.gameObject.SetActive(true);
         sprite = Resources.Load<Sprite>("Sprites/" + recipe.Image);
         image.sprite = sprite;
     }
@@ -79,6 +82,7 @@ public class RecipeHolder : MonoBehaviour, IPointerDownHandler, IPointerUpHandle
         holderScript.image.sprite = sprite;
         holderScript.amount = recipe.Amount;
         holderScript.ingredients = recipe.Ingredients;
+        holderScript.price.text = recipe.Price.ToString();
         //holderScript.image.SetNativeSize();
         holderScript.image.preserveAspect = true;
     }

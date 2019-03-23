@@ -10,6 +10,7 @@ public class RecipeModalWindowHolder : MonoBehaviour {
     public Image image;
     public List<int> amount;
     public List<int> ingredients;
+    public Text price;
 
     public GameObject recipeIngredientHolderPrefab;
     public Transform ingredientGrid;
