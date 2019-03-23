@@ -11,7 +11,9 @@ public class ItemHolder : MonoBehaviour, IPointerDownHandler, IPointerUpHandler 
     [SerializeField]
     private Text itemName;
     [SerializeField]
-    public Text happinessFactor;
+    private Text happinessFactor;
+    [SerializeField]
+    private Image image;
 
     public ItemObject item; 
 
@@ -23,10 +25,14 @@ public class ItemHolder : MonoBehaviour, IPointerDownHandler, IPointerUpHandler 
 
     public GameObject modalWindow;
 
+    private Sprite sprite;
+
     private void Start()
     {
         itemName.text = item.ItemName;
         happinessFactor.text = item.HappinessFactor.ToString();
+        sprite = Resources.Load<Sprite>("Sprites/"+item.Image);
+        image.sprite = sprite;
     }
 
     public void OnPointerDown(PointerEventData eventData)
@@ -68,6 +74,9 @@ public class ItemHolder : MonoBehaviour, IPointerDownHandler, IPointerUpHandler 
         GameObject holder = Instantiate(modalWindow, this.gameObject.transform.parent.parent.parent.parent.parent);
         ModalWindowHolder holderScript = holder.GetComponent<ModalWindowHolder>();
         holderScript.titel.text = item.ItemName;
+        holderScript.image.sprite = sprite;
+        //holderScript.image.SetNativeSize();
+        holderScript.image.preserveAspect = true;
     }
 
 }

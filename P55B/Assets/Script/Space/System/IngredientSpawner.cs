@@ -6,56 +6,72 @@ public class IngredientSpawner : MonoBehaviour {
 
 	#region Variables
 	[Header("Components")]
-	public Transform planet;
-	public GameObject spawnee;
-	public IngredientMovement movement;
-	[Space]
+	public GameObject ingredientLeft;
+    public GameObject ingredientRight;
+    [Space]
 	[Header("Variables")]
-	public bool stopSpawning = false;
-	public int spawnMaximum = 5;
 	public float spawnTime;
 	public float spawnDelay;
 	public static int objectCounter;
-	#endregion
+    private float timer = 0f;
+    private Camera cam;
+    private Vector3[] spawnPointsLeft;
+    private Vector3[] spawnPointsRight;
+    private Vector3 spawnpoint1 = new Vector3();
+    private Vector3 spawnpoint2 = new Vector3();
+    private Vector3 spawnpoint3 = new Vector3();
+    private Vector3 spawnpoint4 = new Vector3();
+    private Vector3 spawnpoint5 = new Vector3();
+    private Vector3 spawnpoint6 = new Vector3();
+    private Vector3 spawnpoint7 = new Vector3();
 
-	#region Methods
-	// Use this for initialization
-	void Start ()
+    #endregion
+
+    #region Methods
+    // Use this for initialization 
+    void Start ()
 	{
 		objectCounter = GameObject.FindGameObjectsWithTag("Moveable").Length;
+        cam = Camera.main;
+        spawnpoint1 = cam.ScreenToWorldPoint(new Vector3(0, 1.4f*Screen.height / 5, 15.5f));
+        spawnpoint2 = cam.ScreenToWorldPoint(new Vector3(Screen.width, 1.8f * Screen.height / 5, 15.5f));
+        spawnpoint3 = cam.ScreenToWorldPoint(new Vector3(0, 3.1f*Screen.height / 5, 15.5f));
+        spawnpoint4 = cam.ScreenToWorldPoint(new Vector3(Screen.width, 3.4f * Screen.height / 5, 15.5f));
+        spawnpoint5 = cam.ScreenToWorldPoint(new Vector3(0, 3.8f * Screen.height / 5, 15.5f));
+        spawnpoint6 = cam.ScreenToWorldPoint(new Vector3(Screen.width, 4.2f * Screen.height / 5, 15.5f));
+        spawnpoint7 = cam.ScreenToWorldPoint(new Vector3(0, 4.6f * Screen.height / 5, 15.5f));
+        spawnPointsLeft =  new Vector3[]{spawnpoint1, spawnpoint3, spawnpoint5, spawnpoint7, };
+        spawnPointsRight = new Vector3[] {spawnpoint2, spawnpoint4, spawnpoint6 };
+    }
 
-		movement = gameObject.GetComponent<IngredientMovement>();
-		InvokeRepeating("SpawnObject", spawnTime, spawnDelay);
-	}
+    private void Update()
+    {
+        timer += Time.deltaTime;
+        if (timer >= spawnDelay)
+        {
+            SpawnObject();
+            timer = 0f;
+        }
+    }
 
-	private void Update()
+
+    public void SpawnObject()
 	{
-		movement.orbitSpeed = Random.Range(-1000, 1000);
-	}
 
-	public void SpawnObject()
-	{
-		if (objectCounter < spawnMaximum)
-		{
-			CreateObject(spawnee);
+        int spawnPointLeftIndex = Random.Range(0, spawnPointsLeft.Length);
+        int spawnPointRightIndex = Random.Range(0, spawnPointsRight.Length);
+        float side = Random.value;
+        if (side < .5f)
+        {
+            Instantiate(ingredientLeft, spawnPointsLeft[spawnPointLeftIndex], new Quaternion(0.0f, 0.0f, 0.0f, 1.0f));
+        }
+        else
+        {
+            Instantiate(ingredientRight, spawnPointsRight[spawnPointRightIndex], new Quaternion(0.0f, 0.0f, 0.0f, 1.0f));
+        }
+        
+    }
 
-		}
-		if (stopSpawning)
-		{
-			CancelInvoke("SpawnObject");
-		}
-	}
-
-	public GameObject CreateObject(GameObject spawnee)
-	{
-		objectCounter += 1;
-		GameObject createdObject = Instantiate(spawnee, transform.position, transform.rotation) as GameObject;
-		IngredientMovement mover = createdObject.GetComponent<IngredientMovement>();
-		mover.planet = planet;
-		mover.orbitSpeed = Random.Range(40, 80);
-
-		return createdObject;
-	}
 
 	#endregion
 

@@ -11,8 +11,8 @@ public class IngredientMovement : MonoBehaviour
 	private Rigidbody rbody;
 	[Space]
 	[Header("Variables")]
-	public float orbitSpeed = 50f;
-	public float rotationSpeed = -5f;
+	public float rotationSpeed;
+    public float speed;
 	[HideInInspector]
 	public int playerTouchCount = 0;
 	#endregion
@@ -20,17 +20,19 @@ public class IngredientMovement : MonoBehaviour
 	#region Methods
 	void Start()
 	{
-		rbody = gameObject.GetComponent<Rigidbody>();
-	}
+		rbody = gameObject.GetComponent<Rigidbody>();   
+    }
 
 	void Update()
 	{
 		RotateWithin();
-		RotateAround();
+		MoveRight();
 	}
 
-	// Own Axis Rotation
-	public void RotateWithin()
+
+
+    // Own Axis Rotation
+    public void RotateWithin()
 	{
 		float angle = Time.deltaTime * rotationSpeed;
 		Vector3 rotation = new Vector3(angle, angle, angle);
@@ -38,10 +40,9 @@ public class IngredientMovement : MonoBehaviour
 	}
 
 	// Orbit Axis Rotation
-	public void RotateAround()
+	public void MoveRight()
 	{
-		float speed = orbitSpeed * Time.deltaTime;
-		transform.RotateAround(planet.position, Vector3.back, speed);
+        transform.position += Vector3.right * Time.deltaTime * speed;
 	}
 
 
@@ -51,7 +52,6 @@ public class IngredientMovement : MonoBehaviour
 
 		if (playerTouchCount < 2)
 		{
-			orbitSpeed = 0f;
 			rbody.AddForce(300 * velocity);
 
 			// TODO Add more gravity to object:

@@ -12,6 +12,8 @@ public class Ingredient : MonoBehaviour
 	[Header("Variables")]
 	public string ingredientName;
 	public int index;
+    Shader lightweightShader;
+    Renderer rend;
 	#endregion
 
 	#region Methods
@@ -20,6 +22,9 @@ public class Ingredient : MonoBehaviour
 		ingredientRenderer = gameObject.GetComponent<Renderer>();
 		GenerateRandomIndex();
 		SetIngredient();
+        rend = GetComponent<Renderer>();
+        lightweightShader = Shader.Find("LightweightPipeline/Standard (Physically Based)");
+        rend.material.shader = lightweightShader;
 	}
 
 	public void GenerateRandomIndex()
