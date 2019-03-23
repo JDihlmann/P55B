@@ -51,8 +51,9 @@ public class ObjectGrid_Placement : MonoBehaviour {
 			initalClick = false;
 			initalClickHitObject = didRaycastHitObject(); 
 
-			if (initalClickHitObject)
+			if (initalClickHitObject) {
 				GetObjectComponents();
+			}
 		}
 
 		if (initalClickHitObject) {
@@ -63,7 +64,12 @@ public class ObjectGrid_Placement : MonoBehaviour {
 			// Mark tiles hovered over
 			if (didRaycastHitTile() && hitTileChanged) {
 				GetTileComponents();
-				hitTileFloorGridMarkTile.MarkTiles(hitTilePosition.position, colliderPosition, hitObjectParentValues.occupiedSpace); 
+				
+				// Object placeable at position
+				bool placeable = objectGridOperations.IsObjectPlaceableAtPosition(hitObjectParent, hitTilePosition.position);
+
+				// Mark tiles
+				hitTileFloorGridMarkTile.MarkTiles(hitTilePosition.position, colliderPosition, hitObjectParentValues.occupiedSpace, placeable); 
 			} else if (hitTileChanged) {
 				hitTileFloorGridMarkTile.UnmarkTiles();
 			}
