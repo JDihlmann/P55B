@@ -1,0 +1,16 @@
+﻿{
+  "Items": [
+    {
+      "Name": "PINA COLADA",
+      "ID": 0,
+      "Price": 500,
+      "MinIncome": 2,
+      "MaxIncome": 5,
+      "Description": "Rusty table",
+      "Image": "Chair",
+      "Rarety": "common",
+      "Ingredients": [0],
+      "Amount":  [5]
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+﻿{
+  "Items": [
+    {
+      "IngredientName": "QUBI",
+      "IngredientID": 0,
+      "Cost": 5,
+      "Count": 0,
+      "Color": "Color.red",
+      "Image": "Qubi"
+    }
+  ]
+}

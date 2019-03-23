@@ -15,14 +15,16 @@ public class IngredientObject {
     public int Cost { get; set; }
     public int Count { get; set; }
     public Color Color { get; set; }
+    public string Image { get; set; }
 
 
-    public IngredientObject(string ingredientName, int ingredientID, int cost, int count, Color color) {
+    public IngredientObject(string ingredientName, int ingredientID, int cost, int count, Color color, string image) {
         this.IngredientName = ingredientName;
         this.IngredientID = ingredientID;
         this.Cost = cost;
         this.Count = count;
         this.Color = color;
+        this.Image = image;
     }
 
     public void UpdateCount (int number){
