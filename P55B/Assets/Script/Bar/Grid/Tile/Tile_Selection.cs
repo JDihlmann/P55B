@@ -10,7 +10,8 @@ public class Tile_Selection: MonoBehaviour {
 	// Color defined statics 
 	public static Color defaultColor = Color.white;
 	public Material tileDefault;
-	public Material tileHighlight; 
+	public Material tileHighlightPlaceable;
+	public Material tileHighlightNotPlaceable; 
 
 	public static Color highlightColor = Color.green;
 
@@ -19,22 +20,16 @@ public class Tile_Selection: MonoBehaviour {
         rend = GetComponent<Renderer>();
 	}
 
-	public void HighlightTileMaterial(bool highlight) {
-		//Set the main color of the material to white
-       	// rend.material.shader = Shader.Find("_Color");
-        // rend.material.SetColor("_Color", color);
+	public void HighlightTileMaterial(bool highlight, bool placeable) {
 
 		if (highlight) {
-			rend.material = tileHighlight;
+			if (placeable) {
+				rend.material = tileHighlightPlaceable;
+			} else {
+				rend.material = tileHighlightNotPlaceable; 
+			}
 		} else {
 			rend.material = tileDefault;
 		}
-
-
-
-		//Find the specular shader and change its color to red
-        // rend.material.shader = Shader.Find("Specular");
-        // rend.material.SetColor("_SpecColor", Color.red);
-		//rend.material = tileDefault; 
 	}
 }

@@ -32,7 +32,6 @@ public class ObjectGrid_Operations : MonoBehaviour {
 		// Blocked Space By Center Bar 
 		// TODO: Fix if grid changes size
 		blockedSpace = new Vector2Int[]{new Vector2Int(4,4), new Vector2Int(4,5), new Vector2Int(5,4), new Vector2Int(5,5)};
-		if (width != 10 || length != 10) { Debug.LogError("Center Bar position wrong");} 
 	}
 
 	// Get gameobject at position 
@@ -82,8 +81,12 @@ public class ObjectGrid_Operations : MonoBehaviour {
 				return false; 
 
 			// Position empty
-			if (!IsPositionEmpty(integerObjectGrid[relativePos.x, relativePos.y]))
-				return false; 
+			Vector2Int objectGridPosition = integerObjectGrid[relativePos.x, relativePos.y];
+			if (!IsPositionEmpty(objectGridPosition)) {
+				if (obj != objectGrid[objectGridPosition.x, objectGridPosition.y]) {
+					return false; 
+				}
+			}
 
 			if (IsPositionBlocked(relativePos))
 				return false;
@@ -148,10 +151,10 @@ public class ObjectGrid_Operations : MonoBehaviour {
 			for (int j = 0; j < integerObjectGrid.GetLength(1); j++) {
 				if (!IsPositionEmpty(integerObjectGrid[i,j])) {
 					Tile_Selection tileSelection = test1.floorGrid[i,j].GetComponent<Tile_Selection>();
-					tileSelection.HighlightTileMaterial(true);  
+					tileSelection.HighlightTileMaterial(true, true);  
 				} else {
 					Tile_Selection tileSelection = test1.floorGrid[i,j].GetComponent<Tile_Selection>();
-					tileSelection.HighlightTileMaterial(false); 
+					tileSelection.HighlightTileMaterial(false, false); 
 				}
 			}
 		}

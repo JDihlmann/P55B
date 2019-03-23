@@ -19,7 +19,7 @@ TagManager:
   - Placeable
   - Moveable
   - Object
-  - 
+  - Rotateable
   - 
   - 
   - 

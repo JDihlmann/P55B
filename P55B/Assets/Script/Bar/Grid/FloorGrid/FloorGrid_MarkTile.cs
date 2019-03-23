@@ -10,7 +10,7 @@ public class FloorGrid_MarkTile : MonoBehaviour {
 		previousMarkTiles = new List<GameObject>(); 
 	}
 
-	public void MarkTiles(Vector2Int tilePos, Vector2Int colliderPos, Vector2Int[] occupiedSpace) {
+	public void MarkTiles(Vector2Int tilePos, Vector2Int colliderPos, Vector2Int[] occupiedSpace, bool placeable) {
 		UnmarkTiles();
 
 		FloorGrid_Instantiate floorGridInstantiate = GetComponent<FloorGrid_Instantiate>();
@@ -24,7 +24,7 @@ public class FloorGrid_MarkTile : MonoBehaviour {
 			if (isInXBounds && isInYBounds) {	
 				GameObject tile = floorGrid[realPos.x,realPos.y];
 				Tile_Selection tileSelection = tile.GetComponent<Tile_Selection>();
-				tileSelection.HighlightTileMaterial(true); 
+				tileSelection.HighlightTileMaterial(true, placeable); 
 				previousMarkTiles.Add(tile);
 			}
 		}
@@ -35,7 +35,7 @@ public class FloorGrid_MarkTile : MonoBehaviour {
 		// Reset color to default
 		foreach (GameObject tile in previousMarkTiles) {
 			Tile_Selection tileSelection = tile.GetComponent<Tile_Selection>();
-			tileSelection.HighlightTileMaterial(false); 
+			tileSelection.HighlightTileMaterial(false, false); 
 		}
 
 		// Reset list 
