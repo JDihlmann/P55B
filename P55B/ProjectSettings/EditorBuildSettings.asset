@@ -14,7 +14,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scene/Ingredients.unity
     guid: a97e8f65c17aa4a1d95548776c15977f
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scene/Bar.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 0
