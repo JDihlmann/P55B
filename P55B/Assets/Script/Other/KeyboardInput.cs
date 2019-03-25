@@ -10,9 +10,16 @@ public class KeyboardInput : MonoBehaviour {
 	// Object grid placement component
 	private ObjectGrid_Placement objectGridPlacement; 
 
+	// Reference to state change
+	public GameObject gameStateChanger;
+
+	// Object grid placement component
+	private StateChange stateChange; 
+
 
 	void Start() {
-		objectGridPlacement = objectGrid.GetComponent<ObjectGrid_Placement>(); 
+		objectGridPlacement = objectGrid.GetComponent<ObjectGrid_Placement>();
+		stateChange = gameStateChanger.GetComponent<StateChange>(); 
 	}	
 
 	// Keyboard Input for Debuging
@@ -36,6 +43,26 @@ public class KeyboardInput : MonoBehaviour {
 		if (Input.GetKeyUp("l")) {
             Debug.Log("Delete");
 			objectGridPlacement.UIRemoveObjectOnGrid();
+        }
+
+		if (Input.GetKeyUp("v")) {
+            Debug.Log("Activate UI State");
+			stateChange.ActivateUIState();
+        }
+
+		if (Input.GetKeyUp("b")) {
+            Debug.Log("Activate Bar  State");
+			stateChange.ActivateBarState();
+        }
+
+		if (Input.GetKeyUp("n")) {
+            Debug.Log("Activate Build State");
+			stateChange.ActivateBuildState();
+        }
+
+		if (Input.GetKeyUp("m")) {
+            Debug.Log("Activate Space State");
+			stateChange.ActivateSpaceState();
         }
 	}
 }

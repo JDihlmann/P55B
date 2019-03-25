@@ -62,12 +62,7 @@ public class ObjectGrid_Placement : MonoBehaviour {
 
 				if(!hitObjectParentPlaced && hitObjectParent != null){
 					if (IsDiffrentObject) {
-						// Grid position
-						Vector2Int offset = hitObjectColliderPosition.position;
-						Vector2Int fromPos = hitObjectParentValues.placedPosition;
-						Vector2Int toPos = hitTilePosition.position;
-
-						TryPlacingObjectOnGrid(hitObjectParent, fromPos, toPos, offset); 
+						TryPlacingObjectOnGrid(); 
 					}
 				} 
 
@@ -236,13 +231,22 @@ public class ObjectGrid_Placement : MonoBehaviour {
 		objectGridOperations.RemoveObject(pos); 
 	}
 
-	public void TryPlacingObjectOnGrid(GameObject obj, Vector2Int fromPos, Vector2Int toPos, Vector2Int offset) {
-		// Try placing combination
+	public void TryPlacingObjectOnGrid() {
+
+		if(hitObjectParent == null || hitTilePosition == null)
+			return; 
+
+		GameObject obj = hitObjectParent; 
+		Vector2Int offset = hitObjectColliderPosition.position;
+		Vector2Int fromPos = hitObjectParentValues.placedPosition;
+		Vector2Int toPos = hitTilePosition.position;
+
+		// All possible place combinations
 		if(objectGridOperations.IsPositionEmpty(fromPos)) {
-			if(!PlaceObjectOnGrid(hitObjectParent, toPos, offset))
-				RemoveObjectOnGrid(hitObjectParent, fromPos); 
+			if(!PlaceObjectOnGrid(obj, toPos, offset))
+				RemoveObjectOnGrid(obj, fromPos); 
 		} else {
-			MoveObjectOnGrid(hitObjectParent, fromPos, toPos, offset); 
+			MoveObjectOnGrid(obj, fromPos, toPos, offset); 
 		}
 
 		// Unmark Tiles
@@ -378,7 +382,7 @@ public class ObjectGrid_Placement : MonoBehaviour {
 
 	# region Reset
 
-	private void ResetAllValues() {
+	public void ResetAllValues() {
 		hitTile = null;
 		hitObject = null; 
 		initalClick = true;

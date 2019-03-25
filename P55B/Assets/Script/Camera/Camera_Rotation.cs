@@ -22,9 +22,10 @@ public class Camera_Rotation : MonoBehaviour {
 	private Vector3 snapCameraRotation; 
 
 	// Snap rotation
-	private bool snapped; 
+	public bool snapped; 
 	private bool snapIsNegative; 
 	private float previousRotationDistance; 
+	private float speed = 5; 
 
 
 	void Start () {
@@ -71,7 +72,9 @@ public class Camera_Rotation : MonoBehaviour {
 			previousRotationDistance = float.MaxValue; 
 		} else {
 			// Snap to edge over time 
-			if (!snapped) SnapToEdge(); 
+			if (!snapped) {
+				SnapToEdge();
+			} 
 		}
 		
 	}
@@ -155,15 +158,34 @@ public class Camera_Rotation : MonoBehaviour {
 		}
 	}
 
-	void SnapToEdge () {
+	public void SelectSnapToDefaultEdge() {
+		// Positive camera y, x and z values
+		float positiveCameraY = initialCameraPosition.y;
+		float positiveCameraX = Mathf.Abs(initialCameraPosition.x);
+		float positiveCameraZ = Mathf.Abs(initialCameraPosition.z);
+
+		// Camera position -x, -z
+		snapCameraPosition = new Vector3(-positiveCameraX, positiveCameraY, -positiveCameraZ);
+
+		// Camera angle 45 degree
+		snapCameraRotation.y =  45f;
+
+		// Snap negative
+		snapIsNegative = transform.eulerAngles.y > 45 && transform.eulerAngles.y < 225; 
+
+		previousRotationDistance = float.MaxValue; 
+
+		snapped = false;
+	}
+
+	void SnapToEdge() {
 		// Distance between camera and snap camera position
 		float rotationDistance = Vector3.Distance(snapCameraPosition, transform.position); 
 
 		if (rotationDistance < previousRotationDistance) {
 			// Rotate
-
-			float speed = 50; 
-			float rotationSpeed = Time.deltaTime * speed * rotationDistance;
+			float rotationDistanceSpeed = rotationDistance > 1 ? rotationDistance :1f; 
+			float rotationSpeed = Time.deltaTime * speed * rotationDistanceSpeed;
 			rotationSpeed *= snapIsNegative ? -1 : 1; 
 
 			transform.RotateAround(Vector3.zero, Vector3.up, rotationSpeed);
