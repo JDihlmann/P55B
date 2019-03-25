@@ -51,4 +51,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c9343dee326f4c45aebfaad60e71036, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectGrid: {fileID: 0}
+  objectGrid: {fileID: 1261485305869346, guid: 406b8849fec4d8c47813afa73b73d572, type: 2}
+  gameStateChanger: {fileID: 1492511092435420, guid: 21818dcdbd50b594bbf14a92dbc86cb3,
+    type: 2}

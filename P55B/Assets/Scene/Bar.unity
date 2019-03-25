@@ -1201,11 +1201,6 @@ Prefab:
       propertyPath: objectGrid
       value: 
       objectReference: {fileID: 885104628}
-    - target: {fileID: 114244643689049772, guid: 21818dcdbd50b594bbf14a92dbc86cb3,
-        type: 2}
-      propertyPath: camera
-      value: 
-      objectReference: {fileID: 2035326992}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21818dcdbd50b594bbf14a92dbc86cb3, type: 2}
   m_IsPrefabAsset: 0
@@ -1433,11 +1428,6 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb8cf3f50b0f7654f9994291b2a2089e, type: 2}
   m_IsPrefabAsset: 0
---- !u!1 &2035326992 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1698912811620260, guid: 12700ad856c86c24eb44f5560839ac91,
-    type: 2}
-  m_PrefabInternal: {fileID: 2079091395}
 --- !u!1001 &2079091395
 Prefab:
   m_ObjectHideFlags: 0

@@ -132,6 +132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dada7b95fc136624da20a39a2ced6941, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  snapped: 0
 --- !u!114 &114264994943525032
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -169,3 +170,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81c45207b9780a14b9c86df429dedd5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  barSize: 4.3
+  barPosition: {x: 0, y: 0, z: 0}
+  barRotation: {x: 0, y: 0, z: 0}
+  spaceSize: 30
+  spacePosition: {x: 0, y: 0, z: 0}
+  spaceRotation: {x: 0, y: 0, z: 0}
