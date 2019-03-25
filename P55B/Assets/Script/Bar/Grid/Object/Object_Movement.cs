@@ -10,6 +10,7 @@ public class Object_Movement : MonoBehaviour {
 	// Moveable Boundry 
 	public static int[] boundries = new int[] { 10, -10, 10, -10 }; 
 
+
 	public void MoveOnMoveableLayerWithMouseAndOffset(Vector2Int colliderOffset) {
 		int layer_moveable = LayerMask.GetMask("Moveable");
 		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -34,7 +35,7 @@ public class Object_Movement : MonoBehaviour {
 			movePoint.z = movePoint.z + zScale > boundries[2]? boundries[2] - zScale: movePoint.z;
 			movePoint.z = movePoint.z - zScale < boundries[3]? boundries[3] + zScale: movePoint.z;
 			
-			// Scale adjustment
+			// Floating above grid
 			movePoint.y += yScale + lift;
 
 			// Assign position
@@ -45,17 +46,31 @@ public class Object_Movement : MonoBehaviour {
 	public void MoveToGridTileWithOffset(GameObject tile, Vector2Int colliderOffset) {
 		Vector3 gloabalPosition = tile.transform.position;
 
-		// Height position with lift and object height
+		// Height position without lift and object height
 		gloabalPosition.y += tile.transform.localScale.y / 2;
 		gloabalPosition.y += transform.localScale.y / 2;
-
+		
 		// Width and length with collider offset
 		gloabalPosition.x -= colliderOffset.x;
 		gloabalPosition.z -= colliderOffset.y;
 
 		// Set possition
 		transform.position = gloabalPosition;
+	}
 
-		// TODO: Animate 
+	public void MoveToAboveGridTileWithOffset(GameObject tile, Vector2Int colliderOffset) {
+		Vector3 gloabalPosition = tile.transform.position;
+
+		// Height position with lift and object height
+		gloabalPosition.y += tile.transform.localScale.y / 2;
+		gloabalPosition.y += transform.localScale.y / 2;
+		gloabalPosition.y += lift;
+		
+		// Width and length with collider offset
+		gloabalPosition.x -= colliderOffset.x;
+		gloabalPosition.z -= colliderOffset.y;
+
+		// Set possition
+		transform.position = gloabalPosition;
 	}
 }

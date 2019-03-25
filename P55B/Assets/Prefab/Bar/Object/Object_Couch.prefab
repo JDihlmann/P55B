@@ -149,7 +149,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 5e091a4a7399a3b448799276905becc7, type: 3}
+  - {fileID: 2100000, guid: a53ceca00b632c5499806b5829cf72f4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -238,6 +238,8 @@ MonoBehaviour:
   occupiedSpace:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
+  previousOccupiedSpace:
+  - {x: 0, y: 0}
 --- !u!114 &114703027072452216
 MonoBehaviour:
   m_ObjectHideFlags: 1

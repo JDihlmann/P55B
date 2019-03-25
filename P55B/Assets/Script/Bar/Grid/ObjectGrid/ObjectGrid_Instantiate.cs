@@ -81,6 +81,8 @@ public class ObjectGrid_Instantiate : MonoBehaviour {
 		// GameObject objectChair = Instantiate(object_chair, Vector3.zero, Quaternion.identity);
 		// GameObject objectTable = Instantiate(object_table, Vector3.zero, Quaternion.identity);
 		// GameObject objectCouch = Instantiate(object_couch, Vector3.zero, Quaternion.identity);
+		GameObject chair3 = Instantiate(object_chair, Vector3.zero, Quaternion.identity);
+		GameObject couch2 = Instantiate(object_couch, Vector3.zero, Quaternion.identity);
 
 		/* defaultObjectSC.transform.parent = transform;
 		defaultObjectSP.transform.parent = transform; 
@@ -90,6 +92,8 @@ public class ObjectGrid_Instantiate : MonoBehaviour {
 		// objectChair.transform.parent = transform;
 		// objectTable.transform.parent = transform;
 		// objectCouch.transform.parent = transform;
+		chair3.transform.parent = transform;
+		couch2.transform.parent = transform;
 
 		/* objectGridPlacement.PlaceObjectOnGrid(defaultObjectSC, new Vector2Int(0,0), Vector2Int.zero);
 		objectGridPlacement.PlaceObjectOnGrid(defaultObjectSP, new Vector2Int(4,4), Vector2Int.zero);
@@ -101,7 +105,9 @@ public class ObjectGrid_Instantiate : MonoBehaviour {
 		// objectGridPlacement.PlaceObjectOnGrid(objectCouch, new Vector2Int(6,3), Vector2Int.zero);
 		objectGridPlacement.PlaceObjectOnGrid(chair1, new Vector2Int(8,8), Vector2Int.zero);
 		objectGridPlacement.PlaceObjectOnGrid(chair2, new Vector2Int(8,6), Vector2Int.zero);
+		objectGridPlacement.PlaceObjectOnGridWithRotation(chair3, new Vector2Int(7,6), Vector2Int.zero, 180);
 		objectGridPlacement.PlaceObjectOnGrid(couch, new Vector2Int(4,7), Vector2Int.zero);
+		objectGridPlacement.PlaceObjectOnGridWithRotation(couch2, new Vector2Int(2,5), Vector2Int.zero, 270);
 		objectGridPlacement.PlaceObjectOnGrid(table, new Vector2Int(8,7), Vector2Int.zero);
 	}
 

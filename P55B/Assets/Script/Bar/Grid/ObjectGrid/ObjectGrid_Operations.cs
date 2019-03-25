@@ -105,7 +105,7 @@ public class ObjectGrid_Operations : MonoBehaviour {
 		Object_Values objectValues = GetObjectValues(obj);
 
 		// Remove from index grid
-		foreach (Vector2Int deltaPos in objectValues.occupiedSpace) {
+		foreach (Vector2Int deltaPos in objectValues.previousOccupiedSpace) {
 			Vector2Int relativePos = deltaPos + pos;
 			integerObjectGrid[relativePos.x, relativePos.y] = emptyIntObjectElement; 
 		}

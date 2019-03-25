@@ -10,4 +10,11 @@ public class Object_Values : MonoBehaviour {
 	// Space occupied by object
 	// Center is always on position (0,0)
 	public Vector2Int[] occupiedSpace = new Vector2Int[]{new Vector2Int(0,0)}; 
+
+	[HideInInspector]
+	public Vector2Int[] previousOccupiedSpace; 
+
+	void Start() {
+		previousOccupiedSpace = (Vector2Int[])occupiedSpace.Clone();
+	}
 }
