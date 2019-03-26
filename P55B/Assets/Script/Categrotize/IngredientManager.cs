@@ -14,7 +14,12 @@ public class IngredientManager : MonoBehaviour
 
     public static List<RecipeObject> Recipes;
 
-    private static IngredientsData data;
+    public static List<MachineStatsObject> MachineStats;
+
+    //private static IngredientsData data;
+
+    // delete line
+    public static List<bool> RecipeBoughtState;
 
     private void Awake()
     {
@@ -26,12 +31,16 @@ public class IngredientManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
-            data = SaveSystem.LoadIngredients();
-            BuildDatabase(data);
+            //data = SaveSystem.LoadIngredients();
+            BuildDatabase();
+
+            // delete line
+            RecipeBoughtState = new List<bool>() { true, false, false };
         }
+
     }
 
-    private void BuildDatabase(IngredientsData data)
+    private void BuildDatabase()
     {
 
 
@@ -40,16 +49,18 @@ public class IngredientManager : MonoBehaviour
 
         Recipes = BuildLists<RecipeObject>("JSON/Recipes");
 
+        MachineStats = BuildLists<MachineStatsObject>("JSON/MachineStats");
+
         //Ingredients = BuildLists<IngredientObject>("JSON/Ingredients");
 
 
         int[] savedData = new int[] { 0, 0, 0, 0 };
 
-        if (data != null)
-        {
-            savedData = data.ingredients;
+        //if (data != null)
+        //{
+        //    savedData = data.ingredients;
 
-        }
+        //}
 
         Ingredients = new List<IngredientObject>(){
             new IngredientObject("Strawberry", 1, 5, savedData[0], Color.red, "Qubi"),
@@ -68,6 +79,11 @@ public class IngredientManager : MonoBehaviour
         return list;
     }
 
+    public static List<MachineStatsObject> GetMachineStats()
+    {
+        return MachineStats;
+    }
+
     public static List<RecipeObject> GetRecipes()
     {
         return Recipes;
@@ -80,6 +96,12 @@ public class IngredientManager : MonoBehaviour
     public static List<ItemObject> GetItems()
     {
         return Items;
+    }
+
+    // delete line
+    public static List<bool> GetRecipeBoughtState()
+    {
+        return RecipeBoughtState;
     }
 
 }

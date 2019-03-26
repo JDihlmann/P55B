@@ -11,6 +11,18 @@
       "Rarety": "common",
       "Ingredients": [0],
       "Amount":  [5]
+    },
+    {
+      "Name": "PINA COLADA",
+      "ID": 1,
+      "Price": 500,
+      "MinIncome": 2,
+      "MaxIncome": 5,
+      "Description": "Rusty table",
+      "Image": "Chair",
+      "Rarety": "common",
+      "Ingredients": [ 0 ],
+      "Amount": [ 5 ]
     }
   ]
 }

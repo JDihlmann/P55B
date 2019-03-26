@@ -287,6 +287,7 @@ MonoBehaviour:
   name: {fileID: 114454629261409628}
   price: {fileID: 114877307840404624}
   image: {fileID: 114561657006278864}
+  boughtTag: {fileID: 114174187725752886}
   recipe:
     ID: 0
     Name: 
