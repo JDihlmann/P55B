@@ -43,13 +43,15 @@ public class Camera_State : MonoBehaviour {
 		spaceRotation =  new Vector3(30, 45, 0);
 	}
 
-	void Update () {
+	void LateUpdate () {
 		if (zoom && cameraRotation.snapped) {
 			if (currentTime <= timeToMove)	{
             	currentTime += Time.deltaTime;
-				Vector3 cameraPosition = Camera.main.transform.position;
-            	Camera.main.orthographicSize = Mathf.Lerp(sizeLerp1, sizeLerp2, currentTime / timeToMove);
-				cameraPosition.y = Mathf.Lerp(positionLerp1, positionLerp2, currentTime / timeToMove);
+				Vector3 cameraPosition = new Vector3(-28f, 0, -28f);
+				float t = currentTime / timeToMove;
+				t = t*t*t * (t * (6f*t - 15f) + 10f);
+            	Camera.main.orthographicSize = Mathf.Lerp(sizeLerp1, sizeLerp2, t);
+				cameraPosition.y = Mathf.Lerp(positionLerp1, positionLerp2, t);
 				Camera.main.transform.position = cameraPosition;
 			} else {
 				Camera.main.orthographicSize = Mathf.Lerp(sizeLerp1, sizeLerp2, currentTime / timeToMove);
@@ -77,7 +79,7 @@ public class Camera_State : MonoBehaviour {
 
 	public void ZoomToSpace() {
 		cameraRotation = transform.GetComponent<Camera_Rotation>(); 
-		cameraRotation.SelectSnapToDefaultEdge(); 
+		// cameraRotation.SelectSnapToDefaultEdge(); 
 		sizeLerp1 = barSize;
 		sizeLerp2 = spaceSize;   
 		positionLerp1 = barPosition.y;
