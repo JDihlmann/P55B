@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Moveable
   - Blackhole
+  - Exit
+  - NavMesh
+  - Seatable
+  - Bar
   layers:
   - Default
   - TransparentFX
@@ -20,7 +24,7 @@ TagManager:
   - Moveable
   - Object
   - Rotateable
-  - 
+  - Walkable
   - 
   - 
   - 
