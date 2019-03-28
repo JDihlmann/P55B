@@ -4,11 +4,73 @@ ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
+    100002: pCone1
+    100004: pCylinder1
+    100006: pCylinder2
+    100008: pSphere1
+    100010: pSphere2
+    100012: pSphere3
+    100014: pSphere4
+    100016: pSphere5
+    100018: pSphere6
+    100020: pSphere7
+    100022: pSphere8
+    100024: pSphere9
+    100026: pTorus1
+    100028: transform1
+    100030: transform2
+    100032: transform3
+    100034: transform4
     400000: //RootNode
+    400002: pCone1
+    400004: pCylinder1
+    400006: pCylinder2
+    400008: pSphere1
+    400010: pSphere2
+    400012: pSphere3
+    400014: pSphere4
+    400016: pSphere5
+    400018: pSphere6
+    400020: pSphere7
+    400022: pSphere8
+    400024: pSphere9
+    400026: pTorus1
+    400028: transform1
+    400030: transform2
+    400032: transform3
+    400034: transform4
     2100000: lambert1
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Customer
+    2100002: lambert2
+    2300000: pCone1
+    2300002: pCylinder1
+    2300004: pCylinder2
+    2300006: pSphere5
+    2300008: pSphere6
+    2300010: pSphere7
+    2300012: pSphere8
+    2300014: pSphere9
+    2300016: pTorus1
+    2300018: //RootNode
+    3300000: pCone1
+    3300002: pCylinder1
+    3300004: pCylinder2
+    3300006: pSphere5
+    3300008: pSphere6
+    3300010: pSphere7
+    3300012: pSphere8
+    3300014: pSphere9
+    3300016: pTorus1
+    3300018: //RootNode
+    4300000: pCylinder1
+    4300002: pSphere5
+    4300004: pSphere6
+    4300006: pSphere7
+    4300008: pTorus1
+    4300010: pSphere8
+    4300012: pCone1
+    4300014: pSphere9
+    4300016: pCylinder2
+    4300018: Customer
   externalObjects: {}
   materials:
     importMaterials: 1
