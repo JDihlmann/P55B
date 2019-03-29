@@ -8512,9 +8512,116 @@ Prefab:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 224056829328626634, guid: 80409d925e5fe4bc8933a28357a5a2cb,
+        type: 2}
+      propertyPath: m_AnchorMin.x
+      value: 0.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 224056829328626634, guid: 80409d925e5fe4bc8933a28357a5a2cb,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224056829328626634, guid: 80409d925e5fe4bc8933a28357a5a2cb,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: -255
+      objectReference: {fileID: 0}
+    - target: {fileID: 224056829328626634, guid: 80409d925e5fe4bc8933a28357a5a2cb,
+        type: 2}
+      propertyPath: m_Pivot.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224203683522246788, guid: 80409d925e5fe4bc8933a28357a5a2cb,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224203683522246788, guid: 80409d925e5fe4bc8933a28357a5a2cb,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: -3.3999634
+      objectReference: {fileID: 0}
+    - target: {fileID: 224203683522246788, guid: 80409d925e5fe4bc8933a28357a5a2cb,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: -18.700012
+      objectReference: {fileID: 0}
+    - target: {fileID: 224203683522246788, guid: 80409d925e5fe4bc8933a28357a5a2cb,
+        type: 2}
+      propertyPath: m_AnchorMin.x
+      value: 0.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 224203683522246788, guid: 80409d925e5fe4bc8933a28357a5a2cb,
+        type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224203683522246788, guid: 80409d925e5fe4bc8933a28357a5a2cb,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -80.399994
+      objectReference: {fileID: 0}
+    - target: {fileID: 224203683522246788, guid: 80409d925e5fe4bc8933a28357a5a2cb,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 439.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 224056829328626634, guid: 80409d925e5fe4bc8933a28357a5a2cb,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: -261
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114334853778084770, guid: 80409d925e5fe4bc8933a28357a5a2cb, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 80409d925e5fe4bc8933a28357a5a2cb, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &1315047932 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1537981303669298, guid: 80409d925e5fe4bc8933a28357a5a2cb,
+    type: 2}
+  m_PrefabInternal: {fileID: 1315047931}
+--- !u!114 &1315047933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1315047932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -2095666955, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 0
+  m_StartCorner: 0
+  m_StartAxis: 0
+  m_CellSize: {x: 120, y: 120}
+  m_Spacing: {x: 20, y: 10}
+  m_Constraint: 1
+  m_ConstraintCount: 3
+--- !u!224 &1315047934 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 224203683522246788, guid: 80409d925e5fe4bc8933a28357a5a2cb,
+    type: 2}
+  m_PrefabInternal: {fileID: 1315047931}
+--- !u!114 &1315047935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1315047932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea7a0a648f68e40f49fbf1a83d210905, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drinkSlot: {fileID: 1314521312920224, guid: 20b1fef994e7040d3a7989f4b069d7ff, type: 2}
+  grid: {fileID: 1315047934}
 --- !u!1 &1340416601
 GameObject:
   m_ObjectHideFlags: 0

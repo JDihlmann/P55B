@@ -44,7 +44,16 @@ public class MachineStatsHolder : MonoBehaviour {
     private void updateStat()
     {
         currentStat += 1;
-        price.text = machineStat.Steps[currentStat + 1].Price.ToString();
+
+        if (currentStat == machineStat.Steps.Count - 1)
+        {
+            price.text = "";
+            this.GetComponent<Button>().onClick.RemoveListener(updateStat);
+        } else 
+        {
+            price.text = machineStat.Steps[currentStat + 1].Price.ToString();
+        }
+
         statGrid.GetChild(currentStat).GetComponent<Image>().sprite = statSprite;
     }
 
