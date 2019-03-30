@@ -75,7 +75,7 @@ MonoBehaviour:
     type: 2}
   customerList: []
   leavingCustomerList: []
-  spawnMaximum: 5
+  spawnMaximum: 3
   spawnDelay: 2
   spawnPoints:
   - {fileID: 0}
@@ -96,6 +96,7 @@ MonoBehaviour:
   customerList: []
   orderingCustomerList: []
   availableSeatList:
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}

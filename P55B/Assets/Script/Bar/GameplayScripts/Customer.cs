@@ -29,6 +29,8 @@ public class Customer : MonoBehaviour
 	private Vector3 barOffset;
 	private bool atDestination;
 	private GameObject destination;
+	private NavMeshPath path;
+	private int pathTries;
 
 	
 
@@ -68,7 +70,7 @@ public class Customer : MonoBehaviour
 			{
 				if (currentState != CustomerState.SEATING)
 				{
-					Debug.Log("Kunde verpisst sich");
+					Debug.Log("Kunde hat zu lang gewartet");
 					happiness = Random.Range(0f, 33f);
 					currentState = CustomerState.LEAVE;
 					gameSystem.LeavingCustomer(gameObject);
@@ -89,17 +91,40 @@ public class Customer : MonoBehaviour
 		{
 			if (currentState == CustomerState.CONSUMING)
 			{
+				if (actionTimer > 0)
+				{
+					actionTimer -= Time.deltaTime;
+				}
+				else
+				{
+					if (!atDestination)
+					{
+						if (destination == null)
+						{
+							SetNewDestination();
+						}
+						else
+						{
+							GoToDestination();
+						}
+						
+					}
+				}
+
 				if (!atDestination)
 				{
 					if (destination == null)
 					{
 						drinkTimer -= Time.deltaTime;
 						happiness -= happinessLossRate * Time.deltaTime;
-						SetNewDestination();
 					}
 					else
 					{
-						GoToDestination();
+						if (pathTries >= 0)
+						{
+							drinkTimer -= Time.deltaTime;
+							happiness -= happinessLossRate * Time.deltaTime;
+						}
 					}
 				}
 				else
@@ -152,6 +177,8 @@ public class Customer : MonoBehaviour
 		isWaiting = false;
 		waitingTimer = 0f;
 		waitingMaximum = Random.Range(5f, 10f);
+		pathTries = 0;
+		path = new NavMeshPath();
 		switch (customerId)
 		{
 			case 0: // Standard (Random distribution)
@@ -183,15 +210,30 @@ public class Customer : MonoBehaviour
 
 	public void GenerateOffset()
 	{
-		float random1 = Random.Range(0, 2);
-		float random2 = Random.Range(-1.1f, 1.2f);
+		int random1 = Random.Range(0, 2); // X or Z axis
+		int random2 = Random.Range(0, 2); // +1 or -1
 		if (random1 == 0)
 		{
-			barOffset = new Vector3(0, 0, random2);
+			if (random2 == 0)
+			{
+				barOffset = new Vector3(0, 0, -1);
+			}
+			else
+			{
+				barOffset = new Vector3(0, 0, 1);
+			}
 		}
 		else
 		{
-			barOffset = new Vector3(random2, 0, 0);
+			if (random2 == 0)
+			{
+				barOffset = new Vector3(-1, 0, 0);
+			}
+			else
+			{
+				barOffset = new Vector3(1, 0, 0);
+			}
+		
 		}
 	}
 	#endregion
@@ -236,13 +278,82 @@ public class Customer : MonoBehaviour
 	public void GoToDestination()
 	{
 		actionTimer = Random.Range(1f, 1.5f);
-		if (destination == gameSystem.bar)
+		if (CalculateNewPath() == true)
 		{
-			agent.SetDestination(destination.transform.position + barOffset);
+			if (destination == gameSystem.bar)
+			{
+				agent.SetDestination(destination.transform.position + barOffset);
+			}
+			else
+			{
+				agent.SetDestination(destination.transform.position);
+			}
 		}
 		else
 		{
-			agent.SetDestination(destination.transform.position);
+			if (destination == gameSystem.bar)
+			{
+				if (pathTries > 3)
+				{
+					Debug.Log("Kunde kommt nicht rein");
+					happiness = 50;
+					gameSystem.LeavingCustomer(gameObject);
+					destination = null;
+					currentState = CustomerState.LEAVE;
+				}
+				else
+				{
+					agent.SetDestination(destination.transform.position + barOffset);
+				}
+			}
+			else if (destination == gameSystem.exit)
+			{
+				if (pathTries > 3)
+				{
+					Debug.Log("Kunde kommt nicht raus");
+					NextState();
+				}
+			}
+			else
+			{
+				if (pathTries > 1)
+				{
+					if (currentState == CustomerState.SEATING)
+					{
+						NextState();
+						atDestination = false;
+						isWaiting = false;
+					}
+
+					GameObject tempDestination = gameSystem.GetAvailableSeat();
+					gameSystem.AddSeatToList(destination);
+					destination = tempDestination;
+					pathTries = 0;
+				}
+			}
+		}
+	}
+
+	public bool CalculateNewPath()
+	{
+		if(destination == gameSystem.bar)
+		{
+			agent.CalculatePath(destination.transform.position + barOffset, path);
+		}
+		else
+		{
+			agent.CalculatePath(destination.transform.position, path);
+		}
+		Debug.Log("Path calculated: " + path.status);
+		if (path.status != NavMeshPathStatus.PathComplete)
+		{
+			pathTries += 1;
+			return false;
+		}
+		else
+		{
+			pathTries = 0;
+			return true;
 		}
 	}
 
