@@ -24,6 +24,7 @@ public class DrinkSlotsUI : MonoBehaviour {
             Sprite sprite = Resources.Load<Sprite>("Sprites/" + IngredientManager.GetRecipes()[drinks[i]].Image);
             holder.transform.GetChild(0).GetComponent<Image>().sprite = sprite;
             holder.transform.GetChild(0).GetComponent<Image>().preserveAspect = true;
+            holder.transform.GetChild(2).GetComponent<Text>().text = IngredientManager.GetRecipes()[drinks[i]].Name;
             //GetComponent<Image>().sprite = sprite;
             //MachineStatsHolder holderScript = holder.GetComponent<MachineStatsHolder>();
             //holderScript.machineStat = machineStats[i];
