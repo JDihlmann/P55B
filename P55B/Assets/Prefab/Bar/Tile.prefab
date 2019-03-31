@@ -122,7 +122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tileDefault: {fileID: 2100000, guid: cfc015982b8b2b54db56017441f92d89, type: 2}
-  tileHighlightPlaceable: {fileID: 2100000, guid: 29d663c3e60e4ab4eb50d2aac211444a,
+  tileHighlightPlaceable: {fileID: 2100000, guid: d4599c2905fa11041bb9f94a53188f84,
     type: 2}
   tileHighlightNotPlaceable: {fileID: 2100000, guid: dc07e2ed4d8ef694f89a83e5369249e4,
     type: 2}

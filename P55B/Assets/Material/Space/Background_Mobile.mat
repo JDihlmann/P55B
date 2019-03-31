@@ -6,8 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Cloud
-  m_Shader: {fileID: 4800000, guid: aafa0d3af778ff447b729ac55f066e14, type: 3}
+  m_Name: Background_Mobile
+  m_Shader: {fileID: 4800000, guid: b5a138e7052ca964aade03ec54b4da15, type: 3}
   m_ShaderKeywords: _ALPHATEST_ON _SPECULARHIGHLIGHTS_OFF
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -61,6 +61,7 @@ Material:
     m_Floats:
     - Vector1_1A5F8F80: 15
     - Vector1_9934F2CD: 0.01
+    - Vector1_A327294E: 0.4
     - _AlphaClip: 1
     - _Blend: 0
     - _BumpScale: 1
