@@ -1,12 +1,28 @@
 ﻿{
   "Items": [
     {
-      "IngredientName": "QUBI",
       "IngredientID": 0,
-      "Cost": 5,
-      "Count": 0,
-      "Color": "Color.red",
+      "Name": "QUBI",
+      "Price": 5,
       "Image": "Qubi"
+    },
+    {
+      "IngredientID": 1,
+      "Name": "FLOLI",
+      "Price": 5,
+      "Image": "Floli"
+    },
+    {
+      "IngredientID": 2,
+      "Name": "FLOLI",
+      "Price": 5,
+      "Image": "Floli"
+    },
+    {
+      "IngredientID": 3,
+      "Name": "FLOLI",
+      "Price": 5,
+      "Image": "Floli"
     }
   ]
 }
