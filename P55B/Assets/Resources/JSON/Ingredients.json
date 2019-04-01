@@ -9,20 +9,20 @@
     {
       "ID": 1,
       "Name": "FLOLI",
-      "Price": 5,
-      "Image": "Floli"
+      "Price": 2,
+      "Image": "Qubi"
     },
     {
       "ID": 2,
       "Name": "FLOLI",
       "Price": 5,
-      "Image": "Floli"
+      "Image": "Qubi"
     },
     {
       "ID": 3,
       "Name": "FLOLI",
       "Price": 5,
-      "Image": "Floli"
+      "Image": "Qubi"
     }
   ]
 }

@@ -24,6 +24,9 @@ public class InregdientsUI : MonoBehaviour {
             GameObject holder = Instantiate(ingredientHolderPrefab, grid);
             IngredientHolder holderScript = holder.GetComponent<IngredientHolder>();
             holderScript.name.text = ingredientList[i].Name;
+            holderScript.amount.text = "50";
+            holderScript.price.text = ingredientList[i].Price + "$ each";
+            holderScript.image.sprite = Resources.Load<Sprite>("Sprites/" + ingredientList[i].Image);
             //holderScript.ingredientName.text = ingredientList[i].IngredientName;
             //holderScript.ingredientCount.text = ingredientList[i].Count.ToString();
             //holderScript.ingredientImage.color = ingredientList[i].Color;
