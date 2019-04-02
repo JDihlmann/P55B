@@ -7,7 +7,6 @@ public class Customer : MonoBehaviour
 {
 	#region Variables
 	[Header("Components")]
-	public GamePlaySystem gameSystem;
 	private NavMeshAgent agent;
 	[Space]
 	[Header("Variables")]
@@ -52,6 +51,7 @@ public class Customer : MonoBehaviour
 		GenerateOffset();
 		agent = gameObject.GetComponent<NavMeshAgent>();
 		InitializeCustomer(0);
+		AudioManager.Instance.Play("PortalOut");
 	}
 
 	void Update()
@@ -73,7 +73,7 @@ public class Customer : MonoBehaviour
 					Debug.Log("Kunde hat zu lang gewartet");
 					happiness = Random.Range(0f, 33f);
 					currentState = CustomerState.LEAVE;
-					gameSystem.LeavingCustomer(gameObject);
+					GamePlaySystem.Instance.LeavingCustomer(gameObject);
 					isWaiting = false;
 					destination = null;
 				}
@@ -244,16 +244,16 @@ public class Customer : MonoBehaviour
 		switch (currentState)
 		{
 			case CustomerState.ENTER:
-				destination = gameSystem.bar;
+				destination = GamePlaySystem.Instance.bar;
 				break;
 			case CustomerState.ORDER:
-				destination = gameSystem.bar;
+				destination = GamePlaySystem.Instance.bar;
 				break;
 			case CustomerState.WAITING:
-				destination = gameSystem.bar;
+				destination = GamePlaySystem.Instance.bar;
 				break;
 			case CustomerState.SEATING:
-				destination = gameSystem.GetAvailableSeat();
+				destination = GamePlaySystem.Instance.GetAvailableSeat();
 				if (destination != null)
 				{
 					isWaiting = false;
@@ -264,10 +264,10 @@ public class Customer : MonoBehaviour
 				}
 				break;
 			case CustomerState.CONSUMING:
-				destination = gameSystem.GetAvailableSeat();
+				destination = GamePlaySystem.Instance.GetAvailableSeat();
 				break;
 			case CustomerState.LEAVE:
-				destination = gameSystem.exit;
+				destination = GamePlaySystem.Instance.exit;
 				break;
 			default:
 				Debug.Log("Error with SetNewDestination");
@@ -280,7 +280,7 @@ public class Customer : MonoBehaviour
 		actionTimer = Random.Range(1f, 1.5f);
 		if (CalculateNewPath() == true)
 		{
-			if (destination == gameSystem.bar)
+			if (destination == GamePlaySystem.Instance.bar)
 			{
 				agent.SetDestination(destination.transform.position + barOffset);
 			}
@@ -291,13 +291,13 @@ public class Customer : MonoBehaviour
 		}
 		else
 		{
-			if (destination == gameSystem.bar)
+			if (destination == GamePlaySystem.Instance.bar)
 			{
 				if (pathTries > 3)
 				{
 					Debug.Log("Kunde kommt nicht rein");
 					happiness = 50;
-					gameSystem.LeavingCustomer(gameObject);
+					GamePlaySystem.Instance.LeavingCustomer(gameObject);
 					destination = null;
 					currentState = CustomerState.LEAVE;
 				}
@@ -306,7 +306,7 @@ public class Customer : MonoBehaviour
 					agent.SetDestination(destination.transform.position + barOffset);
 				}
 			}
-			else if (destination == gameSystem.exit)
+			else if (destination == GamePlaySystem.Instance.exit)
 			{
 				if (pathTries > 3)
 				{
@@ -325,8 +325,8 @@ public class Customer : MonoBehaviour
 						isWaiting = false;
 					}
 
-					GameObject tempDestination = gameSystem.GetAvailableSeat();
-					gameSystem.AddSeatToList(destination);
+					GameObject tempDestination = GamePlaySystem.Instance.GetAvailableSeat();
+					GamePlaySystem.Instance.AddSeatToList(destination);
 					destination = tempDestination;
 					pathTries = 0;
 				}
@@ -336,7 +336,7 @@ public class Customer : MonoBehaviour
 
 	public bool CalculateNewPath()
 	{
-		if(destination == gameSystem.bar)
+		if(destination == GamePlaySystem.Instance.bar)
 		{
 			agent.CalculatePath(destination.transform.position + barOffset, path);
 		}
@@ -344,7 +344,7 @@ public class Customer : MonoBehaviour
 		{
 			agent.CalculatePath(destination.transform.position, path);
 		}
-		Debug.Log("Path calculated: " + path.status);
+
 		if (path.status != NavMeshPathStatus.PathComplete)
 		{
 			pathTries += 1;
@@ -367,7 +367,7 @@ public class Customer : MonoBehaviour
 		{
 			case CustomerState.ENTER:
 				isWaiting = true;
-				gameSystem.AddCustomerToList(this);
+				GamePlaySystem.Instance.AddCustomerToList(this);
 				currentState = CustomerState.ORDER;
 				break;
 			case CustomerState.ORDER:
@@ -384,8 +384,8 @@ public class Customer : MonoBehaviour
 				currentState = CustomerState.CONSUMING;
 				break;
 			case CustomerState.CONSUMING:
-				gameSystem.AddSeatToList(destination);
-				gameSystem.LeavingCustomer(gameObject);
+				GamePlaySystem.Instance.AddSeatToList(destination);
+				GamePlaySystem.Instance.LeavingCustomer(gameObject);
 				destination = null;
 				currentState = CustomerState.LEAVE;
 				break;
@@ -406,7 +406,7 @@ public class Customer : MonoBehaviour
 						GameSystem.Instance.AddHappiness(1);
 					}
 				}
-				gameSystem.DestroyCustomer(gameObject);
+				GamePlaySystem.Instance.DestroyCustomer(gameObject);
 				break;
 			default:
 				Debug.Log("Error with NextState");
@@ -417,21 +417,21 @@ public class Customer : MonoBehaviour
 	public void SelectDrink()
 	{
 		int bestValue = 1000;
-		for (int i = 0; i < gameSystem.totalRecipeList.Count; i++)
+		for (int i = 0; i < GamePlaySystem.Instance.totalRecipeList.Count; i++)
 		{
 			int currentValue = 0;
 			for (int k = 0; k < 4; k++)
 			{
-				currentValue += Mathf.Abs(customerPreference[k] - gameSystem.totalRecipeList[i].recipeStats[k]);
+				currentValue += Mathf.Abs(customerPreference[k] - GamePlaySystem.Instance.totalRecipeList[i].recipeStats[k]);
 			}
 			if (currentValue < bestValue)
 			{
 				bestValue = currentValue;
-				selectedRecipe = gameSystem.totalRecipeList[i];
+				selectedRecipe = GamePlaySystem.Instance.totalRecipeList[i];
 			}
 		}
 		drinkValue = bestValue;
-		Debug.Log(selectedRecipe.recipeName + " with value " + bestValue);
+		// Debug.Log(selectedRecipe.recipeName + " with value " + bestValue);
 	}
 
 	private void OnTriggerEnter(Collider other)

@@ -52,4 +52,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 0
-  objectGrid: {fileID: 1261485305869346, guid: 406b8849fec4d8c47813afa73b73d572, type: 2}
+  objectGrid: {fileID: 0}

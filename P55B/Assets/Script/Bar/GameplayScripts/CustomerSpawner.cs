@@ -7,7 +7,6 @@ public class CustomerSpawner : MonoBehaviour
 	#region Variables
 	[Header("Components")]
 	public GameObject customerPrefab;
-	private GamePlaySystem gameSystem;
 	[Space]
 	[Header("Variables")]
 	public List<GameObject> customerList = new List<GameObject>();
@@ -20,11 +19,6 @@ public class CustomerSpawner : MonoBehaviour
 
 	#region Methods
 	// Use this for initialization 
-	private void Start()
-	{
-		gameSystem = gameObject.GetComponent<GamePlaySystem>();
-	}
-
 	private void Update()
 	{
 		if (customerList.Count >= spawnMaximum)
@@ -48,7 +42,6 @@ public class CustomerSpawner : MonoBehaviour
 		int spawnPointIndex = Random.Range(0, spawnPoints.Length);
 
 		GameObject newCustomer = Instantiate(customerPrefab, spawnPoints[spawnPointIndex].position, new Quaternion(0.0f, 0.0f, 0.0f, 1.0f));
-		newCustomer.GetComponent<Customer>().gameSystem = gameSystem;
 		customerList.Add(newCustomer);
 	}
 
@@ -67,6 +60,7 @@ public class CustomerSpawner : MonoBehaviour
 		{
 			leavingCustomerList.Remove(customer);
 			Destroy(customer);
+			AudioManager.Instance.Play("PortalIn");
 		}
 		CheckHapiness();
 	}

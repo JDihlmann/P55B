@@ -6,7 +6,6 @@ public class Worker : MonoBehaviour
 {
 	#region Variables
 	[Header("Components")]
-	public GamePlaySystem gameSystem;
 	private Customer servicedCustomer;
 	[Space]
 	[Header("Variables")]
@@ -26,7 +25,7 @@ public class Worker : MonoBehaviour
 	void Start()
 	{
 		InitializeWorker(workerId);
-		gameSystem.AddWorkerToList(this);
+		GamePlaySystem.Instance.AddWorkerToList(this);
 		// Load worker stats here
 	}
 
@@ -34,14 +33,14 @@ public class Worker : MonoBehaviour
 	{
 		if (isIdle)
 		{
-			if (gameSystem.orderingCustomerList.Count != 0)
+			if (GamePlaySystem.Instance.orderingCustomerList.Count != 0)
 			{
-				for (int i = 0; i < gameSystem.orderingCustomerList.Count; i++)
+				for (int i = 0; i < GamePlaySystem.Instance.orderingCustomerList.Count; i++)
 				{
-					if (recipeList.Contains(gameSystem.orderingCustomerList[i].selectedRecipe))
+					if (recipeList.Contains(GamePlaySystem.Instance.orderingCustomerList[i].selectedRecipe))
 					{
-						servicedCustomer = gameSystem.orderingCustomerList[i];
-						gameSystem.orderingCustomerList.RemoveAt(i);
+						servicedCustomer = GamePlaySystem.Instance.orderingCustomerList[i];
+						GamePlaySystem.Instance.orderingCustomerList.RemoveAt(i);
 						timer = servicedCustomer.selectedRecipe.recipeCraftTime / craftSpeed;
 						isIdle = false;
 						break;
@@ -52,10 +51,10 @@ public class Worker : MonoBehaviour
 		}
 		if (isIdle)
 		{
-			if (gameSystem.customerList.Count != 0)
+			if (GamePlaySystem.Instance.customerList.Count != 0)
 			{
-				servicedCustomer = gameSystem.customerList[0];
-				gameSystem.customerList.RemoveAt(0);
+				servicedCustomer = GamePlaySystem.Instance.customerList[0];
+				GamePlaySystem.Instance.customerList.RemoveAt(0);
 				isIdle = false;
 				timer = 3 / orderSpeed;
 			}
@@ -139,7 +138,7 @@ public class Worker : MonoBehaviour
 	public void GetOrder(Customer customer)
 	{
 		customer.SelectDrink();
-		gameSystem.AddOrderToList(customer);
+		GamePlaySystem.Instance.AddOrderToList(customer);
 	}
 
 	public void ServeOrder(Customer customer)
@@ -150,7 +149,8 @@ public class Worker : MonoBehaviour
 			sum *= Mathf.RoundToInt(1 + Mathf.Floor((100 - customer.drinkValue) / 10) / 10);
 		}
 
-		Debug.Log("Customer pays " + sum);
+		AudioManager.Instance.Play("Cash" + Random.Range(1,4));
+		
 		GameSystem.Instance.money += sum;
 		// Calculate money here
 		// Calculate happiness here
