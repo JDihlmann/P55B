@@ -543,7 +543,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc8524d5c9b444942b2233a78520efb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawner: {fileID: 0}
+  spawner: {fileID: 114183545689394456}
 --- !u!114 &114949855530096326
 MonoBehaviour:
   m_ObjectHideFlags: 1
