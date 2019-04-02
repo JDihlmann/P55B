@@ -37,6 +37,18 @@ public class GamePlaySystem : MonoBehaviour
 		spawner = gameObject.GetComponent<CustomerSpawner>();
 	}
 
+	public void Update()
+	{
+		if (Input.GetKeyUp(KeyCode.KeypadPlus))
+		{
+			GameSystem.Instance.AddTime(0.25f);
+		}
+		if (Input.GetKeyUp(KeyCode.KeypadMinus))
+		{
+			GameSystem.Instance.SubTime(0.25f);
+		}
+	}
+
 	public void AddCustomerToList(Customer customer)
 	{
 		customerList.Add(customer);

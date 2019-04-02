@@ -95,11 +95,7 @@ MonoBehaviour:
   totalRecipeList: []
   customerList: []
   orderingCustomerList: []
-  availableSeatList:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  availableSeatList: []
   bar: {fileID: 0}
   exit: {fileID: 0}
 --- !u!114 &114920185422593748

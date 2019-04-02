@@ -43,6 +43,7 @@ public class Worker : MonoBehaviour
 						GamePlaySystem.Instance.orderingCustomerList.RemoveAt(i);
 						timer = servicedCustomer.selectedRecipe.recipeCraftTime / craftSpeed;
 						isIdle = false;
+						AudioManager.Instance.Play("DrinkPour" + Random.Range(1,4));
 						break;
 					}
 				}
@@ -137,6 +138,7 @@ public class Worker : MonoBehaviour
 	#region GameplayMethods
 	public void GetOrder(Customer customer)
 	{
+		AudioManager.Instance.Play("DrinkMix" + Random.Range(1, 5));
 		customer.SelectDrink();
 		GamePlaySystem.Instance.AddOrderToList(customer);
 	}

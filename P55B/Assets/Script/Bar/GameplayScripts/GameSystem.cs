@@ -159,6 +159,37 @@ public class GameSystem : MonoBehaviour
 		happiness = amount;
 	}
 
+	public void AddTime(float amount)
+	{
+		Time.timeScale += amount;
+		if (Time.timeScale > 3)
+		{
+			Time.timeScale = 3;
+		}
+	}
+
+	public void SubTime(float amount)
+	{
+		Time.timeScale -= amount;
+		if (Time.timeScale < 0.25f)
+		{
+			Time.timeScale = 0.25f;
+		}
+	}
+
+	public void SetTime(float amount)
+	{
+		Time.timeScale = amount;
+		if (Time.timeScale > 3)
+		{
+			Time.timeScale = 3;
+		}
+		else if (Time.timeScale < 0.25f)
+		{
+			Time.timeScale = 0.25f;
+		}
+	}
+
 	public void SaveGameSystem()
 	{
 		// Save all values into binary or smth
