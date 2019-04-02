@@ -4547,7 +4547,7 @@ RectTransform:
   - {fileID: 224954492096555320}
   - {fileID: 224931439277179268}
   m_Father: {fileID: 224634863016786830}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -5231,7 +5231,7 @@ RectTransform:
   - {fileID: 224943184262862684}
   - {fileID: 224154226443402840}
   m_Father: {fileID: 224634863016786830}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -5272,7 +5272,7 @@ RectTransform:
   - {fileID: 224613437368194754}
   - {fileID: 224751878421081364}
   m_Father: {fileID: 224634863016786830}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -5311,12 +5311,12 @@ RectTransform:
   - {fileID: 224038552981069330}
   - {fileID: 224046496146375282}
   - {fileID: 224455580687340096}
+  - {fileID: 224737289370485148}
   - {fileID: 224062113694361144}
   - {fileID: 224729173692718176}
   - {fileID: 224636592330200712}
   - {fileID: 224580877118233660}
   - {fileID: 224618732497972244}
-  - {fileID: 224737289370485148}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5345,7 +5345,7 @@ RectTransform:
   - {fileID: 224203683522246788}
   - {fileID: 224056829328626634}
   m_Father: {fileID: 224634863016786830}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -5386,7 +5386,7 @@ RectTransform:
   - {fileID: 224381211200246934}
   - {fileID: 224093317487639046}
   m_Father: {fileID: 224634863016786830}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -5405,7 +5405,7 @@ RectTransform:
   m_Children:
   - {fileID: 224143834938282912}
   m_Father: {fileID: 224634863016786830}
-  m_RootOrder: 9
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

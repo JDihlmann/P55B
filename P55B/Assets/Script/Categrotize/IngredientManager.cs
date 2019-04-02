@@ -23,20 +23,9 @@ public class IngredientManager : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance != null)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-            //data = SaveSystem.LoadIngredients();
-            BuildDatabase();
-
-            // delete line
-            RecipeBoughtState = new List<bool>() { true, false, false };
-        }
+        BuildDatabase();
+      
+        RecipeBoughtState = new List<bool>() { true, false, false };
 
     }
 
