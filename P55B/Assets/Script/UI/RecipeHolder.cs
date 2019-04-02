@@ -88,9 +88,10 @@ public class RecipeHolder : MonoBehaviour, IPointerDownHandler, IPointerUpHandle
         holderScript.ingredients = recipe.Ingredients;
         holderScript.price.text = recipe.Price.ToString();
         holderScript.id = recipeId;
-        //holderScript.image.SetNativeSize();
         holderScript.image.preserveAspect = true;
         holderScript.buyButton.onClick.AddListener(() => buyRecipe(holder));
+        holderScript.rarety.text = recipe.Rarety + " recipe";
+        holderScript.income.text = recipe.MinIncome + " - " + recipe.MaxIncome + " income per drink";
     }
 
     private void buyRecipe(GameObject window)

@@ -12,6 +12,8 @@ public class RecipeModalWindowHolder : MonoBehaviour {
     public List<int> ingredients;
     public Text price;
     public Button buyButton;
+    public Text rarety;
+    public Text income;
 
     public GameObject recipeIngredientHolderPrefab;
     public Transform ingredientGrid;
