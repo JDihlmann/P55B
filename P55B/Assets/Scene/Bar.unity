@@ -1273,6 +1273,30 @@ Prefab:
       propertyPath: gameSystem
       value: 
       objectReference: {fileID: 1235737496}
+    - target: {fileID: 114784612088903552, guid: fb8cf3f50b0f7654f9994291b2a2089e,
+        type: 2}
+      propertyPath: s1_Chair
+      value: 
+      objectReference: {fileID: 1095436220130688, guid: 142381825589ff64ebfc6897a7743ba2,
+        type: 2}
+    - target: {fileID: 114784612088903552, guid: fb8cf3f50b0f7654f9994291b2a2089e,
+        type: 2}
+      propertyPath: s1_Tabel
+      value: 
+      objectReference: {fileID: 1250474341391020, guid: dc90c2bca00e1e042aacd345dd99e536,
+        type: 2}
+    - target: {fileID: 114784612088903552, guid: fb8cf3f50b0f7654f9994291b2a2089e,
+        type: 2}
+      propertyPath: s1_CouchS
+      value: 
+      objectReference: {fileID: 1217785031253442, guid: e19dbe8466bf4fa4bac166ebaaec083c,
+        type: 2}
+    - target: {fileID: 114784612088903552, guid: fb8cf3f50b0f7654f9994291b2a2089e,
+        type: 2}
+      propertyPath: s1_CouchL
+      value: 
+      objectReference: {fileID: 1617500033549782, guid: 674662620a70ec3488aba1538ade27c6,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb8cf3f50b0f7654f9994291b2a2089e, type: 2}
   m_IsPrefabAsset: 0
