@@ -9,30 +9,31 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1476257160468668}
+  m_RootGameObject: {fileID: 1510996965863312}
   m_IsPrefabAsset: 1
---- !u!1 &1476257160468668
+--- !u!1 &1510996965863312
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4070803937086858}
-  - component: {fileID: 114759186908376462}
-  m_Layer: 0
-  m_Name: KeyboardInput
+  - component: {fileID: 4362262750723628}
+  - component: {fileID: 114215435993195232}
+  - component: {fileID: 65925011012754050}
+  m_Layer: 2
+  m_Name: Border
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4070803937086858
+--- !u!4 &4362262750723628
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1476257160468668}
+  m_GameObject: {fileID: 1510996965863312}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -40,16 +41,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114759186908376462
+--- !u!65 &65925011012754050
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1510996965863312}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114215435993195232
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1476257160468668}
+  m_GameObject: {fileID: 1510996965863312}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c9343dee326f4c45aebfaad60e71036, type: 3}
+  m_Script: {fileID: 11500000, guid: 15dbd0ef7604fd44a97771feb753ce3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectGrid: {fileID: 0}
-  gameStateChanger: {fileID: 0}

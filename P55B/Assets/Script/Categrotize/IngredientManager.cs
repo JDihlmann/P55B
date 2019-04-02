@@ -51,10 +51,12 @@ public class IngredientManager : MonoBehaviour
 
         MachineStats = BuildLists<MachineStatsObject>("JSON/MachineStats");
 
+        Ingredients = BuildLists<IngredientObject>("JSON/Ingredients");
+
         //Ingredients = BuildLists<IngredientObject>("JSON/Ingredients");
 
 
-        int[] savedData = new int[] { 0, 0, 0, 0 };
+        //int[] savedData = new int[] { 0, 0, 0, 0 };
 
         //if (data != null)
         //{
@@ -62,12 +64,12 @@ public class IngredientManager : MonoBehaviour
 
         //}
 
-        Ingredients = new List<IngredientObject>(){
-            new IngredientObject("Strawberry", 1, 5, savedData[0], Color.red, "Qubi"),
-            new IngredientObject("Blueberry", 1, 5, savedData[1], Color.blue, "Qubi"),
-            new IngredientObject("Apple", 1, 5, savedData[2], Color.green, "Qubi"),
-            new IngredientObject("Banana", 1, 5, savedData[3], Color.yellow, "Qubi"),
-        };
+        //Ingredients = new List<IngredientObject>(){
+        //    new IngredientObject("Strawberry", 1, 5, savedData[0], Color.red, "Qubi"),
+        //    new IngredientObject("Blueberry", 1, 5, savedData[1], Color.blue, "Qubi"),
+        //    new IngredientObject("Apple", 1, 5, savedData[2], Color.green, "Qubi"),
+        //    new IngredientObject("Banana", 1, 5, savedData[3], Color.yellow, "Qubi"),
+        //};
     }
 
     private List<Objects> BuildLists<Objects>(string path)

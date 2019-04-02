@@ -9,6 +9,8 @@ public class DrinkSlotsUI : MonoBehaviour {
 
     public Transform grid;
 
+    public GameObject modalWindow;
+
     private int[] drinks = new int[] { 1, 0, 0, 1 };
 
     void Start()
@@ -25,10 +27,16 @@ public class DrinkSlotsUI : MonoBehaviour {
             holder.transform.GetChild(0).GetComponent<Image>().sprite = sprite;
             holder.transform.GetChild(0).GetComponent<Image>().preserveAspect = true;
             holder.transform.GetChild(2).GetComponent<Text>().text = IngredientManager.GetRecipes()[drinks[i]].Name;
+            holder.GetComponent<Button>().onClick.AddListener(openModal);
             //GetComponent<Image>().sprite = sprite;
             //MachineStatsHolder holderScript = holder.GetComponent<MachineStatsHolder>();
             //holderScript.machineStat = machineStats[i];
         }
+    }
+
+    void openModal()
+    {
+        Instantiate(modalWindow, this.gameObject.transform.parent);
     }
 
 }

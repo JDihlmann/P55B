@@ -16,7 +16,6 @@ public class InregdientsUI : MonoBehaviour {
 	void Start () {
         ingredientsUI = this;
         ingredientList = IngredientManager.GetIngredients();
-        ingredientList[0].UpdateCount(2);
         FillList();
 	}
 
@@ -24,10 +23,14 @@ public class InregdientsUI : MonoBehaviour {
         for (int i = 0; i < ingredientList.Count; i++){
             GameObject holder = Instantiate(ingredientHolderPrefab, grid);
             IngredientHolder holderScript = holder.GetComponent<IngredientHolder>();
-            holderScript.ingredientName.text = ingredientList[i].IngredientName;
-            holderScript.ingredientCount.text = ingredientList[i].Count.ToString();
-            holderScript.ingredientImage.color = ingredientList[i].Color;
-            holderScript.ingredientID = ingredientList[i].IngredientID;
+            holderScript.name.text = ingredientList[i].Name;
+            holderScript.amount.text = "50";
+            holderScript.price.text = ingredientList[i].Price + "$ each";
+            holderScript.image.sprite = Resources.Load<Sprite>("Sprites/" + ingredientList[i].Image);
+            //holderScript.ingredientName.text = ingredientList[i].IngredientName;
+            //holderScript.ingredientCount.text = ingredientList[i].Count.ToString();
+            //holderScript.ingredientImage.color = ingredientList[i].Color;
+            //holderScript.ingredientID = ingredientList[i].IngredientID;
         }
     }
 }

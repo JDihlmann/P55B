@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GamePlaySystem : MonoBehaviour
 {
+	public static GamePlaySystem Instance { get; private set; }
+
 	#region Variables
 	//[Header("Components")]
 	private CustomerSpawner spawner;
@@ -21,6 +23,17 @@ public class GamePlaySystem : MonoBehaviour
 	#region Methods
 	public void Awake()
 	{
+		if (Instance == null)
+		{
+			Instance = this;
+			DontDestroyOnLoad(gameObject);
+		}
+		else
+		{
+			Destroy(gameObject);
+			return;
+		}
+
 		spawner = gameObject.GetComponent<CustomerSpawner>();
 	}
 

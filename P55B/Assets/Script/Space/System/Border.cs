@@ -18,9 +18,10 @@ public class Border : MonoBehaviour {
     void Start()
     {
         cam = Camera.main;
-        height = cam.ScreenToWorldPoint(new Vector3(0,Screen.height, 15.5f)).y;
-        width = cam.ScreenToWorldPoint(new Vector3(Screen.width, 0, 15.5f)).x;
-        transform.localScale = new Vector3(2f*width, 2f*height, 3f);
+        height = cam.ScreenToWorldPoint(new Vector3(0,Screen.height, 54f)).y;
+        width = cam.ScreenToWorldPoint(new Vector3(Screen.width, 0, 54f)).x;
+        transform.localScale = new Vector3(3.5f*width, 3f*height, 30f);
+        transform.Rotate(0, 45f,0);
     }
 
 	private void OnTriggerExit(Collider other)
