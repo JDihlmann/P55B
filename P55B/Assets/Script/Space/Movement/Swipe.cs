@@ -11,8 +11,8 @@ public class Swipe : MonoBehaviour
 	{
 		bool upAction = false;
 		bool downAction = false;
-		Vector3 end = new Vector2();
-		Vector2 touchPosition = new Vector2(0.0f, 0.0f);
+		Vector3 end = new Vector3();
+		Vector3 touchPosition = new Vector3(); 
 
 		// Mouse events
 		if (Input.GetMouseButtonDown(0))
@@ -65,7 +65,7 @@ public class Swipe : MonoBehaviour
 		// TODO: Maybe limit by time
 		if (upAction && activeObject != null)
 		{
-			end = Camera.main.ScreenToWorldPoint(touchPosition);
+			end = Camera.main.ScreenToWorldPoint(new Vector3(touchPosition.x, touchPosition.y, 65-(17*touchPosition.x/Screen.height)));
 			activeObject.SendMessage("Move", end - activeObject.transform.position);
 			activeObject = null;
 		}

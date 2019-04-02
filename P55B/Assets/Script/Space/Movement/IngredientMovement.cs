@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
+
 
 public class IngredientMovement : MonoBehaviour
 {
@@ -42,7 +44,7 @@ public class IngredientMovement : MonoBehaviour
 	// Orbit Axis Rotation
 	public void MoveRight()
 	{
-        transform.position += Vector3.right * Time.deltaTime * speed;
+        transform.position += new Vector3(1, 0, -1f) * Time.deltaTime * speed;
 	}
 
 
@@ -52,7 +54,7 @@ public class IngredientMovement : MonoBehaviour
 
 		if (playerTouchCount < 2)
 		{
-			rbody.AddForce(300 * velocity);
+            rbody.AddForce(300 * velocity.x, 300 * velocity.y, 300 * velocity.z);
 
 			// TODO Add more gravity to object:
 			// rbody.mass = 0.01f;

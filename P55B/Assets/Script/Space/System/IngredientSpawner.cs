@@ -8,13 +8,13 @@ public class IngredientSpawner : MonoBehaviour {
 	[Header("Components")]
 	public GameObject ingredientLeft;
     public GameObject ingredientRight;
+    public Camera cam;
     [Space]
 	[Header("Variables")]
 	public float spawnTime;
 	public float spawnDelay;
 	public static int objectCounter;
     private float timer = 0f;
-    private Camera cam;
     private Vector3[] spawnPointsLeft;
     private Vector3[] spawnPointsRight;
     private Vector3 spawnpoint1 = new Vector3();
@@ -32,16 +32,16 @@ public class IngredientSpawner : MonoBehaviour {
     void Start ()
 	{
 		objectCounter = GameObject.FindGameObjectsWithTag("Moveable").Length;
-        cam = Camera.main;
-        spawnpoint1 = cam.ScreenToWorldPoint(new Vector3(0, 1.4f*Screen.height / 5, 15.5f));
-        spawnpoint2 = cam.ScreenToWorldPoint(new Vector3(Screen.width, 1.8f * Screen.height / 5, 15.5f));
-        spawnpoint3 = cam.ScreenToWorldPoint(new Vector3(0, 3.1f*Screen.height / 5, 15.5f));
-        spawnpoint4 = cam.ScreenToWorldPoint(new Vector3(Screen.width, 3.4f * Screen.height / 5, 15.5f));
-        spawnpoint5 = cam.ScreenToWorldPoint(new Vector3(0, 3.8f * Screen.height / 5, 15.5f));
-        spawnpoint6 = cam.ScreenToWorldPoint(new Vector3(Screen.width, 4.2f * Screen.height / 5, 15.5f));
-        spawnpoint7 = cam.ScreenToWorldPoint(new Vector3(0, 4.6f * Screen.height / 5, 15.5f));
-        spawnPointsLeft =  new Vector3[]{spawnpoint1, spawnpoint3, spawnpoint5, spawnpoint7, };
-        spawnPointsRight = new Vector3[] {spawnpoint2, spawnpoint4, spawnpoint6 };
+        //cam = Camera.Camera_Space; ;
+        spawnpoint1 = cam.ScreenToWorldPoint(new Vector3(Screen.width, 2.2f * Screen.height / 5, 57.5f));
+        spawnpoint2 = cam.ScreenToWorldPoint(new Vector3(0, 2.6f*Screen.height / 5, 55f));
+        spawnpoint3 = cam.ScreenToWorldPoint(new Vector3(Screen.width, 3.0f * Screen.height / 5, 52.5f));
+        spawnpoint4 = cam.ScreenToWorldPoint(new Vector3(0, 3.4f * Screen.height / 5, 50f));
+        spawnpoint5 = cam.ScreenToWorldPoint(new Vector3(Screen.width, 3.8f * Screen.height / 5, 47.5f));
+        spawnpoint6 = cam.ScreenToWorldPoint(new Vector3(0, 4.2f * Screen.height / 5, 45f));
+        spawnpoint7 = cam.ScreenToWorldPoint(new Vector3(Screen.width, 4.6f * Screen.height / 5, 42.5f));
+        spawnPointsRight =  new Vector3[]{spawnpoint1, spawnpoint3, spawnpoint5, spawnpoint7, };
+        spawnPointsLeft = new Vector3[] {spawnpoint2, spawnpoint4, spawnpoint6,};
     }
 
     private void Update()
