@@ -1,5 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.IO;
 using UnityEngine;
 
 public class GameSystem : MonoBehaviour
@@ -12,10 +14,12 @@ public class GameSystem : MonoBehaviour
 	public int[] workerUnlocks = new int[4];
 	[Space]
 	[Header("Values")]
-	public int[] objectAmount = new int[5]; // Change this to bool[] if player only needs to buy once and can place freely
+	public List<Recipe> recipeList = new List<Recipe>(); // Equipped recipes of worker
 	public int[] ingredientAmount = new int[4];
 	public int money = 0;
 	public int happiness = 0;
+	public List<Object> objectList = new List<Object>(); // Placed objects
+	// Save array with 3 variable objects
 	#endregion
 
 	#region Methods
@@ -57,40 +61,39 @@ public class GameSystem : MonoBehaviour
 		}
 	}
 
-	public void AddObject(int id, int amount)
+	public void AddObject(Object placedObject)
 	{
-		if (id > objectAmount.Length)
+		if (objectList.Contains(placedObject))
 		{
-			Debug.Log("Error object ID out of index");
+			Debug.Log("Don't add same object again");
 		}
 		else
 		{
-			objectAmount[id] += amount;
+			objectList.Add(placedObject);
 		}
 	}
 
-	public void SubObject(int id, int amount)
+	public void SubObject(Object placedObject)
 	{
-		if (id > objectAmount.Length)
+		if (objectList.Contains(placedObject))
 		{
-			Debug.Log("Error object ID out of index");
+			objectList.Remove(placedObject);
 		}
 		else
 		{
-			objectAmount[id] -= amount;
+			Debug.Log("No viable gameObject");
 		}
 	}
 
-	public void SetObject(int id, int amount)
+	public Object PopObject()
 	{
-		if (id > objectAmount.Length)
+		if (objectList.Count > 0)
 		{
-			Debug.Log("Error object ID out of index");
+			Object temp = objectList[0];
+			objectList.RemoveAt(0);
+			return temp;
 		}
-		else
-		{
-			objectAmount[id] = amount;
-		}
+		return null;
 	}
 
 	public void AddIngredient(int id, int amount)
@@ -193,11 +196,38 @@ public class GameSystem : MonoBehaviour
 	public void SaveGameSystem()
 	{
 		// Save all values into binary or smth
+		BinaryFormatter formatter = new BinaryFormatter();
+		//string path = Application.persistentDataPath + "/ingredients.bla";
+		string path = "SaveGame.bla";
+		FileStream stream = new FileStream(path, FileMode.Create);
+
+		SaveGameData data = new SaveGameData();
+
+		formatter.Serialize(stream, data);
+		stream.Close();
 	}
 
-	public void LoadGameSystem()
+	public SaveGameData LoadGameSystem()
 	{
 		// Load all values from binary or smth
+		//string path = Application.persistentDataPath + "/ingredients.bla";
+		string path = "SaveGame.bla";
+		if (File.Exists(path))
+		{
+			BinaryFormatter formatter = new BinaryFormatter();
+			FileStream stream = new FileStream(path, FileMode.Open);
+
+			SaveGameData data = formatter.Deserialize(stream) as SaveGameData;
+			stream.Close();
+
+			return data;
+
+		}
+		else
+		{
+			Debug.LogError("Save file not found in " + path);
+			return null;
+		}
 	}
 	#endregion
 }

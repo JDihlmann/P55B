@@ -46,6 +46,7 @@ public class CustomerSpawner : MonoBehaviour
 		int spawnPointIndex = Random.Range(0, spawnPoints.Length);
 
 		GameObject newCustomer = Instantiate(customerPrefab, spawnPoints[spawnPointIndex].position, new Quaternion(0.0f, 0.0f, 0.0f, 1.0f));
+		newCustomer.transform.parent = gameObject.transform;
 		customerList.Add(newCustomer);
 	}
 

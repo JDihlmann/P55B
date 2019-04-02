@@ -18,6 +18,8 @@ public class GamePlaySystem : MonoBehaviour
 	public List<GameObject> availableSeatList = new List<GameObject>();
 	public GameObject bar;
 	public GameObject exit;
+
+	private float tempSeater = 1f;
 	#endregion
 
 	#region Methods
@@ -46,6 +48,11 @@ public class GamePlaySystem : MonoBehaviour
 		if (Input.GetKeyUp(KeyCode.KeypadMinus))
 		{
 			GameSystem.Instance.SubTime(0.25f);
+		}
+		if (tempSeater > 0.75f)
+		{
+			tempSeater -= Time.deltaTime;
+			UpdateSeatList();
 		}
 	}
 
@@ -77,7 +84,10 @@ public class GamePlaySystem : MonoBehaviour
 
 	public void AddSeatToList(GameObject seat)
 	{
-		availableSeatList.Add(seat);
+		if (!availableSeatList.Contains(seat))
+		{
+			availableSeatList.Add(seat);
+		}
 	}
 
 	public GameObject GetAvailableSeat()
@@ -91,6 +101,16 @@ public class GamePlaySystem : MonoBehaviour
 			return seat;
 		}
 		return null;
+	}
+
+	public void UpdateSeatList()
+	{
+		availableSeatList.Clear();
+		GameObject[] seatArray = GameObject.FindGameObjectsWithTag("Seatable");
+		foreach (GameObject seat in seatArray)
+		{
+			availableSeatList.Add(seat);
+		}
 	}
 
 	public void UpdateRecipes() // Creates a List with ALL equipped recipes.
