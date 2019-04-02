@@ -56,10 +56,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   recipeUnlocks: 0000000000
   workerUnlocks: 00000000000000000000000000000000
-  objectAmount: 0000000000000000000000000000000000000000
+  recipeList: []
   ingredientAmount: 00000000000000000000000000000000
   money: 0
   happiness: 0
+  objectList: []
 --- !u!114 &114118925102759882
 MonoBehaviour:
   m_ObjectHideFlags: 1

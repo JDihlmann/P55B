@@ -6,7 +6,8 @@ using UnityEngine;
 
 public class SaveGame : MonoBehaviour {
 
-    public static void Save()
+    /*
+	public static void Save()
     {
         BinaryFormatter formatter = new BinaryFormatter();
         //string path = Application.persistentDataPath + "/ingredients.bla";
@@ -40,4 +41,5 @@ public class SaveGame : MonoBehaviour {
             return null;
         }
     }
+	*/
 }

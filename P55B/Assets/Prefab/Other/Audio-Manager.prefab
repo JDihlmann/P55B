@@ -54,9 +54,9 @@ MonoBehaviour:
   sounds:
   - clip: {fileID: 8300000, guid: 6ebf7623e0e14554ea3cb38858701921, type: 3}
     name: Theme
-    volume: 0.4
+    volume: 0.2
     pitch: 1
-    loop: 1
+    loop: 0
     source: {fileID: 0}
   - clip: {fileID: 8300000, guid: 7e300cb5ba99d0341abb7025e1d31117, type: 3}
     name: Cash1
@@ -66,13 +66,13 @@ MonoBehaviour:
     source: {fileID: 0}
   - clip: {fileID: 8300000, guid: 0864840773ac1894c91c8e5dc5e5d25c, type: 3}
     name: Cash2
-    volume: 0.5
+    volume: 0.4
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - clip: {fileID: 8300000, guid: 7393c901924766a46937ca7a0fa380df, type: 3}
     name: Cash3
-    volume: 0.4
+    volume: 0.3
     pitch: 1
     loop: 0
     source: {fileID: 0}
@@ -130,4 +130,4 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
-  muted: 0
+  muted: 1
