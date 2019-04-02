@@ -46,7 +46,7 @@ public class GameSystem : MonoBehaviour
 		else
 		{
 			recipeUnlocks[id] = true;
-		}
+        }
 	}
 
 	public void UpgradeWorker(int id)

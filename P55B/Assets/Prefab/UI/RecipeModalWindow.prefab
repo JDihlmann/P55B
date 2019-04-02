@@ -467,9 +467,11 @@ MonoBehaviour:
   amount: 
   ingredients: 
   price: {fileID: 114046610110936766}
+  buyButton: {fileID: 114034825092916818}
   recipeIngredientHolderPrefab: {fileID: 1010584766501058, guid: 3635cf80e32324fa68765bd21e011609,
     type: 2}
   ingredientGrid: {fileID: 224818776039190306}
+  id: 0
 --- !u!114 &114592949657097338
 MonoBehaviour:
   m_ObjectHideFlags: 1

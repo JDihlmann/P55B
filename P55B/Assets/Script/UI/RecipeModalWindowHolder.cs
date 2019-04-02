@@ -11,9 +11,11 @@ public class RecipeModalWindowHolder : MonoBehaviour {
     public List<int> amount;
     public List<int> ingredients;
     public Text price;
+    public Button buyButton;
 
     public GameObject recipeIngredientHolderPrefab;
     public Transform ingredientGrid;
+    public int id;
 
     void Start()
     {
@@ -25,7 +27,6 @@ public class RecipeModalWindowHolder : MonoBehaviour {
             GameObject holder = Instantiate(recipeIngredientHolderPrefab, ingredientGrid);
             RecipeIngredientHolder holderScript = holder.GetComponent<RecipeIngredientHolder>();
             holderScript.text.text = "x " + amount[i].ToString();
-            Debug.Log(IngredientManager.GetIngredients()[ingredients[i]].Image);
             Sprite sprite = Resources.Load<Sprite>("Sprites/" + IngredientManager.GetIngredients()[ingredients[i]].Image);
             holderScript.image.sprite = sprite;
             holderScript.image.preserveAspect = true;

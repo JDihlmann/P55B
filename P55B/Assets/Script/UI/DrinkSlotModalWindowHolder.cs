@@ -13,6 +13,7 @@ public class DrinkSlotModalWindowHolder : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+    
         Button btn = background.GetComponent<Button>();
         btn.onClick.AddListener(hideModal);
 

@@ -35,7 +35,8 @@ public class RecipeHolder : MonoBehaviour, IPointerDownHandler, IPointerUpHandle
     private void Start()
     {
         recipeId = recipe.ID;
-        bought = IngredientManager.GetRecipeBoughtState()[recipeId];
+        //bought = IngredientManager.GetRecipeBoughtState()[recipeId];
+        bought = GameSystem.Instance.recipeUnlocks[recipeId];
         name.text = recipe.Name;
         price.text = recipe.Price.ToString();
         boughtTag.gameObject.SetActive(bought);
@@ -86,8 +87,17 @@ public class RecipeHolder : MonoBehaviour, IPointerDownHandler, IPointerUpHandle
         holderScript.amount = recipe.Amount;
         holderScript.ingredients = recipe.Ingredients;
         holderScript.price.text = recipe.Price.ToString();
+        holderScript.id = recipeId;
         //holderScript.image.SetNativeSize();
         holderScript.image.preserveAspect = true;
+        holderScript.buyButton.onClick.AddListener(() => buyRecipe(holder));
+    }
+
+    private void buyRecipe(GameObject window)
+    {
+        boughtTag.gameObject.SetActive(true);
+        GameSystem.Instance.UnlockRecipe(recipeId);
+        Destroy(window);
     }
 
 }

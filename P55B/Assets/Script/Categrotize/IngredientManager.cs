@@ -25,7 +25,7 @@ public class IngredientManager : MonoBehaviour
     {
         BuildDatabase();
       
-        RecipeBoughtState = new List<bool>() { true, false, false };
+        RecipeBoughtState = new List<bool>() { true, false, false, true };
 
     }
 
