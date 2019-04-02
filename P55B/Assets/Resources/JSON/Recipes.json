@@ -1,7 +1,7 @@
 ﻿{
   "Items": [
     {
-      "Name": "PINA COLADA",
+      "Name": "PINA COLADA 1",
       "ID": 0,
       "Price": 500,
       "MinIncome": 2,
@@ -13,8 +13,32 @@
       "Amount":  [5]
     },
     {
-      "Name": "PINA COLADA",
+      "Name": "PINA COLADA 2",
       "ID": 1,
+      "Price": 500,
+      "MinIncome": 2,
+      "MaxIncome": 5,
+      "Description": "Rusty table",
+      "Image": "Chair",
+      "Rarety": "common",
+      "Ingredients": [ 0 ],
+      "Amount": [ 5 ]
+    },
+    {
+      "Name": "PINA COLADA 3",
+      "ID": 2,
+      "Price": 500,
+      "MinIncome": 2,
+      "MaxIncome": 5,
+      "Description": "Rusty table",
+      "Image": "Chair",
+      "Rarety": "common",
+      "Ingredients": [ 0 ],
+      "Amount": [ 5 ]
+    },
+    {
+      "Name": "PINA COLADA 4",
+      "ID": 3,
       "Price": 500,
       "MinIncome": 2,
       "MaxIncome": 5,
