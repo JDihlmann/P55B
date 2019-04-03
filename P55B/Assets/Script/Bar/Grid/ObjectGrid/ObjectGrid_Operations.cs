@@ -18,6 +18,10 @@ public class ObjectGrid_Operations : MonoBehaviour {
 	// Blocked Space
 	private Vector2Int[] blockedSpace; 
 
+	void Update() {
+		// DebugGrid();
+	}
+
 	void Start () {
 		// Object Grid instantiatet grids
 		ObjectGrid_Instantiate objectGridInstantiate = GetComponent<ObjectGrid_Instantiate>();

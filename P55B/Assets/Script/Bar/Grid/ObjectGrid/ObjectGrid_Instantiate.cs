@@ -32,7 +32,7 @@ public class ObjectGrid_Instantiate : MonoBehaviour {
 		width = gridWidth;
 		length = gridLength; 
 
-		EmptyObjectGrid();
+		InitObjectGrid();
 	}
 
 	void Update() {
@@ -47,7 +47,7 @@ public class ObjectGrid_Instantiate : MonoBehaviour {
 	}
 
 
-	private void EmptyObjectGrid() {
+	private void InitObjectGrid() {
 		objectGrid = new GameObject[width,length];
 		integerObjectGrid = new Vector2Int[width,length];
 
@@ -58,18 +58,97 @@ public class ObjectGrid_Instantiate : MonoBehaviour {
 			}
 		}
 	}
+
+	public void EmptyObjectGrid() {
+		// Fill all arrays with [-1,-1]
+		for (int i = 0; i < integerObjectGrid.GetLength(0); i++) {
+			for (int j = 0; j < integerObjectGrid.GetLength(1); j++) {
+				integerObjectGrid[i,j] = emptyIntObjectElement;
+			}
+		}
+
+		// Fill all arrays with null
+		for (int i = 0; i < objectGrid.GetLength(0); i++) {
+			for (int j = 0; j < objectGrid.GetLength(1); j++) {
+				Destroy(objectGrid[i,j]);
+				objectGrid[i,j] = null;
+			}
+		}
+	}
 	
-	public void LoadObjects () {
-		// TODO: Load Objects from JSON
+	public void LoadObjects() {
+		// !!! BUILD SCRIPT MUST BE ENABLED TO LOAD OBJECTS !!!
 		objectGridPlacement = GetComponent<ObjectGrid_Placement>();
 
-		// GameObject table = Instantiate(s1_Tabel, Vector3.zero, Quaternion.identity);
-		// table.transform.parent = transform;
-		// objectGridPlacement.PlaceObjectOnGrid(table, new Vector2Int(8,8), Vector2Int.zero);
+		foreach(ObjectProperties properties in GameSystem.Instance.objectList) {
+			int ID = properties.objectId; 
+			Vector2Int position = properties.objectPosition; 
+			float rotation = properties.objectRotation; 
+			
+			GameObject objectPrefab = GetGameObjectForId(ID);
+		
+			// No Prefab for ID 
+			if (objectPrefab != null) {
+				GameObject gameObject = Instantiate(objectPrefab, Vector3.zero, Quaternion.identity);
+				gameObject.transform.parent = transform;
+				objectGridPlacement.PlaceObjectOnGridWithRotation(gameObject, position, Vector2Int.zero, rotation);
+			} 
+		}
 	}
 
 	public void SaveObjects () {
-		// TODO: Save Objects to JSON 
+		// Clear Object List
+		GameSystem.Instance.objectList.Clear();
+
+		// Save Object List
+		for (int i = 0; i < objectGrid.GetLength(0); i++) {
+			for (int j = 0; j < objectGrid.GetLength(1); j++) {
+				if(objectGrid[i,j] != null) {
+					Object_Values objectValues = objectGrid[i,j].GetComponent<Object_Values>();
+					float rotation = objectGrid[i,j].transform.eulerAngles.y; 
+					rotation = rotation == -90 ? 270 : rotation; 
+					ObjectProperties objectProperties = new ObjectProperties(objectValues.ID, objectValues.placedPosition, rotation); 
+					GameSystem.Instance.AddObject(objectProperties);
+				}
+			}
+		}
+	}
+
+
+	public void SpawnNewObjectWithID(int id) {
+		// TODO: ID should select right prefab
+		GameObject objectPrefab = GetGameObjectForId(id);
+
+		// No Prefab for ID 
+		if (objectPrefab == null) 
+			return; 
+		
+
+		GameObject gameObject = Instantiate(objectPrefab, new Vector3(-100, -100 ,-100), Quaternion.identity);
+		gameObject.transform.parent = transform;
+
+		GameObject gameObjectCollider = gameObject.transform.Find("ColliderCube (1)").gameObject;
+
+		if (gameObjectCollider != null) {
+			objectGridPlacement = GetComponent<ObjectGrid_Placement>();
+			objectGridPlacement.MoveSpawnObjectAtCollider(gameObjectCollider); 
+		}
+	}
+
+	private GameObject GetGameObjectForId(int id) {
+		switch (id) {
+			case 1: 
+				return s1_Tabel;
+			case 2: 
+				return s1_Chair;
+			case 3: 
+				return s1_CouchS;
+			case 4: 
+				return s1_CouchL;
+
+			default:
+				return null; 
+		}
 	}
 
 	public void TestBar() {
