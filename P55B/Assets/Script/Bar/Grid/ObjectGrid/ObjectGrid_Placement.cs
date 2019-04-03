@@ -49,7 +49,6 @@ public class ObjectGrid_Placement : MonoBehaviour {
 		}
 	}
 
-
 	# region Mouse  
 
 	private void MouseDown() {
@@ -323,6 +322,26 @@ public class ObjectGrid_Placement : MonoBehaviour {
 		return false; 
 	}
 
+	# endregion
+
+	# region Spawn 
+	
+	public void MoveSpawnObjectAtCollider(GameObject collider) {
+
+		TryPlacingObjectOnGrid(); 
+
+		hitObject = collider;
+
+		GetHitObjectComponents();
+		previousHitObjectParentRotation = hitObjectParent.transform.eulerAngles;
+		hitObjectParentValues.previousOccupiedSpace = (Vector2Int[])hitObjectParentValues.occupiedSpace.Clone();
+		hitObjectParentPlaced = false; 
+
+		// TODO: Possible that object despawns ?
+
+		initalClickHitObject = true; 
+	}
+	
 	# endregion
 
 	# region Component 

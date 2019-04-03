@@ -69,7 +69,46 @@ public class ObjectGrid_Instantiate : MonoBehaviour {
 	}
 
 	public void SaveObjects () {
-		// TODO: Save Objects to JSON 
+		// TODO: Save Object
+	}
+
+
+	public void SpawnNewObjectWithID(int id) {
+		// TODO: ID should select right prefab
+		GameObject objectPrefab = GetGameObjectForId(id);
+
+		Debug.Log(objectPrefab);
+
+		// No Prefab for ID 
+		if (objectPrefab == null) 
+			return; 
+		
+
+		GameObject gameObject = Instantiate(objectPrefab, new Vector3(-100, -100 ,-100), Quaternion.identity);
+		gameObject.transform.parent = transform;
+
+		GameObject gameObjectCollider = gameObject.transform.Find("ColliderCube (1)").gameObject;
+
+		if (gameObjectCollider != null) {
+			objectGridPlacement = GetComponent<ObjectGrid_Placement>();
+			objectGridPlacement.MoveSpawnObjectAtCollider(gameObjectCollider); 
+		}
+	}
+
+	private GameObject GetGameObjectForId(int id) {
+		switch (id) {
+			case 1: 
+				return s1_Tabel;
+			case 2: 
+				return s1_Chair;
+			case 3: 
+				return s1_CouchS;
+			case 4: 
+				return s1_CouchL;
+
+			default:
+				return null; 
+		}
 	}
 
 	public void TestBar() {

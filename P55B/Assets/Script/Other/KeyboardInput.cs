@@ -7,7 +7,9 @@ public class KeyboardInput : MonoBehaviour {
 	// Reference to object grid
 	public GameObject objectGrid;
 
+	// Object grid components
 	// Object grid placement component
+	private ObjectGrid_Instantiate objectGridInstantiate; 
 	private ObjectGrid_Placement objectGridPlacement; 
 
 	// Reference to state change
@@ -18,6 +20,7 @@ public class KeyboardInput : MonoBehaviour {
 
 
 	void Start() {
+		objectGridInstantiate = objectGrid.GetComponent<ObjectGrid_Instantiate>();
 		objectGridPlacement = objectGrid.GetComponent<ObjectGrid_Placement>();
 		stateChange = gameStateChanger.GetComponent<StateChange>(); 
 	}	
@@ -64,5 +67,10 @@ public class KeyboardInput : MonoBehaviour {
             Debug.Log("Activate Space State");
 			stateChange.ActivateSpaceState();
         }
+
+
+		if (Input.GetKeyDown("space")) {
+			objectGridInstantiate.SpawnNewObjectWithID(1);
+		}	
 	}
 }
