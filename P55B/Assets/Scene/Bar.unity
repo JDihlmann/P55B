@@ -701,6 +701,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114244643689049772, guid: 21818dcdbd50b594bbf14a92dbc86cb3,
         type: 2}
+      propertyPath: planetButton
+      value: 
+      objectReference: {fileID: 1579165162}
+    - target: {fileID: 114244643689049772, guid: 21818dcdbd50b594bbf14a92dbc86cb3,
+        type: 2}
       propertyPath: objectGrid
       value: 
       objectReference: {fileID: 885104628}
@@ -781,6 +786,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4396706478844714, guid: fb8cf3f50b0f7654f9994291b2a2089e,
     type: 2}
   m_PrefabInternal: {fileID: 1951390635}
+--- !u!1 &1579165162 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1788132237747286, guid: 80409d925e5fe4bc8933a28357a5a2cb,
+    type: 2}
+  m_PrefabInternal: {fileID: 1788213176}
 --- !u!1 &1783923855
 GameObject:
   m_ObjectHideFlags: 0

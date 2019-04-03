@@ -52,4 +52,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 0
+  planetButton: {fileID: 0}
   objectGrid: {fileID: 0}

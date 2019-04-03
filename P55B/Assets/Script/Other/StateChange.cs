@@ -8,10 +8,10 @@ public class StateChange : MonoBehaviour {
 	public enum State {UI, Bar, Build, Space};
 
 	// Current state
-	public State currentState; 
+	public State currentState;
 
-	// UI GameObjects
-	// TODO: Insert GameObjects 
+    // UI GameObjects
+    public GameObject planetButton;
 
 	// Bar GameObjects
 	// TODO: Insert GameObjects 
@@ -95,7 +95,10 @@ public class StateChange : MonoBehaviour {
 		}
 
 		ObjectGrid_Placement objectGridPlacements = objectGrid.GetComponent<ObjectGrid_Placement>();
-		objectGridPlacements.enabled = true; 	
+		objectGridPlacements.enabled = true;
+
+        // hide planet button
+        planetButton.SetActive(false);
 
 		// Customer verschwinden
 	}
@@ -104,12 +107,15 @@ public class StateChange : MonoBehaviour {
 		ObjectGrid_Placement objectGridPlacements = objectGrid.GetComponent<ObjectGrid_Placement>();
 		objectGridPlacements.TryPlacingObjectOnGrid();
 		objectGridPlacements.ResetAllValues(); 
-		objectGridPlacements.enabled = false; 
-		// TODO: Save objects on Grid 
+		objectGridPlacements.enabled = false;
+        // TODO: Save objects on Grid 
 
-		// NavMesh
-		// Customer appear
-	}
+        // show planet button
+        planetButton.SetActive(true);
+
+        // NavMesh
+        // Customer appear
+    }
 
 	# endregion
 
