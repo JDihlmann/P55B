@@ -626,12 +626,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1931203064488450, guid: fb8cf3f50b0f7654f9994291b2a2089e,
     type: 2}
   m_PrefabInternal: {fileID: 1951390635}
---- !u!114 &1235737496 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114844341422384404, guid: b7099e21e9e30db4fbc146432b697daf,
-    type: 2}
-  m_PrefabInternal: {fileID: 415739598}
-  m_Script: {fileID: 11500000, guid: 66ac88a38bf06fa43921b3b6b1cadd02, type: 3}
 --- !u!1 &1293390010
 GameObject:
   m_ObjectHideFlags: 0
@@ -987,35 +981,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 114495840771900848, guid: fb8cf3f50b0f7654f9994291b2a2089e,
-        type: 2}
-      propertyPath: gameSystem
-      value: 
-      objectReference: {fileID: 1235737496}
-    - target: {fileID: 114784612088903552, guid: fb8cf3f50b0f7654f9994291b2a2089e,
-        type: 2}
-      propertyPath: s1_Chair
-      value: 
-      objectReference: {fileID: 1095436220130688, guid: 142381825589ff64ebfc6897a7743ba2,
-        type: 2}
-    - target: {fileID: 114784612088903552, guid: fb8cf3f50b0f7654f9994291b2a2089e,
-        type: 2}
-      propertyPath: s1_Tabel
-      value: 
-      objectReference: {fileID: 1250474341391020, guid: dc90c2bca00e1e042aacd345dd99e536,
-        type: 2}
-    - target: {fileID: 114784612088903552, guid: fb8cf3f50b0f7654f9994291b2a2089e,
-        type: 2}
-      propertyPath: s1_CouchS
-      value: 
-      objectReference: {fileID: 1217785031253442, guid: e19dbe8466bf4fa4bac166ebaaec083c,
-        type: 2}
-    - target: {fileID: 114784612088903552, guid: fb8cf3f50b0f7654f9994291b2a2089e,
-        type: 2}
-      propertyPath: s1_CouchL
-      value: 
-      objectReference: {fileID: 1617500033549782, guid: 674662620a70ec3488aba1538ade27c6,
-        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb8cf3f50b0f7654f9994291b2a2089e, type: 2}
   m_IsPrefabAsset: 0
