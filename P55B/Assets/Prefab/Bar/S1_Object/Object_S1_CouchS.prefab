@@ -676,6 +676,7 @@ MonoBehaviour:
   occupiedSpace:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
+  ID: 3
   previousOccupiedSpace: []
 --- !u!114 &114971941982760930
 MonoBehaviour:

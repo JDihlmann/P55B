@@ -11,12 +11,12 @@ public class ObjectProperties
 	//[Space]
 	[Header("Variables")]
 	public int objectId;
-	public Vector2Int[,] objectPosition;
+	public Vector2Int objectPosition;
 	public float objectRotation;
 	#endregion
 
 	#region Methods
-	public ObjectProperties(int objectId, Vector2Int[,] objectPosition, float objectRotation)
+	public ObjectProperties(int objectId, Vector2Int objectPosition, float objectRotation)
 	{
 		this.objectId = objectId;
 		this.objectPosition = objectPosition;

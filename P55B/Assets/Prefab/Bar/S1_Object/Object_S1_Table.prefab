@@ -257,6 +257,7 @@ MonoBehaviour:
   placedPosition: {x: -1, y: -1}
   occupiedSpace:
   - {x: 0, y: 0}
+  ID: 1
   previousOccupiedSpace: []
 --- !u!114 &114419805189993486
 MonoBehaviour:

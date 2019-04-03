@@ -979,6 +979,7 @@ MonoBehaviour:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 0, y: -1}
+  ID: 4
   previousOccupiedSpace: []
 --- !u!208 &208007329213020234
 NavMeshObstacle:

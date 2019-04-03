@@ -71,6 +71,16 @@ public class KeyboardInput : MonoBehaviour {
 
 		if (Input.GetKeyDown("space")) {
 			objectGridInstantiate.SpawnNewObjectWithID(1);
-		}	
+		}
+
+
+
+		if (Input.GetKeyDown("a")) {
+			objectGridInstantiate.LoadObjects();
+		}
+
+		if (Input.GetKeyDown("s")) {
+			objectGridInstantiate.EmptyObjectGrid();
+		}
 	}
 }
