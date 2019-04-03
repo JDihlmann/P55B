@@ -46,6 +46,7 @@ public class GameSystem : MonoBehaviour
 		else
 		{
 			recipeUnlocks[id] = true;
+            Debug.Log("recipe unlocked");
         }
 	}
 
@@ -58,7 +59,8 @@ public class GameSystem : MonoBehaviour
 		else
 		{
 			workerUnlocks[id] += 1;
-		}
+            Debug.Log("worker upgraded");
+        }
 	}
 
 	public void AddObject(ObjectProperties placedObject)
