@@ -11,6 +11,9 @@ public class Object_Values : MonoBehaviour {
 	// Center is always on position (0,0)
 	public Vector2Int[] occupiedSpace = new Vector2Int[]{new Vector2Int(0,0)}; 
 
+	// ID for Prefab
+	public int ID; 
+
 	[HideInInspector]
 	public Vector2Int[] previousOccupiedSpace; 
 

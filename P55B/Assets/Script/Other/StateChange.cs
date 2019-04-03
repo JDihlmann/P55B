@@ -58,18 +58,15 @@ public class StateChange : MonoBehaviour {
 
 		// TODO: Add ui relateded scripts / objects / ...
 
-		// Time Scale = 0?
 	}
 
 	public void DeactivateUIState() {
 		// TODO: Add ui relateded scripts / objects / ...
-
-		// Time Scale = 1?
 	}
 
-	#endregion
+	# endregion
 
-	#region Bar State
+	# region Bar State
 
 	public void ActivateBarState() {
 		if(currentState != State.Bar) {
@@ -96,19 +93,19 @@ public class StateChange : MonoBehaviour {
 
 		ObjectGrid_Placement objectGridPlacements = objectGrid.GetComponent<ObjectGrid_Placement>();
 		objectGridPlacements.enabled = true; 	
-
-		// Customer verschwinden
 	}
 
 	public void DeactivateBuildState() {
+		// Place last object, reset all values and disable script
 		ObjectGrid_Placement objectGridPlacements = objectGrid.GetComponent<ObjectGrid_Placement>();
 		objectGridPlacements.TryPlacingObjectOnGrid();
 		objectGridPlacements.ResetAllValues(); 
 		objectGridPlacements.enabled = false; 
-		// TODO: Save objects on Grid 
 
-		// NavMesh
-		// Customer appear
+		// Save all objects on grid 
+		ObjectGrid_Instantiate objectGridInstantiate = objectGrid.GetComponent<ObjectGrid_Instantiate>();
+		objectGridInstantiate.SaveObjects();
+
 	}
 
 	# endregion
@@ -123,7 +120,6 @@ public class StateChange : MonoBehaviour {
 
 		Camera_State cameraState = Camera.main.GetComponent<Camera_State>();
 		cameraState.ZoomToSpace(); 
-		
 
 		// TODO: Add space relateded scripts / objects / ...
 	}
@@ -133,7 +129,6 @@ public class StateChange : MonoBehaviour {
 
 		Camera_State cameraState = Camera.main.GetComponent<Camera_State>();
 		cameraState.ZoomToBar(); 
-
 	}
 
 	# endregion

@@ -63,6 +63,21 @@ public class ObjectGrid_Instantiate : MonoBehaviour {
 		// TODO: Load Objects from JSON
 		objectGridPlacement = GetComponent<ObjectGrid_Placement>();
 
+		// foreach () {
+			int ID = 1; 
+			GameObject objectPrefab = GetGameObjectForId(ID);
+			
+
+			// No Prefab for ID 
+			if (objectPrefab != null) {
+				// GameObject table = Instantiate(s1_Tabel, Vector3.zero, Quaternion.identity);
+				// table.transform.parent = transform;
+				// objectGridPlacement.PlaceObjectOnGrid(table, new Vector2Int(8,8), Vector2Int.zero);
+			} 
+		
+
+		// }
+
 		// GameObject table = Instantiate(s1_Tabel, Vector3.zero, Quaternion.identity);
 		// table.transform.parent = transform;
 		// objectGridPlacement.PlaceObjectOnGrid(table, new Vector2Int(8,8), Vector2Int.zero);
@@ -70,14 +85,24 @@ public class ObjectGrid_Instantiate : MonoBehaviour {
 
 	public void SaveObjects () {
 		// TODO: Save Object
+		for (int i = 0; i < objectGrid.GetLength(0); i++) {
+			for (int j = 0; j < objectGrid.GetLength(1); j++) {
+				if(objectGrid[i,j] != null) {
+					Object_Values objectValues = objectGrid[i,j].GetComponent<Object_Values>();
+					float rotation = objectGrid[i,j].transform.eulerAngles.y; 
+					rotation = rotation == -90 ? 270 : rotation; 
+					//ObjectProperties temp = new Object(id, vector2int, rotation);
+					// ObjectProperties objectProperties = new ObjectProperties(objectValues.ID, objectValues.placedPosition)
+					// GameSystem.AddObject(objectProperties);
+				}
+			}
+		}
 	}
 
 
 	public void SpawnNewObjectWithID(int id) {
 		// TODO: ID should select right prefab
 		GameObject objectPrefab = GetGameObjectForId(id);
-
-		Debug.Log(objectPrefab);
 
 		// No Prefab for ID 
 		if (objectPrefab == null) 
