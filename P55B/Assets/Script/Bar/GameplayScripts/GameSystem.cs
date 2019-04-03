@@ -18,7 +18,7 @@ public class GameSystem : MonoBehaviour
 	public int[] ingredientAmount = new int[4];
 	public int money = 0;
 	public int happiness = 0;
-	public List<Object> objectList = new List<Object>(); // Placed objects
+	public List<ObjectProperties> objectList = new List<ObjectProperties>(); // Placed objects
 	// Save array with 3 variable objects
 	#endregion
 
@@ -61,7 +61,7 @@ public class GameSystem : MonoBehaviour
 		}
 	}
 
-	public void AddObject(Object placedObject)
+	public void AddObject(ObjectProperties placedObject)
 	{
 		if (objectList.Contains(placedObject))
 		{
@@ -73,7 +73,7 @@ public class GameSystem : MonoBehaviour
 		}
 	}
 
-	public void SubObject(Object placedObject)
+	public void SubObject(ObjectProperties placedObject)
 	{
 		if (objectList.Contains(placedObject))
 		{
@@ -85,11 +85,11 @@ public class GameSystem : MonoBehaviour
 		}
 	}
 
-	public Object PopObject()
+	public ObjectProperties PopObject()
 	{
 		if (objectList.Count > 0)
 		{
-			Object temp = objectList[0];
+			ObjectProperties temp = objectList[0];
 			objectList.RemoveAt(0);
 			return temp;
 		}
