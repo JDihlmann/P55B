@@ -72,7 +72,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c5c9868daf29834d83b611a8d772f56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  customerPrefab: {fileID: 1216449300660918, guid: 19941566c6972fb4192e75bdafd16f97,
+  customerPrefab: {fileID: 1216449300660918, guid: 5fc55a1fd915ebb45a5c149cb7a5c490,
     type: 2}
   customerList: []
   leavingCustomerList: []
