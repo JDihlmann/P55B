@@ -60,15 +60,13 @@ public class ObjectGrid_Placement : MonoBehaviour {
 			if (initalClickHitObject) {
 				bool IsDiffrentObject = (hitObjectParent != hitObject.transform.parent.gameObject);
 
-				if(!hitObjectParentPlaced && hitObjectParent != null){
-					if (IsDiffrentObject) {
-						TryPlacingObjectOnGrid(); 
-					}
+				if(!hitObjectParentPlaced && hitObjectParent != null && IsDiffrentObject){
+					TryPlacingObjectOnGrid(); 
 				} 
 
 				GetHitObjectComponents();
 
-				if (IsDiffrentObject) {
+				if (IsDiffrentObject || (hitObjectParentPlaced && hitObjectParent != null)) {
 					previousHitObjectParentRotation = hitObjectParent.transform.eulerAngles;
 					hitObjectParentValues.previousOccupiedSpace = (Vector2Int[])hitObjectParentValues.occupiedSpace.Clone();
 				}
@@ -109,6 +107,7 @@ public class ObjectGrid_Placement : MonoBehaviour {
 
 			// Object not above grid 
 			if(hitTile == null) {
+				UIHideAllButtons();
 				RemoveObjectOnGrid(obj, fromPos);
 				return; 
 			}
@@ -123,9 +122,7 @@ public class ObjectGrid_Placement : MonoBehaviour {
 			Vector2Int posWithOffset = hitTilePosition.position - hitObjectColliderPosition.position;  
 			bool placeable = objectGridOperations.IsObjectPlaceableAtPosition(hitObjectParent, posWithOffset);
 
-			if (hitTile == null) {
-				UIHideAllButtons();
-
+			if (hitTile != null) {
 				if(placeable) {
 					UIShowAllButtons();
 				} else {
@@ -211,14 +208,15 @@ public class ObjectGrid_Placement : MonoBehaviour {
 	}
 
 	private void UIShowAllButtons() {
-
+		Debug.Log("UIShowAllButtons");
 	}
 
 	private void UIHideAllButtons() {
-		
+		Debug.Log("UIHideAllButtons");
 	}
 
 	private void UIShowAllButtonsWithoutPlaceableButton() {
+		Debug.Log("UIShowAllButtonsWithoutPlaceableButton");
 
 	}
 
@@ -234,7 +232,7 @@ public class ObjectGrid_Placement : MonoBehaviour {
 	public void TryPlacingObjectOnGrid() {
 
 		if(hitObjectParent == null || hitTilePosition == null)
-			return; 
+			return;
 
 		GameObject obj = hitObjectParent; 
 		Vector2Int offset = hitObjectColliderPosition.position;
