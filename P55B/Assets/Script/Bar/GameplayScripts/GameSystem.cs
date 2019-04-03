@@ -73,18 +73,6 @@ public class GameSystem : MonoBehaviour
 		}
 	}
 
-	public void SubObject(ObjectProperties placedObject)
-	{
-		if (objectList.Contains(placedObject))
-		{
-			objectList.Remove(placedObject);
-		}
-		else
-		{
-			Debug.Log("No viable gameObject");
-		}
-	}
-
 	public ObjectProperties PopObject()
 	{
 		if (objectList.Count > 0)
