@@ -481,6 +481,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1889022267628692, guid: fb8cf3f50b0f7654f9994291b2a2089e,
     type: 2}
   m_PrefabInternal: {fileID: 1951390635}
+--- !u!114 &885104630 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114102466919599968, guid: fb8cf3f50b0f7654f9994291b2a2089e,
+    type: 2}
+  m_PrefabInternal: {fileID: 1951390635}
+  m_Script: {fileID: 11500000, guid: 390cc7069edf0f340a42de5fae7935b2, type: 3}
+--- !u!1 &889926955 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1274524072214654, guid: 80409d925e5fe4bc8933a28357a5a2cb,
+    type: 2}
+  m_PrefabInternal: {fileID: 1788213176}
 --- !u!1 &919663674
 GameObject:
   m_ObjectHideFlags: 0
@@ -944,6 +955,26 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114869417233858794, guid: 80409d925e5fe4bc8933a28357a5a2cb,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 885104630}
+    - target: {fileID: 114278188846756178, guid: 80409d925e5fe4bc8933a28357a5a2cb,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 885104630}
+    - target: {fileID: 114577975608025166, guid: 80409d925e5fe4bc8933a28357a5a2cb,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 885104630}
+    - target: {fileID: 114842295733483844, guid: 80409d925e5fe4bc8933a28357a5a2cb,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 885104630}
     - target: {fileID: 114698668859172838, guid: 80409d925e5fe4bc8933a28357a5a2cb,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -991,6 +1022,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 114102466919599968, guid: fb8cf3f50b0f7654f9994291b2a2089e,
+        type: 2}
+      propertyPath: moveObjectButtons
+      value: 
+      objectReference: {fileID: 889926955}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb8cf3f50b0f7654f9994291b2a2089e, type: 2}
   m_IsPrefabAsset: 0

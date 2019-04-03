@@ -30,7 +30,10 @@ public class ObjectGrid_Placement : MonoBehaviour {
 
 	// Initial click bool
 	private bool initalClick = true;
-	private bool initalClickHitObject = false; 
+	private bool initalClickHitObject = false;
+
+    // UI move object buttons
+    public GameObject moveObjectButtons;
 
 	void Start () {
 		objectGridOperations = GetComponent<ObjectGrid_Operations>(); 
@@ -207,16 +210,15 @@ public class ObjectGrid_Placement : MonoBehaviour {
 	}
 
 	private void UIShowAllButtons() {
-		Debug.Log("UIShowAllButtons");
+        moveObjectButtons.SetActive(true);
 	}
 
 	private void UIHideAllButtons() {
-		Debug.Log("UIHideAllButtons");
-	}
+        moveObjectButtons.SetActive(false);
+    }
 
 	private void UIShowAllButtonsWithoutPlaceableButton() {
 		Debug.Log("UIShowAllButtonsWithoutPlaceableButton");
-
 	}
 
 	# endregion
