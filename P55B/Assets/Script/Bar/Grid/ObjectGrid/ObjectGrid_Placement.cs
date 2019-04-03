@@ -225,10 +225,12 @@ public class ObjectGrid_Placement : MonoBehaviour {
 
 	public void RemoveObjectOnGrid(GameObject obj, Vector2Int pos) {
 		Destroy(obj);
-		objectGridOperations.RemoveObject(pos); 
+		objectGridOperations.RemoveObject(pos);
+		UIHideAllButtons();
 	}
 
 	public void TryPlacingObjectOnGrid() {
+		UIHideAllButtons();
 
 		if(hitObjectParent == null || hitTilePosition == null)
 			return;
@@ -263,10 +265,13 @@ public class ObjectGrid_Placement : MonoBehaviour {
 		Object_Values objValues = obj.GetComponent<Object_Values>(); 
 		Object_Movement objMovement = obj.GetComponent<Object_Movement>();
 
+		UIHideAllButtons();
+
 		if(objectGridOperations.AddObject(obj, posWithOffset)) {
 			GameObject tile = floorGridInstantiate.floorGrid[posWithOffset.x, posWithOffset.y]; 
 			objMovement.MoveToGridTileWithOffset(tile, new Vector2Int(0,0));
 			objValues.placedPosition = posWithOffset;
+
 			return true;
 		}
 
@@ -274,7 +279,9 @@ public class ObjectGrid_Placement : MonoBehaviour {
 	}
 
 	public bool PlaceObjectOnGridWithRotation(GameObject obj, Vector2Int pos, Vector2Int offset, float degree) {
-		Object_Values objValues = obj.GetComponent<Object_Values>(); 
+		Object_Values objValues = obj.GetComponent<Object_Values>();
+
+		UIHideAllButtons();
 
 		// Rotate Object
 		Vector3 rotation = Vector3.zero;
@@ -306,6 +313,8 @@ public class ObjectGrid_Placement : MonoBehaviour {
 		Vector2Int posWithOffset = toPos - offset;
 		Object_Values objValues = obj.GetComponent<Object_Values>(); 
 		Object_Movement objMovement = obj.GetComponent<Object_Movement>();
+
+		UIHideAllButtons();
 
 		if(objectGridOperations.MoveObject(fromPos, posWithOffset)) {
 			GameObject tile = floorGridInstantiate.floorGrid[posWithOffset.x, posWithOffset.y]; 
