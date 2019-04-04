@@ -9,26 +9,11 @@ public class Worker : MonoBehaviour
 	private Customer servicedCustomer;
 	[Space]
 	[Header("Variables")]
-	public string workerName;
-	public int workerId;
 	public bool isIdle = true;
-	public float craftSpeed;
-	public float orderSpeed;
-	public List<Recipe> recipeList = new List<Recipe>();
-	public int recipeLimit = 1;
 	private float timer;
-	// Add more information like crafting time, cost, etc.
-
 	#endregion
 
 	#region Methods
-	void Start()
-	{
-		InitializeWorker(workerId);
-		GamePlaySystem.Instance.AddWorkerToList(this);
-		// Load worker stats here
-	}
-
 	private void Update()
 	{
 		if (isIdle)
@@ -37,11 +22,11 @@ public class Worker : MonoBehaviour
 			{
 				for (int i = 0; i < GamePlaySystem.Instance.orderingCustomerList.Count; i++)
 				{
-					if (recipeList.Contains(GamePlaySystem.Instance.orderingCustomerList[i].selectedRecipe))
+					if (GameSystem.Instance.recipeList.Contains(GamePlaySystem.Instance.orderingCustomerList[i].selectedRecipe))
 					{
 						servicedCustomer = GamePlaySystem.Instance.orderingCustomerList[i];
 						GamePlaySystem.Instance.orderingCustomerList.RemoveAt(i);
-						timer = servicedCustomer.selectedRecipe.recipeCraftTime / craftSpeed;
+						timer = servicedCustomer.selectedRecipe.recipeCraftTime / (GameSystem.Instance.workerUnlocks[1] + 1);
 						isIdle = false;
 						AudioManager.Instance.Play("DrinkPour" + Random.Range(1,4));
 						break;
@@ -57,7 +42,7 @@ public class Worker : MonoBehaviour
 				servicedCustomer = GamePlaySystem.Instance.customerList[0];
 				GamePlaySystem.Instance.customerList.RemoveAt(0);
 				isIdle = false;
-				timer = 3 / orderSpeed;
+				timer = 3 / (GameSystem.Instance.workerUnlocks[1] + 1);
 			}
 		}
 		if (!isIdle)
@@ -91,48 +76,7 @@ public class Worker : MonoBehaviour
 	}
 
 	#region SystemMethods
-	public void InitializeWorker(int newId)
-	{
-		workerId = newId;
-		craftSpeed = 1;
-		orderSpeed = 1;
-
-		switch (workerId)
-		{
-			case 1:
-				workerName = "HEL-Pi";
-				recipeList = new List<Recipe> { new Recipe(1), new Recipe(2), new Recipe(3) };
-				craftSpeed = 1;
-				orderSpeed = 1;
-				break;
-			case 2:
-				workerName = "HEL-Po";
-				recipeList = new List<Recipe> { new Recipe(3) };
-				break;
-			default:
-				Debug.Log("No valid Worker ID");
-				break;
-		}
-	}
-
-	public void AddRecipe(Recipe newRecipe)
-	{
-		if (recipeList.Count < recipeLimit)
-		{
-			if (!recipeList.Contains(newRecipe))
-			{
-				recipeList.Add(newRecipe);
-			}
-		}
-	}
-
-	public void RemoveRecipe(Recipe oldRecipe)
-	{
-		if (recipeList.Contains(oldRecipe))
-		{
-			recipeList.Remove(oldRecipe);
-		}
-	}
+	
 	#endregion
 
 	#region GameplayMethods
@@ -146,9 +90,17 @@ public class Worker : MonoBehaviour
 	public void ServeOrder(Customer customer)
 	{
 		int sum = customer.selectedRecipe.recipePrice;
-		if (customer.drinkValue <= 90)
+		if (customer.drinkValue <= 100)
 		{
-			sum *= Mathf.RoundToInt(1 + Mathf.Floor((100 - customer.drinkValue) / 10) / 10);
+			sum = Mathf.RoundToInt(sum * (1 + Mathf.Floor((109 - customer.drinkValue) / 10) / 10));
+		}
+		else if(customer.drinkValue >= 200 && customer.drinkValue < 300)
+		{
+			sum = Mathf.RoundToInt(sum * (0.5f + Mathf.Floor((300 - customer.drinkValue) / 10) / 20));
+		}
+		else if (customer.drinkValue >= 300)
+		{
+			sum = Mathf.RoundToInt(sum * 0.5f);
 		}
 
 		AudioManager.Instance.Play("Cash" + Random.Range(1,4));
