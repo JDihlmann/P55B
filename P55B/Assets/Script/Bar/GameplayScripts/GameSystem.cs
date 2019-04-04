@@ -19,7 +19,8 @@ public class GameSystem : MonoBehaviour
 	public int money = 0;
 	public int happiness = 0;
 	public List<ObjectProperties> objectList = new List<ObjectProperties>(); // Placed objects
-	// Save array with 3 variable objects
+                                                                             // Save array with 3 variable objects
+    public SaveGameData savedData;
 	#endregion
 
 	#region Methods
@@ -29,6 +30,11 @@ public class GameSystem : MonoBehaviour
 		{
 			Instance = this;
 			DontDestroyOnLoad(gameObject);
+            savedData = LoadGameSystem();
+            ingredientAmount = savedData.ingredientAmount;
+            // TODO Set the remaining Data
+
+
 		}
 		else
 		{
@@ -183,7 +189,7 @@ public class GameSystem : MonoBehaviour
 		}
 	}
 
-	public void SaveGameSystem()
+	public static void SaveGameSystem()
 	{
 		// Save all values into binary or smth
 		BinaryFormatter formatter = new BinaryFormatter();
@@ -197,7 +203,7 @@ public class GameSystem : MonoBehaviour
 		stream.Close();
 	}
 
-	public SaveGameData LoadGameSystem()
+	public static SaveGameData LoadGameSystem()
 	{
 		// Load all values from binary or smth
 		//string path = Application.persistentDataPath + "/ingredients.bla";

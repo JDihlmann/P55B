@@ -10,7 +10,7 @@ public class Blackhole : MonoBehaviour {
 	//[Space]
 	[Header("Variables")]
 
-    IngredientsData data = SaveSystem.LoadIngredients();
+    SaveGameData data = GameSystem.LoadGameSystem();
     public int[] ingredientCounter = new int[4];
     public int destroyedIngredient;
 
@@ -21,7 +21,7 @@ public class Blackhole : MonoBehaviour {
 	{
 		if (data != null)
 			{
-				ingredientCounter = data.ingredients;
+				ingredientCounter = data.ingredientAmount;
 			}
 	}
 
@@ -42,15 +42,17 @@ public class Blackhole : MonoBehaviour {
                 destroyedIngredient = Random.Range(0, 4);
                 //IngredientManager.Ingredients[destroyedIngredient].Count -= 1;
                 ingredientCounter[destroyedIngredient] -= 1 ;
+                GameSystem.Instance.AddIngredient(destroyedIngredient, -1);
             }
             else
             {
                 //IngredientManager.Ingredients[ingredient.index].UpdateCount(1);
                 // Next line is for Debug purposes:
                 ingredientCounter[ingredient.index] += 1;
+                GameSystem.Instance.AddIngredient(ingredient.index, 1);
             }
 			// Save Counter
-			SaveSystem.SaveIngredients(this);
+			GameSystem.SaveGameSystem();
 
 			// Destroy Object TODO? Replace with animation pulling into black hole
 			IngredientSpawner.objectCounter -= 1;
