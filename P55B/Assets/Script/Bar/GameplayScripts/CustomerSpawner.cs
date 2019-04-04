@@ -15,6 +15,8 @@ public class CustomerSpawner : MonoBehaviour
 	public float spawnDelay;
 	public Transform[] spawnPoints;
 	private bool isSpawning = false;
+	[SerializeField]
+	private bool lockMaximum = false;
 	#endregion
 
 	#region Methods
@@ -75,13 +77,16 @@ public class CustomerSpawner : MonoBehaviour
 		int happiness = GameSystem.Instance.happiness;
 		spawnDelay = Random.Range(1, 3f);
 
-		if (happiness < Mathf.Pow(2, spawnMaximum - 1))
+		if (!lockMaximum)
 		{
-			spawnMaximum -= 1;
-		}
-		else if (happiness >= Mathf.Pow(2, spawnMaximum))
-		{
-			spawnMaximum += 1;
+			if (happiness < Mathf.Pow(2, spawnMaximum - 1))
+			{
+				spawnMaximum -= 1;
+			}
+			else if (happiness >= Mathf.Pow(2, spawnMaximum))
+			{
+				spawnMaximum += 1;
+			}
 		}
 	}
 

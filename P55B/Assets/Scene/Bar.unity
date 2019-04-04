@@ -388,6 +388,16 @@ Prefab:
       propertyPath: spawnPoints.Array.data[1]
       value: 
       objectReference: {fileID: 573276653}
+    - target: {fileID: 114118925102759882, guid: b7099e21e9e30db4fbc146432b697daf,
+        type: 2}
+      propertyPath: spawnMaximum
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114118925102759882, guid: b7099e21e9e30db4fbc146432b697daf,
+        type: 2}
+      propertyPath: lockMaximum
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b7099e21e9e30db4fbc146432b697daf, type: 2}
   m_IsPrefabAsset: 0
@@ -1027,6 +1037,11 @@ Prefab:
       propertyPath: moveObjectButtons
       value: 
       objectReference: {fileID: 889926955}
+    - target: {fileID: 23918466270431994, guid: fb8cf3f50b0f7654f9994291b2a2089e,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb8cf3f50b0f7654f9994291b2a2089e, type: 2}
   m_IsPrefabAsset: 0

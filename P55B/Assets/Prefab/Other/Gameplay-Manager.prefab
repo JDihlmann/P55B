@@ -81,6 +81,7 @@ MonoBehaviour:
   spawnPoints:
   - {fileID: 0}
   - {fileID: 0}
+  lockMaximum: 0
 --- !u!114 &114844341422384404
 MonoBehaviour:
   m_ObjectHideFlags: 1
