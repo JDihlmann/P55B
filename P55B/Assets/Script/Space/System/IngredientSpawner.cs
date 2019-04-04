@@ -63,11 +63,11 @@ public class IngredientSpawner : MonoBehaviour {
         float side = Random.value;
         if (side < .5f)
         {
-            Instantiate(ingredientLeft, spawnPointsLeft[spawnPointLeftIndex], new Quaternion(0.0f, 0.0f, 0.0f, 1.0f));
+            Instantiate(ingredientLeft, spawnPointsLeft[spawnPointLeftIndex], new Quaternion(0.0f, 0.0f, 0.0f, 1.0f), transform);
         }
         else
         {
-            Instantiate(ingredientRight, spawnPointsRight[spawnPointRightIndex], new Quaternion(0.0f, 0.0f, 0.0f, 1.0f));
+            Instantiate(ingredientRight, spawnPointsRight[spawnPointRightIndex], new Quaternion(0.0f, 0.0f, 0.0f, 1.0f), transform);
         }
         
     }

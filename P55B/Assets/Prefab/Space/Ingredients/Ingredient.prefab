@@ -128,6 +128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ingredientName: 
   index: 0
+  spawner: {fileID: 0}
 --- !u!114 &114951578234912508
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -140,8 +141,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planet: {fileID: 0}
-  orbitSpeed: 50
   rotationSpeed: -5
+  speed: 0
   playerTouchCount: 0
 --- !u!135 &135872752650138432
 SphereCollider:

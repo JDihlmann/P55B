@@ -143,6 +143,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ingredientName: 
   index: 0
+  spawner: {fileID: 0}
 --- !u!135 &135632633082931486
 SphereCollider:
   m_ObjectHideFlags: 1
