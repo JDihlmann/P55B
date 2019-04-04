@@ -34,11 +34,11 @@ public class IngredientSpawner : MonoBehaviour {
 		objectCounter = GameObject.FindGameObjectsWithTag("Moveable").Length;
         //cam = Camera.Camera_Space; ;
         spawnpoint1 = cam.ScreenToWorldPoint(new Vector3(1.3f*Screen.width, 2.2f * Screen.height / 5, 57.5f));
-        spawnpoint2 = cam.ScreenToWorldPoint(new Vector3(0, 2.6f*Screen.height / 5, 55f));
+        spawnpoint2 = cam.ScreenToWorldPoint(new Vector3(0, 2.6f*Screen.height / 5, 65f));
         spawnpoint3 = cam.ScreenToWorldPoint(new Vector3(1.3f*Screen.width, 3.0f * Screen.height / 5, 52.5f));
-        spawnpoint4 = cam.ScreenToWorldPoint(new Vector3(0, 3.4f * Screen.height / 5, 50f));
+        spawnpoint4 = cam.ScreenToWorldPoint(new Vector3(0, 3.4f * Screen.height / 5, 60f));
         spawnpoint5 = cam.ScreenToWorldPoint(new Vector3(1.3f*Screen.width, 3.8f * Screen.height / 5, 47.5f));
-        spawnpoint6 = cam.ScreenToWorldPoint(new Vector3(0, 4.2f * Screen.height / 5, 45f));
+        spawnpoint6 = cam.ScreenToWorldPoint(new Vector3(0, 4.2f * Screen.height / 5, 55f));
         spawnpoint7 = cam.ScreenToWorldPoint(new Vector3(1.3f*Screen.width, 4.6f * Screen.height / 5, 42.5f));
         spawnpoint2.x = spawnpoint2.x * 1.5f;
         spawnpoint4.x = spawnpoint2.x * 1.5f;
