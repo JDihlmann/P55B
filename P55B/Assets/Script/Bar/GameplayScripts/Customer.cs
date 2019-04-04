@@ -50,6 +50,7 @@ public class Customer : MonoBehaviour
 	{
 		GenerateOffset();
 		agent = gameObject.GetComponent<NavMeshAgent>();
+		agent.updateRotation = false;
 		InitializeCustomer(0);
 		AudioManager.Instance.Play("PortalOut");
 	}
@@ -163,6 +164,30 @@ public class Customer : MonoBehaviour
 			}
 		}
 
+	}
+
+	private void LateUpdate()
+	{
+		if (agent.velocity.sqrMagnitude > Mathf.Epsilon)
+		{
+			transform.rotation = Quaternion.LookRotation(agent.velocity.normalized);
+		}
+		else
+		{
+			if (destination != null)
+			{
+				if (destination != GamePlaySystem.Instance.bar && destination != GamePlaySystem.Instance.exit)
+				{
+					Vector3 targetPosition = new Vector3(-destination.transform.position.x, transform.position.y, -destination.transform.position.z);
+					transform.LookAt(targetPosition);
+				}
+				else
+				{
+					Vector3 targetPosition = new Vector3(destination.transform.position.x, transform.position.y, destination.transform.position.z);
+					transform.LookAt(targetPosition);
+				}
+			}
+		}
 	}
 
 	#region SystemMethods
