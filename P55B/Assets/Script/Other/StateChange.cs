@@ -12,7 +12,6 @@ public class StateChange : MonoBehaviour {
 
     // UI GameObjects
     public GameObject planetButton;
-    public GameObject buildModusButton;
 
 	// Bar GameObjects
 	// TODO: Insert GameObjects 
@@ -20,9 +19,9 @@ public class StateChange : MonoBehaviour {
 	// Build GameObjects
 	public GameObject objectGrid;
 
-    // Space GameObjects
-    // TODO: Insert GameObjects 
-    public GameObject ingredientSpawner;
+	// Space GameObjects
+	// TODO: Insert GameObjects 
+
 
 	void Start () {
 		// TODO: Choose Initial State
@@ -54,9 +53,9 @@ public class StateChange : MonoBehaviour {
 	# region UI State
 
 	public void ActivateUIState() {
-		if(currentState != State.Space) {
+		if(currentState != State.UI) {
 			DeactivateState(currentState);
-			currentState = State.Space; 
+			currentState = State.UI; 
 		}
 
 		// TODO: Add ui relateded scripts / objects / ...
@@ -132,31 +131,19 @@ public class StateChange : MonoBehaviour {
 			DeactivateState(currentState);
 			currentState = State.Space; 
 		}
-        // TODO: Add space relateded scripts / objects / ...
 
-        Camera_State cameraState = Camera.main.GetComponent<Camera_State>();
-		cameraState.ZoomToSpace();
+		Camera_State cameraState = Camera.main.GetComponent<Camera_State>();
+		cameraState.ZoomToSpace(); 
 
-        //deactivate BuildModusButton
-        buildModusButton.SetActive(false);
-
-        //activate Spawner
-        ingredientSpawner.SetActive(true);
-
+		// TODO: Add space relateded scripts / objects / ...
 	}
 
 	public void DeactivateSpaceState() {
 		// TODO: Add space relateded scripts / objects / ...
 
 		Camera_State cameraState = Camera.main.GetComponent<Camera_State>();
-		cameraState.ZoomToBar();
-
-        //activate BuildModusButton
-        buildModusButton.SetActive(true);
-
-        //deactivate Spawner
-        ingredientSpawner.SetActive(false);
-    }
+		cameraState.ZoomToBar(); 
+	}
 
 	# endregion
 }
