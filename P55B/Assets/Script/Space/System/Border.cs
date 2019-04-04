@@ -17,9 +17,9 @@ public class Border : MonoBehaviour {
     #region Methods
     void Start()
     {
-        height = cam.ScreenToWorldPoint(new Vector3(0,Screen.height, 54f)).y;
-        width = cam.ScreenToWorldPoint(new Vector3(Screen.width, 0, 54f)).x;
-        transform.localScale = new Vector3(3.5f*width, 3f*height, 30f);
+        height = cam.ScreenToWorldPoint(new Vector3(0,Screen.height, 65f)).y;
+        width = cam.ScreenToWorldPoint(new Vector3(Screen.width, 0, 70f)).x;
+        transform.localScale = new Vector3(4f*width, 2.5f*height, 30f);
         transform.Rotate(0, 45f,0);
     }
 
