@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66ac88a38bf06fa43921b3b6b1cadd02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  workerPrefab: {fileID: 1520834213941980, guid: c05e08c2fc375cc45a23b8c30872e87d,
+  workerPrefab: {fileID: 1371980371254736, guid: c05e08c2fc375cc45a23b8c30872e87d,
     type: 2}
   customerList: []
   orderingCustomerList: []

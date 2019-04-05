@@ -8,7 +8,6 @@ public class GamePlaySystem : MonoBehaviour
 
 	#region Variables
 	//[Header("Components")]
-	public GameObject workerPrefab;
 	private CustomerSpawner spawner;
 	//[Space]
 	[Header("Variables")]
@@ -77,8 +76,9 @@ public class GamePlaySystem : MonoBehaviour
 
 	public void SpawnWorker()
 	{
-		GameObject newWorker = Instantiate(workerPrefab, transform.position, new Quaternion(0.0f, 0.0f, 0.0f, 1.0f));
+		GameObject newWorker = Instantiate(new GameObject("Worker"), transform.position, new Quaternion(0.0f, 0.0f, 0.0f, 1.0f));
 		newWorker.transform.parent = gameObject.transform;
+		newWorker.AddComponent<Worker>();
 	}
 
 	public void AddSeatToList(GameObject seat)
