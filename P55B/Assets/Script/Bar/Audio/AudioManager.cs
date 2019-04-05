@@ -58,7 +58,7 @@ public class AudioManager : MonoBehaviour
 		}
 		else
 		{
-			Debug.LogWarning("WARNING: Audio is muted");
+			// Debug.LogWarning("WARNING: Audio is muted");
 		}
 	}
 
