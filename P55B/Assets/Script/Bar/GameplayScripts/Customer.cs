@@ -441,18 +441,18 @@ public class Customer : MonoBehaviour
 
 	public void SelectDrink()
 	{
-		int bestValue = 1000;
-		for (int i = 0; i < GamePlaySystem.Instance.totalRecipeList.Count; i++)
+		int bestValue = 400;
+		for (int i = 0; i < GameSystem.Instance.recipeList.Count; i++)
 		{
 			int currentValue = 0;
 			for (int k = 0; k < 4; k++)
 			{
-				currentValue += Mathf.Abs(customerPreference[k] - GamePlaySystem.Instance.totalRecipeList[i].recipeStats[k]);
+				currentValue += Mathf.Abs(customerPreference[k] - GameSystem.Instance.recipeList[i].recipeStats[k]);
 			}
-			if (currentValue < bestValue)
+			if (currentValue <= bestValue)
 			{
 				bestValue = currentValue;
-				selectedRecipe = GamePlaySystem.Instance.totalRecipeList[i];
+				selectedRecipe = GameSystem.Instance.recipeList[i];
 			}
 		}
 		drinkValue = bestValue;

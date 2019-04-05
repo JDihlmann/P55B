@@ -166,7 +166,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: BLUE LAGOON
+  m_Text: EMPTY DRINK SLOT
 --- !u!114 &114542280465846928
 MonoBehaviour:
   m_ObjectHideFlags: 1
