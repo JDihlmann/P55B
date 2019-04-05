@@ -242,7 +242,6 @@ public class GameSystem : MonoBehaviour
 		money = 0;
 		happiness = 0;
 		objectList = new List<ObjectProperties>();
-		GamePlaySystem.Instance.SpawnWorker();
 	}
 
 	public static void SaveGameSystem()
@@ -292,11 +291,6 @@ public class GameSystem : MonoBehaviour
 		workerUnlocks = savedData.workerUnlocks;
 		objectList = savedData.objectList;
 		recipeList = savedData.recipeList;
-		GamePlaySystem.Instance.SpawnWorker();
-		for (int i = 0; i < workerUnlocks[2]; i++)
-		{
-			GamePlaySystem.Instance.SpawnWorker();
-		}
 	}
 	#endregion
 

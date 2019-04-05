@@ -37,6 +37,15 @@ public class GamePlaySystem : MonoBehaviour
 		spawner = gameObject.GetComponent<CustomerSpawner>();
 	}
 
+	public void Start()
+	{
+		SpawnWorker();
+		for (int i = 0; i < GameSystem.Instance.workerUnlocks[2]; i++)
+		{
+			SpawnWorker();
+		}
+	}
+
 	public void Update()
 	{
 		if (Input.GetKeyUp(KeyCode.KeypadPlus))
