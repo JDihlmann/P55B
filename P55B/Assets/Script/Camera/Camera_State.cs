@@ -19,7 +19,7 @@ public class Camera_State : MonoBehaviour {
 	public Vector3 spaceRotation;
 
 	// Movement 
-	bool zoom = false; 
+	public bool zoom = false; 
 	float currentTime = 0f;
  	float timeToMove = 1.5f;
 
@@ -44,7 +44,7 @@ public class Camera_State : MonoBehaviour {
 	}
 
 	void LateUpdate () {
-		if (zoom && cameraRotation.snapped) {
+		if (zoom) {
 			if (currentTime <= timeToMove)	{
             	currentTime += Time.deltaTime;
 				Vector3 cameraPosition = new Vector3(-28f, 0, -28f);
@@ -58,10 +58,6 @@ public class Camera_State : MonoBehaviour {
 				Camera.main.transform.position = new Vector3(-28f, positionLerp2, -28f);
 				currentTime = 0f;
 				zoom = false;
-
-				// Camera Rotation Script enable / disable
-				cameraRotation = transform.GetComponent<Camera_Rotation>(); 
-				cameraRotation.enabled = cameraRotationAllowed;
 			}
 		}
 	
@@ -74,19 +70,15 @@ public class Camera_State : MonoBehaviour {
 		positionLerp2 = barPosition.y;
 
 		zoom = true; 
-		cameraRotationAllowed = true; 
 	}
 
 	public void ZoomToSpace() {
-		cameraRotation = transform.GetComponent<Camera_Rotation>(); 
-		// cameraRotation.SelectSnapToDefaultEdge(); 
 		sizeLerp1 = barSize;
 		sizeLerp2 = spaceSize;   
 		positionLerp1 = barPosition.y;
 		positionLerp2 = spacePosition.y;
 
 		zoom = true; 
-		cameraRotationAllowed = false; 
 	}
 	
 }

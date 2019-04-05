@@ -10,13 +10,16 @@ public class ObjectGrid_Placement : MonoBehaviour {
 	// Hit object
 	private GameObject hitObject;
 	private GameObject hitObjectParent;
+	private Vector2Int hitObjectParentPosition; 
 	private Object_Values hitObjectParentValues;
 	private Object_Movement hitObjectParentMovement;
+	private Vector2Int hitObjectParentColliderPosition; 
 	private Collider_Position hitObjectColliderPosition;
 	private bool hitObjectParentPlaced = false; 
 
 	// Hit object rotation
-	private Vector3 previousHitObjectParentRotation;
+	private Vector3 previousHitObjectParentRotation; 
+	private Vector3 previousPlacedHitObjectParentRotation;
 	
 	// Hit tile
 	private GameObject hitTile;
@@ -68,8 +71,12 @@ public class ObjectGrid_Placement : MonoBehaviour {
 
 				GetHitObjectComponents();
 
-				if (IsDiffrentObject || (hitObjectParentPlaced && hitObjectParent != null)) {
+				if (hitObject != null) {
 					previousHitObjectParentRotation = hitObjectParent.transform.eulerAngles;
+				}
+
+				if (IsDiffrentObject || (hitObjectParentPlaced && hitObjectParent != null)) {
+					previousPlacedHitObjectParentRotation = hitObjectParent.transform.eulerAngles;
 					hitObjectParentValues.previousOccupiedSpace = (Vector2Int[])hitObjectParentValues.occupiedSpace.Clone();
 				}
 
@@ -78,20 +85,24 @@ public class ObjectGrid_Placement : MonoBehaviour {
 		}
 
 		if (initalClickHitObject) {
+			// Set position values
+			float rotation = hitObjectParent.transform.eulerAngles.y; 
+			Vector2Int colliderPosition = hitObjectColliderPosition.position;
+			hitObjectParentColliderPosition = GetRotationForColliderPosition(colliderPosition, rotation); 
+
 			// Move with mouse 
-			Vector2Int colliderPosition = hitObjectColliderPosition.position; 
-			hitObjectParentMovement.MoveOnMoveableLayerWithMouseAndOffset(colliderPosition);
+			hitObjectParentMovement.MoveOnMoveableLayerWithMouseAndOffset(hitObjectParentColliderPosition);
 			
 			// Mark tiles hovered over
 			if (DidRaycastHitTile() && hitTileChanged) {
 				GetTileComponents();
 				
 				// Object placeable at position
-				Vector2Int posWithOffset = hitTilePosition.position - colliderPosition;  
-				bool placeable = objectGridOperations.IsObjectPlaceableAtPosition(hitObjectParent, posWithOffset);
+				hitObjectParentPosition =  hitTilePosition.position - hitObjectParentColliderPosition; 
+				bool placeable = objectGridOperations.IsObjectPlaceableAtPosition(hitObjectParent, hitObjectParentPosition);
 
 				// Mark tiles
-				hitTileFloorGridMarkTile.MarkTiles(hitTilePosition.position, colliderPosition, hitObjectParentValues.occupiedSpace, placeable); 
+				hitTileFloorGridMarkTile.MarkTiles(hitTilePosition.position, hitObjectParentColliderPosition, hitObjectParentValues.occupiedSpace, placeable); 
 			} else if (hitTileChanged) {
 				hitTileFloorGridMarkTile.UnmarkTiles();
 			}
@@ -101,28 +112,20 @@ public class ObjectGrid_Placement : MonoBehaviour {
 
 	private void MouseUp() {
 		if (initalClickHitObject) {
-			GameObject obj = hitObjectParent; 
-
-			// Grid object position
-			Vector2Int offset = hitObjectColliderPosition.position;
 			Vector2Int fromPos = hitObjectParentValues.placedPosition;
 
 			// Object not above grid 
 			if(hitTile == null) {
 				UIHideAllButtons();
-				RemoveObjectOnGrid(obj, fromPos);
+				RemoveObjectOnGrid(hitObjectParent, fromPos);
 				return; 
 			}
 
-			// Grid tile position
 			Vector2Int toPos = hitTilePosition.position;
 
-			// Place object above grid
-			PlaceObjectAboveGrid(obj, offset);
+			PlaceObjectAboveGrid(hitObjectParent, hitObjectParentColliderPosition);
 
-			// Toogle UI buttons
-			Vector2Int posWithOffset = hitTilePosition.position - hitObjectColliderPosition.position;  
-			bool placeable = objectGridOperations.IsObjectPlaceableAtPosition(hitObjectParent, posWithOffset);
+			bool placeable = objectGridOperations.IsObjectPlaceableAtPosition(hitObjectParent, hitObjectParentPosition);
 
 			if (hitTile != null) {
 				if(placeable) {
@@ -140,30 +143,26 @@ public class ObjectGrid_Placement : MonoBehaviour {
 	#region UI  
 
 	public void UIRemoveObjectOnGrid() {
-		// Grid position
 		Vector2Int fromPos = hitObjectParentValues.placedPosition;
 
 		RemoveObjectOnGrid(hitObjectParent, fromPos);
 
-		// Unmark Tiles
 		hitTileFloorGridMarkTile.UnmarkTiles();
 
 		hitObjectParentPlaced = true; 
 	}
 
 	public void UISetObjectOnGridBack() {
-		// Grid position
 		Vector2Int fromPos = hitObjectParentValues.placedPosition;
 
 		if(!objectGridOperations.IsPositionEmpty(fromPos)) {
 			// Undo Rotation
-			hitObjectParent.transform.eulerAngles = previousHitObjectParentRotation;
+			hitObjectParent.transform.eulerAngles = previousPlacedHitObjectParentRotation;
 			hitObjectParentValues.occupiedSpace = (Vector2Int[])hitObjectParentValues.previousOccupiedSpace.Clone();
 		
 			PlaceObjectOnGrid(hitObjectParent, fromPos, new Vector2Int(0,0)); 
 		}
 
-		// Unmark Tiles
 		hitTileFloorGridMarkTile.UnmarkTiles();
 
 		hitObjectParentPlaced = true; 
@@ -171,14 +170,13 @@ public class ObjectGrid_Placement : MonoBehaviour {
 
 	public void UIPlaceObjectOnGrid() {
 		// Grid position
-		Vector2Int offset = hitObjectColliderPosition.position;
 		Vector2Int fromPos = hitObjectParentValues.placedPosition;
 		Vector2Int toPos = hitTilePosition.position;
 
 		if(objectGridOperations.IsPositionEmpty(fromPos)) {
-			PlaceObjectOnGrid(hitObjectParent, toPos, offset);
+			PlaceObjectOnGrid(hitObjectParent, toPos, hitObjectParentColliderPosition);
 		} else {
-			MoveObjectOnGrid(hitObjectParent, fromPos, toPos, offset); 
+			MoveObjectOnGrid(hitObjectParent, fromPos, toPos, hitObjectParentColliderPosition); 
 		}
 
 		// Unmark Tiles
@@ -198,15 +196,18 @@ public class ObjectGrid_Placement : MonoBehaviour {
 			hitObjectParentValues.occupiedSpace[i] = new Vector2Int(space.y, -space.x);
 		}
 
+		// Collider rotation with roation
+		Vector2Int rotatedHitObjectParentColliderPosition = GetRotationForColliderPosition(hitObjectColliderPosition.position, previousHitObjectParentRotation.y); 
+
 		// Object placeable at position
-		Vector2Int colliderPosition = hitObjectColliderPosition.position; 
-		Vector2Int posWithOffset = hitTilePosition.position - colliderPosition;  
+		Vector2Int posWithOffset = hitTilePosition.position - rotatedHitObjectParentColliderPosition;  
 		bool placeable = objectGridOperations.IsObjectPlaceableAtPosition(hitObjectParent, posWithOffset);
 
 		// Mark tiles
-		hitTileFloorGridMarkTile.MarkTiles(hitTilePosition.position, colliderPosition, hitObjectParentValues.occupiedSpace, placeable); 
+		hitTileFloorGridMarkTile.MarkTiles(hitTilePosition.position, rotatedHitObjectParentColliderPosition, hitObjectParentValues.occupiedSpace, placeable); 
 
-
+		// Set values
+		hitObjectParentPosition = posWithOffset; 
 	}
 
 	private void UIShowAllButtons() {
@@ -218,6 +219,7 @@ public class ObjectGrid_Placement : MonoBehaviour {
     }
 
 	private void UIShowAllButtonsWithoutPlaceableButton() {
+		moveObjectButtons.SetActive(true);
 		Debug.Log("UIShowAllButtonsWithoutPlaceableButton");
 	}
 
@@ -237,17 +239,15 @@ public class ObjectGrid_Placement : MonoBehaviour {
 		if(hitObjectParent == null || hitTilePosition == null)
 			return;
 
-		GameObject obj = hitObjectParent; 
-		Vector2Int offset = hitObjectColliderPosition.position;
 		Vector2Int fromPos = hitObjectParentValues.placedPosition;
 		Vector2Int toPos = hitTilePosition.position;
 
 		// All possible place combinations
 		if(objectGridOperations.IsPositionEmpty(fromPos)) {
-			if(!PlaceObjectOnGrid(obj, toPos, offset))
-				RemoveObjectOnGrid(obj, fromPos); 
+			if(!PlaceObjectOnGrid(hitObjectParent, toPos, hitObjectParentColliderPosition))
+				RemoveObjectOnGrid(hitObjectParent, fromPos); 
 		} else {
-			MoveObjectOnGrid(obj, fromPos, toPos, offset); 
+			MoveObjectOnGrid(hitObjectParent, fromPos, toPos, hitObjectParentColliderPosition); 
 		}
 
 		// Unmark Tiles
@@ -325,12 +325,24 @@ public class ObjectGrid_Placement : MonoBehaviour {
 			return true;
 		} 
 
-		hitObjectParent.transform.eulerAngles = previousHitObjectParentRotation;
+		hitObjectParent.transform.eulerAngles = previousPlacedHitObjectParentRotation;
 		hitObjectParentValues.occupiedSpace = (Vector2Int[])hitObjectParentValues.previousOccupiedSpace.Clone();
 
 		PlaceObjectOnGrid(obj, fromPos, new Vector2Int(0,0)); 
 
 		return false; 
+	}
+
+	public Vector2Int GetRotationForColliderPosition(Vector2Int colliderPosition, float degree) {
+		if (degree == 90) {
+			return new Vector2Int(colliderPosition.y, -colliderPosition.x);
+		} else if (degree == 180) {
+			return new Vector2Int(-colliderPosition.x, -colliderPosition.y);
+		} else if (degree == 270 || degree == -90) {
+			return new Vector2Int(-colliderPosition.y, colliderPosition.x);
+		} else {
+			return colliderPosition; 
+		}
 	}
 
 	# endregion
@@ -344,7 +356,7 @@ public class ObjectGrid_Placement : MonoBehaviour {
 		hitObject = collider;
 
 		GetHitObjectComponents();
-		previousHitObjectParentRotation = hitObjectParent.transform.eulerAngles;
+		previousPlacedHitObjectParentRotation = hitObjectParent.transform.eulerAngles;
 		hitObjectParentValues.previousOccupiedSpace = (Vector2Int[])hitObjectParentValues.occupiedSpace.Clone();
 		hitObjectParentPlaced = false; 
 
@@ -415,7 +427,7 @@ public class ObjectGrid_Placement : MonoBehaviour {
 		hitObject = null; 
 		initalClick = true;
 		hitTileChanged = false; 
-		initalClickHitObject = false; 
+		initalClickHitObject = false;
 	}
 
 	# endregion

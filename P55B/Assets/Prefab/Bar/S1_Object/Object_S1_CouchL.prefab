@@ -974,7 +974,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f941b33051c8bb54692957a759c24793, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  placedPosition: {x: 4, y: 7}
+  placedPosition: {x: -1, y: -1}
   occupiedSpace:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
