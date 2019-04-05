@@ -8,11 +8,10 @@ public class GamePlaySystem : MonoBehaviour
 
 	#region Variables
 	//[Header("Components")]
+	public GameObject workerPrefab;
 	private CustomerSpawner spawner;
 	//[Space]
 	[Header("Variables")]
-	public List<Worker> totalWorkerList = new List<Worker>();
-	public List<Recipe> totalRecipeList = new List<Recipe>();
 	public List<Customer> customerList = new List<Customer>();
 	public List<Customer> orderingCustomerList = new List<Customer>();
 	public List<GameObject> availableSeatList = new List<GameObject>();
@@ -76,10 +75,10 @@ public class GamePlaySystem : MonoBehaviour
 		orderingCustomerList.Add(customer);
 	}
 
-	public void AddWorkerToList(Worker worker)
+	public void SpawnWorker()
 	{
-		totalWorkerList.Add(worker);
-		UpdateRecipes();
+		GameObject newWorker = Instantiate(workerPrefab, transform.position, new Quaternion(0.0f, 0.0f, 0.0f, 1.0f));
+		newWorker.transform.parent = gameObject.transform;
 	}
 
 	public void AddSeatToList(GameObject seat)
@@ -111,41 +110,6 @@ public class GamePlaySystem : MonoBehaviour
 		{
 			availableSeatList.Add(seat);
 		}
-	}
-
-	public void UpdateRecipes() // Creates a List with ALL equipped recipes.
-	{
-		totalRecipeList.Clear();
-		if (totalWorkerList.Count > 0)
-		{
-			for (int i = 0; i < totalWorkerList.Count; i++)
-			{
-				for (int k = 0; k < totalWorkerList[i].recipeList.Count; k++)
-				{
-					if (IsUniqueRecipe(totalWorkerList[i].recipeList[k].recipeId))
-					{
-						totalRecipeList.Add(totalWorkerList[i].recipeList[k]);
-					}		
-				}
-			}
-		}
-		else
-		{
-			Debug.Log("No workers assigned");
-		}
-	}
-
-	private bool IsUniqueRecipe(int newRecipeId)
-	{
-		for (int i = 0; i < totalRecipeList.Count; i++)
-		{
-			if (totalRecipeList[i].recipeId == newRecipeId)
-			{
-				return false;
-			}
-		}
-
-		return true;
 	}
 	#endregion
 }

@@ -70,7 +70,7 @@ public class KeyboardInput : MonoBehaviour {
 
 
 		if (Input.GetKeyDown("space")) {
-			objectGridInstantiate.SpawnNewObjectWithID(1);
+			objectGridInstantiate.SpawnNewObjectWithID(4);
 		}
 
 
