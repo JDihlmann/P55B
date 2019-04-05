@@ -11612,7 +11612,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   s1_Tabel: {fileID: 1250474341391020, guid: dc90c2bca00e1e042aacd345dd99e536, type: 2}
-  s1_Chair: {fileID: 1095436220130688, guid: 142381825589ff64ebfc6897a7743ba2, type: 2}
+  s1_Chair_Red: {fileID: 1095436220130688, guid: cfcfe46fb3342e34f83e12ee614a924f,
+    type: 2}
+  s1_Chair_Yellow: {fileID: 1095436220130688, guid: 142381825589ff64ebfc6897a7743ba2,
+    type: 2}
+  s1_Chair_Purple: {fileID: 1095436220130688, guid: 8570043be17f83944984fbd151fb874d,
+    type: 2}
   s1_CouchS: {fileID: 1217785031253442, guid: e19dbe8466bf4fa4bac166ebaaec083c, type: 2}
   s1_CouchL: {fileID: 1617500033549782, guid: 674662620a70ec3488aba1538ade27c6, type: 2}
   emptyIntObjectElement: {x: -1, y: -1}
@@ -11641,6 +11646,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 390cc7069edf0f340a42de5fae7935b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveObjectButtons: {fileID: 0}
 --- !u!114 &114990512267837674
 MonoBehaviour:
   m_ObjectHideFlags: 1

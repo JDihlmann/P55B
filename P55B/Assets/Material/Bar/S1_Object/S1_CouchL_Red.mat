@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: S1_Chair_Red
+  m_Name: S1_CouchL_Red
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
   m_ShaderKeywords: _ALPHATEST_ON _METALLICGLOSSMAP _METALLICSPECGLOSSMAP _NORMALMAP
     _SPECULARHIGHLIGHTS_OFF
@@ -20,7 +20,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 6646a0a61a7133442ac7ed912a2f51e9, type: 3}
+        m_Texture: {fileID: 2800000, guid: 25ccfb5023fb3e24fad347eacc4fa083, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -40,11 +40,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 6567d8c96d5fc424eae9c2811738346a, type: 3}
+        m_Texture: {fileID: 2800000, guid: 2d079f29e235d6b4895c05b39b9657ef, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 2800000, guid: 115109a3a84c4d34583eafef2558e470, type: 3}
+        m_Texture: {fileID: 2800000, guid: b90147f1654058446a44b42a1c1d3215, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:

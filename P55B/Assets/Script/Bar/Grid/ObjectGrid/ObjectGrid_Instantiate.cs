@@ -13,10 +13,22 @@ public class ObjectGrid_Instantiate : MonoBehaviour {
 	public Vector2Int[,] integerObjectGrid;
 
 	// S1 objects
-	public GameObject s1_Tabel;
-	public GameObject s1_Chair;
-	public GameObject s1_CouchS;
-	public GameObject s1_CouchL;
+	public GameObject df_Chair;
+	public GameObject df_CouchS;
+	public GameObject df_CouchL;
+	public GameObject df_Tabel;
+	public GameObject s1_Chair_Purple;
+	public GameObject s1_Chair_Red;
+	public GameObject s1_Chair_Yellow;
+	public GameObject s1_CouchS_Purple;
+	public GameObject s1_CouchS_Red;
+	public GameObject s1_CouchS_Yellow;
+	public GameObject s1_CouchL_Purple;
+	public GameObject s1_CouchL_Red;
+	public GameObject s1_CouchL_Yellow;
+	public GameObject s1_Tabel_Purple;
+	public GameObject s1_Tabel_Red;
+	public GameObject s1_Tabel_Yellow;
 
 	// Empty integer object element
 	public Vector2Int emptyIntObjectElement = new Vector2Int(-1,-1); 
@@ -137,14 +149,38 @@ public class ObjectGrid_Instantiate : MonoBehaviour {
 
 	private GameObject GetGameObjectForId(int id) {
 		switch (id) {
+			case 0: 
+				return df_Chair;
 			case 1: 
-				return s1_Tabel;
+				return df_CouchS;
 			case 2: 
-				return s1_Chair;
+				return df_CouchL;
 			case 3: 
-				return s1_CouchS;
+				return df_Tabel;
 			case 4: 
-				return s1_CouchL;
+				return s1_Chair_Yellow;
+			case 5: 
+				return s1_Chair_Red;
+			case 6: 
+				return s1_Chair_Purple;
+			case 7: 
+				return s1_CouchS_Yellow;
+			case 8: 
+				return s1_CouchS_Red;
+			case 9: 
+				return s1_CouchS_Purple;
+			case 10: 
+				return s1_CouchL_Yellow;
+			case 11: 
+				return s1_CouchL_Red;
+			case 12: 
+				return s1_CouchL_Purple;
+			case 13: 
+				return s1_Tabel_Yellow;
+			case 14: 
+				return s1_Tabel_Red;
+			case 15: 
+				return s1_Tabel_Purple;
 
 			default:
 				return null; 
@@ -154,28 +190,28 @@ public class ObjectGrid_Instantiate : MonoBehaviour {
 	public void TestBar() {
 		objectGridPlacement = GetComponent<ObjectGrid_Placement>();
 
-		GameObject chair = Instantiate(s1_Chair, Vector3.zero, Quaternion.identity);
-		GameObject chair1 = Instantiate(s1_Chair, Vector3.zero, Quaternion.identity);
-		GameObject chair2 = Instantiate(s1_Chair, Vector3.zero, Quaternion.identity);
-		GameObject chair3 = Instantiate(s1_Chair, Vector3.zero, Quaternion.identity);
-		GameObject chair4 = Instantiate(s1_Chair, Vector3.zero, Quaternion.identity);
-		GameObject chair5 = Instantiate(s1_Chair, Vector3.zero, Quaternion.identity);
-		GameObject chair6 = Instantiate(s1_Chair, Vector3.zero, Quaternion.identity);
-		GameObject chair7 = Instantiate(s1_Chair, Vector3.zero, Quaternion.identity);
-		GameObject chair8 = Instantiate(s1_Chair, Vector3.zero, Quaternion.identity);
-		GameObject chair9 = Instantiate(s1_Chair, Vector3.zero, Quaternion.identity);
+		GameObject chair = Instantiate(s1_Chair_Purple, Vector3.zero, Quaternion.identity);
+		GameObject chair1 = Instantiate(s1_Chair_Yellow, Vector3.zero, Quaternion.identity);
+		GameObject chair2 = Instantiate(s1_Chair_Yellow, Vector3.zero, Quaternion.identity);
+		GameObject chair3 = Instantiate(s1_Chair_Purple, Vector3.zero, Quaternion.identity);
+		GameObject chair4 = Instantiate(s1_Chair_Red, Vector3.zero, Quaternion.identity);
+		GameObject chair5 = Instantiate(s1_Chair_Purple, Vector3.zero, Quaternion.identity);
+		GameObject chair6 = Instantiate(s1_Chair_Purple, Vector3.zero, Quaternion.identity);
+		GameObject chair7 = Instantiate(s1_Chair_Red, Vector3.zero, Quaternion.identity);
+		GameObject chair8 = Instantiate(s1_Chair_Red, Vector3.zero, Quaternion.identity);
+		GameObject chair9 = Instantiate(s1_Chair_Red, Vector3.zero, Quaternion.identity);
 
-		GameObject table = Instantiate(s1_Tabel, Vector3.zero, Quaternion.identity);
-		GameObject table1 = Instantiate(s1_Tabel, Vector3.zero, Quaternion.identity);
-		GameObject table2 = Instantiate(s1_Tabel, Vector3.zero, Quaternion.identity);
-		GameObject table3 = Instantiate(s1_Tabel, Vector3.zero, Quaternion.identity);
-		GameObject table4 = Instantiate(s1_Tabel, Vector3.zero, Quaternion.identity);
-		GameObject table5 = Instantiate(s1_Tabel, Vector3.zero, Quaternion.identity);
+		GameObject table = Instantiate(s1_Tabel_Purple, Vector3.zero, Quaternion.identity);
+		GameObject table1 = Instantiate(s1_Tabel_Yellow, Vector3.zero, Quaternion.identity);
+		GameObject table2 = Instantiate(s1_Tabel_Yellow, Vector3.zero, Quaternion.identity);
+		GameObject table3 = Instantiate(s1_Tabel_Purple, Vector3.zero, Quaternion.identity);
+		GameObject table4 = Instantiate(s1_Tabel_Red, Vector3.zero, Quaternion.identity);
+		GameObject table5 = Instantiate(s1_Tabel_Red, Vector3.zero, Quaternion.identity);
 
-		GameObject couchs = Instantiate(s1_CouchS, Vector3.zero, Quaternion.identity);
-		GameObject couchs1 = Instantiate(s1_CouchS, Vector3.zero, Quaternion.identity);
+		GameObject couchs = Instantiate(s1_CouchS_Red, Vector3.zero, Quaternion.identity);
+		GameObject couchs1 = Instantiate(s1_CouchS_Red, Vector3.zero, Quaternion.identity);
 
-		GameObject couchl1 = Instantiate(s1_CouchL, Vector3.zero, Quaternion.identity);
+		GameObject couchl1 = Instantiate(s1_CouchL_Red, Vector3.zero, Quaternion.identity);
 
 		chair.transform.parent = transform;
 		chair1.transform.parent = transform;
