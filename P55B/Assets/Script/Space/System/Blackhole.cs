@@ -10,7 +10,6 @@ public class Blackhole : MonoBehaviour {
 	//[Space]
 	[Header("Variables")]
 
-    SaveGameData data = GameSystem.LoadGameSystem();
     public int[] ingredientCounter = new int[4];
     public int destroyedIngredient;
 
@@ -19,10 +18,9 @@ public class Blackhole : MonoBehaviour {
     #region Methods
 	void Awake()
 	{
-		if (data != null)
-			{
-				ingredientCounter = data.ingredientAmount;
-			}
+
+            ingredientCounter = GameSystem.Instance.ingredientAmount;
+	
 	}
 
 	private void OnTriggerEnter(Collider other)

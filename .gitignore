@@ -421,3 +421,4 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.gitignore.io/api/unity,macos,csharp,windows
+*.bla
