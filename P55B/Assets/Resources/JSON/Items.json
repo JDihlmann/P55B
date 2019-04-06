@@ -12,7 +12,7 @@
     },
     {
       "ItemName": "PLANET",
-      "ItemID": 0,
+      "ItemID": 1,
       "Cost": 5,
       "Color": "Color.red",
       "HappinessFactor": 10,
@@ -22,7 +22,7 @@
     },
     {
       "ItemName": "PLANET",
-      "ItemID": 0,
+      "ItemID": 2,
       "Cost": 5,
       "Color": "Color.red",
       "HappinessFactor": 10,
@@ -32,7 +32,7 @@
     },
     {
       "ItemName": "PLANET",
-      "ItemID": 0,
+      "ItemID": 3,
       "Cost": 5,
       "Color": "Color.red",
       "HappinessFactor": 10,
@@ -42,7 +42,7 @@
     },
     {
       "ItemName": "PLANET",
-      "ItemID": 0,
+      "ItemID": 4,
       "Cost": 5,
       "Color": "Color.red",
       "HappinessFactor": 10,
@@ -52,7 +52,7 @@
     },
     {
       "ItemName": "PLANET",
-      "ItemID": 0,
+      "ItemID": 5,
       "Cost": 5,
       "Color": "Color.red",
       "HappinessFactor": 10,
@@ -62,7 +62,7 @@
     },
     {
       "ItemName": "PLANET",
-      "ItemID": 0,
+      "ItemID": 6,
       "Cost": 5,
       "Color": "Color.red",
       "HappinessFactor": 10,
@@ -72,7 +72,7 @@
     },
     {
       "ItemName": "PLANET",
-      "ItemID": 0,
+      "ItemID": 7,
       "Cost": 5,
       "Color": "Color.red",
       "HappinessFactor": 10,
@@ -82,7 +82,7 @@
     },
     {
       "ItemName": "PLANET",
-      "ItemID": 0,
+      "ItemID": 8,
       "Cost": 5,
       "Color": "Color.red",
       "HappinessFactor": 10,
@@ -92,7 +92,7 @@
     },
     {
       "ItemName": "PLANET",
-      "ItemID": 0,
+      "ItemID": 9,
       "Cost": 5,
       "Color": "Color.red",
       "HappinessFactor": 10,
@@ -102,7 +102,7 @@
     },
     {
       "ItemName": "PLANET",
-      "ItemID": 0,
+      "ItemID": 10,
       "Cost": 5,
       "Color": "Color.red",
       "HappinessFactor": 10,
@@ -112,7 +112,7 @@
     },
     {
       "ItemName": "PLANET",
-      "ItemID": 0,
+      "ItemID": 11,
       "Cost": 5,
       "Color": "Color.red",
       "HappinessFactor": 10,
@@ -122,7 +122,7 @@
     },
     {
       "ItemName": "PLANET",
-      "ItemID": 0,
+      "ItemID": 12,
       "Cost": 5,
       "Color": "Color.red",
       "HappinessFactor": 10,
@@ -132,7 +132,7 @@
     },
     {
       "ItemName": "PLANET",
-      "ItemID": 0,
+      "ItemID": 13,
       "Cost": 5,
       "Color": "Color.red",
       "HappinessFactor": 10,

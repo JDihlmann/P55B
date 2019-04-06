@@ -11,15 +11,19 @@ public class ItemHolder : MonoBehaviour, IPointerDownHandler, IPointerUpHandler 
     [SerializeField]
     private Text itemName;
     [SerializeField]
-    private Text happinessFactor;
-    [SerializeField]
     private Image image;
+    [SerializeField]
+    private Text Price;
+    [SerializeField]
+    private GameObject CantBuy;
 
     public ItemObject item; 
 
     private bool pointerDown;
     private float pointerDownTimer;
     private float requiredHoldTime = 1f;
+
+    public ObjectGrid_Instantiate objectGrid;
 
     public UnityEvent onLongClick;
 
@@ -29,10 +33,12 @@ public class ItemHolder : MonoBehaviour, IPointerDownHandler, IPointerUpHandler 
 
     private void Start()
     {
+        itemID = item.ItemID;
         itemName.text = item.ItemName;
-        happinessFactor.text = item.HappinessFactor.ToString();
+        //happinessFactor.text = item.HappinessFactor.ToString();
         sprite = Resources.Load<Sprite>("Sprites/"+item.Image);
         image.sprite = sprite;
+        Price.text = item.Cost.ToString();
     }
 
     public void OnPointerDown(PointerEventData eventData)
@@ -51,13 +57,20 @@ public class ItemHolder : MonoBehaviour, IPointerDownHandler, IPointerUpHandler 
 
     private void Update()
     {
+     
+        CantBuy.gameObject.SetActive(!(GameSystem.Instance.money - item.Cost >= 0));
+
         if (pointerDown)
         {
             pointerDownTimer += Time.deltaTime;
             if(pointerDownTimer >= requiredHoldTime)
             {
                 Reset();
-                Debug.Log("long click");
+                if (GameSystem.Instance.money - item.Cost >= 0)
+                {
+                    this.gameObject.transform.parent.parent.parent.parent.parent.gameObject.SetActive(false);
+                    objectGrid.SpawnNewObjectWithID(itemID);
+                }
             }
         }
     }

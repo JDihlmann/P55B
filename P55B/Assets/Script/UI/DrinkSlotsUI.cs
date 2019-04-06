@@ -34,13 +34,13 @@ public class DrinkSlotsUI : MonoBehaviour {
     void AddDrinkSlot(int i)
     {
         GameObject holder = Instantiate(drinkSlot, grid);
+        holder.GetComponent<Button>().onClick.AddListener(() => openModal(i));
         if (i < drinks.Length)
         {
             Sprite sprite = Resources.Load<Sprite>("Sprites/" + IngredientManager.GetRecipes()[drinks[i]].Image);
             holder.transform.GetChild(0).GetComponent<Image>().sprite = sprite;
             holder.transform.GetChild(0).GetComponent<Image>().preserveAspect = true;
             holder.transform.GetChild(2).GetComponent<Text>().text = IngredientManager.GetRecipes()[drinks[i]].Name;
-            holder.GetComponent<Button>().onClick.AddListener(openModal);
         }
     }
 
@@ -53,16 +53,28 @@ public class DrinkSlotsUI : MonoBehaviour {
             holder.transform.GetChild(0).GetComponent<Image>().sprite = sprite;
             holder.transform.GetChild(0).GetComponent<Image>().preserveAspect = true;
             holder.transform.GetChild(2).GetComponent<Text>().text = IngredientManager.GetRecipes()[drinks[i]].Name;
-            holder.GetComponent<Button>().onClick.AddListener(openModal);
+            int tempId = i;
+            holder.GetComponent<Button>().onClick.AddListener(() => openModal(tempId));
             //GetComponent<Image>().sprite = sprite;
             //MachineStatsHolder holderScript = holder.GetComponent<MachineStatsHolder>();
             //holderScript.machineStat = machineStats[i];
         }
     }
 
-    void openModal()
+    public void SetDrink(int slotId, int drinkId)
     {
-        Instantiate(modalWindow, this.gameObject.transform.parent);
+        //GameSystem.Instance.SetRecipe(slotId, drinkId);
+        Sprite sprite = Resources.Load<Sprite>("Sprites/" + IngredientManager.GetRecipes()[drinkId].Image);
+        grid.GetChild(slotId).transform.GetChild(0).gameObject.GetComponent<Image>().sprite = sprite;
+        grid.GetChild(slotId).transform.GetChild(0).gameObject.GetComponent<Image>().preserveAspect = true;
+        grid.GetChild(slotId).transform.GetChild(2).gameObject.GetComponent<Text>().text = IngredientManager.GetRecipes()[drinkId].Name;
+
+    }
+
+    void openModal(int slotId)
+    {
+        GameObject modal = Instantiate(modalWindow, this.gameObject.transform.parent);
+        modal.GetComponent<DrinkSlotModalWindowHolder>().slotId = slotId;
     }
 
 }

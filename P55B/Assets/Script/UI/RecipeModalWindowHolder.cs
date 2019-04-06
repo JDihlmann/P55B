@@ -14,6 +14,8 @@ public class RecipeModalWindowHolder : MonoBehaviour {
     public Button buyButton;
     public Text rarety;
     public Text income;
+    public GameObject cantBuy;
+    public int cost;
 
     public GameObject recipeIngredientHolderPrefab;
     public Transform ingredientGrid;
@@ -33,6 +35,12 @@ public class RecipeModalWindowHolder : MonoBehaviour {
             holderScript.image.sprite = sprite;
             holderScript.image.preserveAspect = true;
         }
+    }
+
+    private void Update()
+    {
+        cantBuy.SetActive(!(GameSystem.Instance.money - cost >= 0));
+        buyButton.GetComponent<Button>().interactable = GameSystem.Instance.money - cost >= 0;
     }
 
     public void hideModal()

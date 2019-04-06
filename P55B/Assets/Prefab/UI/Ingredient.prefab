@@ -350,6 +350,7 @@ MonoBehaviour:
   amount: {fileID: 114250475321669376}
   image: {fileID: 114146527670535594}
   price: {fileID: 114719239654065558}
+  button: {fileID: 114733985828763104}
 --- !u!114 &114733985828763104
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -8,4 +8,5 @@ public class IngredientHolder : MonoBehaviour {
     public Text amount;
     public Image image;
     public Text price;
+    public Button button;
 }
