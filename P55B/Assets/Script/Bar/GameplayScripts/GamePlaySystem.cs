@@ -39,6 +39,9 @@ public class GamePlaySystem : MonoBehaviour
 
 	public void Start()
 	{
+		bar = GameObject.FindGameObjectWithTag("Bar");
+		exit = GameObject.FindGameObjectWithTag("Exit");
+
 		SpawnWorker();
 		for (int i = 0; i < GameSystem.Instance.workerUnlocks[2]; i++)
 		{

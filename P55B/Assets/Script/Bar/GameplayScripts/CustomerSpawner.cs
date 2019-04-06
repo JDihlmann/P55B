@@ -13,7 +13,7 @@ public class CustomerSpawner : MonoBehaviour
 	public List<GameObject> leavingCustomerList = new List<GameObject>();
 	public int spawnMaximum;
 	public float spawnDelay;
-	public Transform[] spawnPoints;
+	public List<Transform> spawnPoints = new List<Transform>();
 	private bool isSpawning = false;
 	[SerializeField]
 	private bool lockMaximum = false;
@@ -21,6 +21,14 @@ public class CustomerSpawner : MonoBehaviour
 
 	#region Methods
 	// Use this for initialization 
+	private void Start()
+	{
+		foreach (Transform child in GamePlaySystem.Instance.exit.transform)
+		{
+			spawnPoints.Add(child);
+		}
+	}
+
 	private void Update()
 	{
 		if (customerList.Count >= spawnMaximum)
@@ -45,7 +53,7 @@ public class CustomerSpawner : MonoBehaviour
 
 	public void SpawnObject()
 	{
-		int spawnPointIndex = Random.Range(0, spawnPoints.Length);
+		int spawnPointIndex = Random.Range(0, spawnPoints.Count);
 
 		GameObject newCustomer = Instantiate(customerPrefab, spawnPoints[spawnPointIndex].position, new Quaternion(0.0f, 0.0f, 0.0f, 1.0f));
 		newCustomer.transform.parent = gameObject.transform;
