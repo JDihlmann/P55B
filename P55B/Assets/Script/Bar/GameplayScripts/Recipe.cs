@@ -19,7 +19,7 @@ public class Recipe
 		this.recipeId = recipeId;
 		switch (recipeId)
 		{
-			case 0:
+			case -1:
 				recipeName = "None";
 				recipeDescription = "Do you really want to serve nothing to your customer?";
 				recipeUnlockCost = 0;
@@ -31,7 +31,7 @@ public class Recipe
 					recipeStats[i] = 0;
 				}
 				break;
-			case 1:
+			case 0:
 				recipeName = "The Basic";
 				recipeDescription = "A little bit of everything to please any specimens likings. Every tavern should list this drink so that no guest dries out.";
 				recipeUnlockCost = 0;
@@ -43,7 +43,7 @@ public class Recipe
 					recipeStats[i] = 25;
 				}
 				break;
-			case 2:
+			case 1:
 				recipeName = "Gremonade";
 				recipeDescription = "When life gives you gremons...";
 				recipeUnlockCost = 100;
@@ -51,7 +51,7 @@ public class Recipe
 				recipeCraftTime = 3;
 				recipeStats = new int[] {0, 50, 35, 15};
 				break;
-			case 3:
+			case 2:
 				recipeName = "Cöfi";
 				recipeDescription = "Bitter but refreshing. Many people insist on only being able to converse in the morning after chugging one or two cups of Cöfi.";
 				recipeUnlockCost = 300;
@@ -59,7 +59,7 @@ public class Recipe
 				recipeCraftTime = 6;
 				recipeStats = new int[] {15, 35, 0, 50};
 				break;
-			case 4:
+			case 3:
 				recipeName = "New Basic+";
 				recipeDescription = "Nearly the same as The Basic but more expensive and strenuous thus it has to be better, right?!";
 				recipeUnlockCost = 500;
