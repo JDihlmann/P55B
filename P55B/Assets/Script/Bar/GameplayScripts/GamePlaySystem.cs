@@ -48,6 +48,10 @@ public class GamePlaySystem : MonoBehaviour
 
 	public void Update()
 	{
+		if (Input.GetKeyUp(KeyCode.Space))
+		{
+			GameSystem.Instance.UpgradeWorker(1);
+		}
 		if (Input.GetKeyUp(KeyCode.KeypadPlus))
 		{
 			GameSystem.Instance.AddTime(0.25f);
@@ -70,6 +74,11 @@ public class GamePlaySystem : MonoBehaviour
 
 	public void LeavingCustomer(GameObject customer)
 	{
+		if (customerList.Contains(customer.GetComponent<Customer>()))
+		{
+			Debug.Log("Removed Customer");
+			customerList.Remove(customer.GetComponent<Customer>());
+		}
 		spawner.LeaveCustomer(customer);
 	}
 

@@ -26,7 +26,8 @@ public class Worker : MonoBehaviour
 					{
 						servicedCustomer = GamePlaySystem.Instance.orderingCustomerList[i];
 						GamePlaySystem.Instance.orderingCustomerList.RemoveAt(i);
-						timer = servicedCustomer.selectedRecipe.recipeCraftTime / (GameSystem.Instance.workerUnlocks[1] + 1);
+						timer = servicedCustomer.selectedRecipe.recipeCraftTime / (0.25f * GameSystem.Instance.workerUnlocks[1] + 1);
+						servicedCustomer.popupSystem.StartInteraction(timer);
 						isIdle = false;
 						AudioManager.Instance.Play("DrinkPour" + Random.Range(1,4));
 						break;
@@ -41,8 +42,9 @@ public class Worker : MonoBehaviour
 			{
 				servicedCustomer = GamePlaySystem.Instance.customerList[0];
 				GamePlaySystem.Instance.customerList.RemoveAt(0);
-				isIdle = false;
 				timer = 3 / (GameSystem.Instance.workerUnlocks[1] + 1);
+				servicedCustomer.popupSystem.StartInteraction(timer);
+				isIdle = false;
 			}
 		}
 		if (!isIdle)

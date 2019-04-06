@@ -7,6 +7,7 @@ public class Customer : MonoBehaviour
 {
 	#region Variables
 	[Header("Components")]
+	public PopupSystem popupSystem;
 	private NavMeshAgent agent;
 	[Space]
 	[Header("Variables")]
@@ -49,6 +50,7 @@ public class Customer : MonoBehaviour
 	void Start()
 	{
 		GenerateOffset();
+		popupSystem = gameObject.GetComponent<PopupSystem>();
 		agent = gameObject.GetComponent<NavMeshAgent>();
 		agent.updateRotation = false;
 		InitializeCustomer(0);
@@ -71,7 +73,7 @@ public class Customer : MonoBehaviour
 			{
 				if (currentState != CustomerState.SEATING)
 				{
-					Debug.Log("Kunde hat zu lang gewartet");
+					// Debug.Log("Kunde hat zu lang gewartet");
 					happiness = Random.Range(0f, 33f);
 					currentState = CustomerState.LEAVE;
 					GamePlaySystem.Instance.LeavingCustomer(gameObject);
@@ -406,6 +408,10 @@ public class Customer : MonoBehaviour
 				break;
 			case CustomerState.SEATING:
 				drinkTimer = Random.Range(5f, 10f);
+				if (atDestination)
+				{
+					popupSystem.StartInteraction(drinkTimer);
+				}
 				currentState = CustomerState.CONSUMING;
 				break;
 			case CustomerState.CONSUMING:
@@ -472,14 +478,13 @@ public class Customer : MonoBehaviour
 			case CustomerState.SEATING:
 				if (other.gameObject == destination)
 				{
-					//gameObject.transform.position = other.gameObject.transform.position;
 					atDestination = true;
 				}
 				break;
 			case CustomerState.CONSUMING:
 				if (other.gameObject == destination)
 				{
-					//gameObject.transform.position = other.gameObject.transform.position;
+					popupSystem.StartInteraction(drinkTimer);
 					atDestination = true;
 				}
 				break;

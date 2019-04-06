@@ -6,8 +6,17 @@ public class IngredientSpawner : MonoBehaviour {
 
 	#region Variables
 	[Header("Components")]
-	public GameObject ingredientLeft;
-    public GameObject ingredientRight;
+	public GameObject ingredient1Left;
+    public GameObject ingredient1Right;
+    public GameObject ingredient2Left;
+    public GameObject ingredient2Right;
+    public GameObject ingredient3Left;
+    public GameObject ingredient3Right;
+    public GameObject ingredient4Left;
+    public GameObject ingredient4Right;
+    public GameObject ingredient5Left;
+    public GameObject ingredient5Right;
+
     public Camera cam;
     [Space]
 	[Header("Variables")]
@@ -53,13 +62,39 @@ public class IngredientSpawner : MonoBehaviour {
         timer += Time.deltaTime;
         if (timer >= spawnDelay)
         {
-            SpawnObject();
+            chooseIngredient();
             timer = 0f;
         }
     }
 
+    private void chooseIngredient()
+    {
+        int index = Random.Range(0, 5);
+        switch (index)
+        {
+            case 0:
+                SpawnObject(ingredient1Left, ingredient1Right);
+                break;
+            case 1:
+                SpawnObject(ingredient2Left, ingredient2Right);
+                break;
+            case 2:
+                SpawnObject(ingredient3Left, ingredient3Right);
+                break;
+            case 3:
+                SpawnObject(ingredient4Left, ingredient4Right);
+                break;
+            case 4:
+                SpawnObject(ingredient5Left, ingredient5Right);
+                break;
+            default:
+                Debug.Log("No such index found.");
+                break;
+        }
+    }
 
-    public void SpawnObject()
+
+    public void SpawnObject(GameObject ingredientLeft, GameObject ingredientRight)
 	{
 
         int spawnPointLeftIndex = Random.Range(0, spawnPointsLeft.Length);
