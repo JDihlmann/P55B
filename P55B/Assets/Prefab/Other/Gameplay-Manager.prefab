@@ -9,20 +9,20 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1075616522008000}
+  m_RootGameObject: {fileID: 1574948472852606}
   m_IsPrefabAsset: 1
---- !u!1 &1075616522008000
+--- !u!1 &1574948472852606
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4833476760621378}
-  - component: {fileID: 114069582481227670}
-  - component: {fileID: 114844341422384404}
-  - component: {fileID: 114920185422593748}
-  - component: {fileID: 114118925102759882}
+  - component: {fileID: 4582139960258034}
+  - component: {fileID: 114883609176794892}
+  - component: {fileID: 114473265983590920}
+  - component: {fileID: 114024265971182240}
+  - component: {fileID: 114618446070653116}
   m_Layer: 0
   m_Name: Gameplay-Manager
   m_TagString: Untagged
@@ -30,12 +30,12 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4833476760621378
+--- !u!4 &4582139960258034
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1075616522008000}
+  m_GameObject: {fileID: 1574948472852606}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -43,75 +43,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114069582481227670
+--- !u!114 &114024265971182240
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1075616522008000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: decf69a97976a7e47961c7144be01e3e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  recipeUnlocks: 0000000000
-  workerUnlocks: 00000000000000000000000000000000
-  recipeList: []
-  ingredientAmount: 00000000000000000000000000000000
-  money: 0
-  happiness: 0
-  objectList: []
-  savedData:
-    recipeUnlocks: 0000000000
-    recipeList: []
-    workerUnlocks: 00000000000000000000000000000000
-    ingredientAmount: 00000000000000000000000000000000
-    objectList: []
-    money: 0
-    happiness: 0
---- !u!114 &114118925102759882
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1075616522008000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c5c9868daf29834d83b611a8d772f56, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  customerPrefab: {fileID: 1216449300660918, guid: 5fc55a1fd915ebb45a5c149cb7a5c490,
-    type: 2}
-  customerList: []
-  leavingCustomerList: []
-  spawnMaximum: 1
-  spawnDelay: 2
-  spawnPoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  lockMaximum: 1
---- !u!114 &114844341422384404
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1075616522008000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66ac88a38bf06fa43921b3b6b1cadd02, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  customerList: []
-  orderingCustomerList: []
-  availableSeatList: []
-  bar: {fileID: 0}
-  exit: {fileID: 0}
---- !u!114 &114920185422593748
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1075616522008000}
+  m_GameObject: {fileID: 1574948472852606}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3df27b9289d1e8c4fb82e0df4f4673ba, type: 3}
@@ -134,3 +71,66 @@ MonoBehaviour:
   m_VoxelSize: 0.06666667
   m_BuildHeightMesh: 0
   m_NavMeshData: {fileID: 23800000, guid: 748a4039552c613429ba2f5064175726, type: 2}
+--- !u!114 &114473265983590920
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1574948472852606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66ac88a38bf06fa43921b3b6b1cadd02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  customerList: []
+  orderingCustomerList: []
+  availableSeatList: []
+  bar: {fileID: 0}
+  exit: {fileID: 0}
+--- !u!114 &114618446070653116
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1574948472852606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c5c9868daf29834d83b611a8d772f56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  customerPrefab: {fileID: 1216449300660918, guid: 5fc55a1fd915ebb45a5c149cb7a5c490,
+    type: 2}
+  customerList: []
+  leavingCustomerList: []
+  spawnMaximum: 1
+  spawnDelay: 2
+  spawnPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  lockMaximum: 1
+--- !u!114 &114883609176794892
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1574948472852606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: decf69a97976a7e47961c7144be01e3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  recipeUnlocks: 0000000000
+  workerUnlocks: 00000000000000000000000000000000
+  recipeList: []
+  ingredientAmount: 00000000000000000000000000000000
+  money: 0
+  happiness: 0
+  objectList: []
+  savedData:
+    recipeUnlocks: 0000000000
+    recipeList: []
+    workerUnlocks: 00000000000000000000000000000000
+    ingredientAmount: 00000000000000000000000000000000
+    objectList: []
+    money: 0
+    happiness: 0
