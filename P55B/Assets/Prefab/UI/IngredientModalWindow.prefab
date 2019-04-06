@@ -178,10 +178,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   title: {fileID: 114729563594672332}
+  ingredient: 
   grid: {fileID: 224436975723485922}
   ingredientBuy: {fileID: 1640709190892582, guid: 392039e2cea924932948558573b69096,
     type: 2}
   itemPrice: 0
+  background: {fileID: 114937534124055108}
+  id: 0
+  holderScript: {fileID: 0}
 --- !u!114 &114729563594672332
 MonoBehaviour:
   m_ObjectHideFlags: 1
