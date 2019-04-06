@@ -22,6 +22,7 @@ public class Recipe
 			case -1:
 				recipeName = "None";
 				recipeDescription = "Do you really want to serve nothing to your customer?";
+				/*
 				recipeUnlockCost = 0;
 				recipePrice = 0;
 				recipeCraftTime = 0;
@@ -30,6 +31,7 @@ public class Recipe
 				{
 					recipeStats[i] = 0;
 				}
+				*/
 				break;
 			case 0:
 				recipeName = "The Basic";
@@ -38,9 +40,11 @@ public class Recipe
 				recipePrice = 10;
 				recipeCraftTime = 2;
 				recipeStats = new int[4];
+				recipeIngredientCost = new int[4];
 				for (int i = 0; i < 4; i++)
 				{
 					recipeStats[i] = 25;
+					recipeIngredientCost[i] = 1;
 				}
 				break;
 			case 1:
@@ -49,7 +53,8 @@ public class Recipe
 				recipeUnlockCost = 100;
 				recipePrice = 15;
 				recipeCraftTime = 3;
-				recipeStats = new int[] {0, 50, 35, 15};
+				recipeStats = new int[] { 0, 50, 35, 15 };
+				recipeIngredientCost = new int[] { 0, 6, 4, 2 };
 				break;
 			case 2:
 				recipeName = "Cöfi";
@@ -57,7 +62,8 @@ public class Recipe
 				recipeUnlockCost = 300;
 				recipePrice = 25;
 				recipeCraftTime = 6;
-				recipeStats = new int[] {15, 35, 0, 50};
+				recipeStats = new int[] { 15, 35, 0, 50 };
+				recipeIngredientCost = new int[] { 2, 4, 0, 6 };
 				break;
 			case 3:
 				recipeName = "New Basic+";
@@ -66,6 +72,7 @@ public class Recipe
 				recipePrice = 20;
 				recipeCraftTime = 4;
 				recipeStats = new int[] { 25, 25, 25, 25 };
+				recipeIngredientCost = new int[] { 5, 5, 5, 5};
 				break;
 			default:
 				Debug.Log("Recipe not found.");

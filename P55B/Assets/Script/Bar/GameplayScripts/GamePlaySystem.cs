@@ -54,6 +54,10 @@ public class GamePlaySystem : MonoBehaviour
 		if (Input.GetKeyUp(KeyCode.Space))
 		{
 			GameSystem.Instance.UpgradeWorker(1);
+			for (int i = 0; i < 4; i++)
+			{
+				GameSystem.Instance.ingredientAmount[i] += 1;
+			}
 		}
 		if (Input.GetKeyUp(KeyCode.KeypadPlus))
 		{
@@ -130,6 +134,36 @@ public class GamePlaySystem : MonoBehaviour
 		foreach (GameObject seat in seatArray)
 		{
 			availableSeatList.Add(seat);
+		}
+	}
+
+	public bool IngredientCost(Recipe selectedRecipe)
+	{
+		int[] ingredientAmount = GameSystem.Instance.ingredientAmount;
+		bool hasEnough = true;
+
+		for (int i = 0; i < 4; i++)
+		{
+			if (ingredientAmount[i] - selectedRecipe.recipeIngredientCost[i] < 0)
+			{
+				hasEnough = false;
+			}
+		}
+
+		if (hasEnough)
+		{
+			for (int i = 0; i < 4; i++)
+			{
+				ingredientAmount[i] -= selectedRecipe.recipeIngredientCost[i];
+			}
+			GameSystem.Instance.ingredientAmount = ingredientAmount;
+			Debug.Log("GOGO");
+			return true;
+		}
+		else
+		{
+			Debug.Log("Nicht genug ingredients");
+			return false;
 		}
 	}
 	#endregion
