@@ -35,12 +35,12 @@ public class DrinkSlotsUI : MonoBehaviour {
     {
         GameObject holder = Instantiate(drinkSlot, grid);
         holder.GetComponent<Button>().onClick.AddListener(() => openModal(i));
-        if (i < drinks.Length)
+        if (GameSystem.Instance.recipeList[i].recipeId != -1)
         {
-            Sprite sprite = Resources.Load<Sprite>("Sprites/" + IngredientManager.GetRecipes()[drinks[i]].Image);
+            Sprite sprite = Resources.Load<Sprite>("Sprites/" + IngredientManager.GetRecipes()[GameSystem.Instance.recipeList[i].recipeId].Image);
             holder.transform.GetChild(0).GetComponent<Image>().sprite = sprite;
             holder.transform.GetChild(0).GetComponent<Image>().preserveAspect = true;
-            holder.transform.GetChild(2).GetComponent<Text>().text = IngredientManager.GetRecipes()[drinks[i]].Name;
+            holder.transform.GetChild(2).GetComponent<Text>().text = IngredientManager.GetRecipes()[GameSystem.Instance.recipeList[i].recipeId].Name;
         }
     }
 
@@ -48,13 +48,22 @@ public class DrinkSlotsUI : MonoBehaviour {
     {
         for (int i = 0; i <= drinkSlotAmount; i++)
         {
-            GameObject holder = Instantiate(drinkSlot, grid);
-            Sprite sprite = Resources.Load<Sprite>("Sprites/" + IngredientManager.GetRecipes()[drinks[i]].Image);
-            holder.transform.GetChild(0).GetComponent<Image>().sprite = sprite;
-            holder.transform.GetChild(0).GetComponent<Image>().preserveAspect = true;
-            holder.transform.GetChild(2).GetComponent<Text>().text = IngredientManager.GetRecipes()[drinks[i]].Name;
-            int tempId = i;
-            holder.GetComponent<Button>().onClick.AddListener(() => openModal(tempId));
+            if (GameSystem.Instance.recipeList[i].recipeId == -1)
+            {
+                GameObject holder = Instantiate(drinkSlot, grid);
+                int tempId = i;
+                holder.GetComponent<Button>().onClick.AddListener(() => openModal(tempId));
+            }
+            else
+            {
+                GameObject holder = Instantiate(drinkSlot, grid);
+                Sprite sprite = Resources.Load<Sprite>("Sprites/" + IngredientManager.GetRecipes()[GameSystem.Instance.recipeList[i].recipeId].Image);
+                holder.transform.GetChild(0).GetComponent<Image>().sprite = sprite;
+                holder.transform.GetChild(0).GetComponent<Image>().preserveAspect = true;
+                holder.transform.GetChild(2).GetComponent<Text>().text = IngredientManager.GetRecipes()[GameSystem.Instance.recipeList[i].recipeId].Name;
+                int tempId = i;
+                holder.GetComponent<Button>().onClick.AddListener(() => openModal(tempId));
+            }
             //GetComponent<Image>().sprite = sprite;
             //MachineStatsHolder holderScript = holder.GetComponent<MachineStatsHolder>();
             //holderScript.machineStat = machineStats[i];
@@ -63,7 +72,7 @@ public class DrinkSlotsUI : MonoBehaviour {
 
     public void SetDrink(int slotId, int drinkId)
     {
-        //GameSystem.Instance.SetRecipe(slotId, drinkId);
+        GameSystem.Instance.SetRecipe(slotId, drinkId);
         Sprite sprite = Resources.Load<Sprite>("Sprites/" + IngredientManager.GetRecipes()[drinkId].Image);
         grid.GetChild(slotId).transform.GetChild(0).gameObject.GetComponent<Image>().sprite = sprite;
         grid.GetChild(slotId).transform.GetChild(0).gameObject.GetComponent<Image>().preserveAspect = true;
