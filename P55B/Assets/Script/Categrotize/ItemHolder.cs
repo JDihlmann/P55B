@@ -69,7 +69,7 @@ public class ItemHolder : MonoBehaviour, IPointerDownHandler, IPointerUpHandler 
                 if (GameSystem.Instance.money - item.Cost >= 0)
                 {
                     this.gameObject.transform.parent.parent.parent.parent.parent.gameObject.SetActive(false);
-                    objectGrid.SpawnNewObjectWithID(itemID);
+                    objectGrid.SpawnNewObjectWithID(itemID,0);
                 }
             }
         }
