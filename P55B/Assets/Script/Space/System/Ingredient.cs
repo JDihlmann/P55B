@@ -20,13 +20,13 @@ public class Ingredient : MonoBehaviour
 	void Start()
 	{
 		ingredientRenderer = gameObject.GetComponent<Renderer>();
-		GenerateRandomIndex();
-		SetIngredient();
+		//GenerateRandomIndex();
+		//SetIngredient();
         rend = GetComponent<Renderer>();
         lightweightShader = Shader.Find("LightweightPipeline/Standard (Physically Based)");
         rend.material.shader = lightweightShader;
 	}
-
+    /*
 	public void GenerateRandomIndex()
 	{
 		index = Random.Range(0, 5);
@@ -60,7 +60,7 @@ public class Ingredient : MonoBehaviour
 				Debug.Log("No such index found.");
 				break;
 		}
-	}
+	}*/
 	#endregion
 
 }
