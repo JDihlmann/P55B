@@ -15,6 +15,8 @@ public class ItemsUI : MonoBehaviour
 
     public Transform grid;
 
+    public GameObject objectGrid;
+
     // Use this for initialization
     void Start()
     {
@@ -31,6 +33,7 @@ public class ItemsUI : MonoBehaviour
             GameObject holder = Instantiate(itemHolderPrefab, grid);
             ItemHolder holderScript = holder.GetComponent<ItemHolder>();
             holderScript.item = itemsList[i];
+            holderScript.objectGrid = objectGrid.GetComponent<ObjectGrid_Instantiate>();
             //holderScript.itemName.text = itemsList[i].ItemName;
             //holderScript.itemID = itemsList[i].ItemID;
             //holderScript.happinessFactor.text = itemsList[i].HappinessFactor.ToString();

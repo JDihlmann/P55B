@@ -128,7 +128,7 @@ public class ObjectGrid_Instantiate : MonoBehaviour {
 
 
 	public void SpawnNewObjectWithID(int id) {
-		// TODO: ID should select right prefab
+        // TODO: ID should select right prefab
 		GameObject objectPrefab = GetGameObjectForId(id);
 
 		// No Prefab for ID 

@@ -21,6 +21,8 @@ public class ItemHolder : MonoBehaviour, IPointerDownHandler, IPointerUpHandler 
     private float pointerDownTimer;
     private float requiredHoldTime = 1f;
 
+    public ObjectGrid_Instantiate objectGrid;
+
     public UnityEvent onLongClick;
 
     public GameObject modalWindow;
@@ -29,6 +31,7 @@ public class ItemHolder : MonoBehaviour, IPointerDownHandler, IPointerUpHandler 
 
     private void Start()
     {
+        itemID = item.ItemID;
         itemName.text = item.ItemName;
         happinessFactor.text = item.HappinessFactor.ToString();
         sprite = Resources.Load<Sprite>("Sprites/"+item.Image);
@@ -57,7 +60,8 @@ public class ItemHolder : MonoBehaviour, IPointerDownHandler, IPointerUpHandler 
             if(pointerDownTimer >= requiredHoldTime)
             {
                 Reset();
-                Debug.Log("long click");
+                this.gameObject.transform.parent.parent.parent.parent.parent.gameObject.SetActive(false);
+                objectGrid.SpawnNewObjectWithID(itemID);
             }
         }
     }
