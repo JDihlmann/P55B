@@ -137,11 +137,11 @@ public class StateChange : MonoBehaviour {
 		cameraState.ZoomToSpace();
 
         leftButton.SetActive(false);
-        barButton.SetActive(true);
         planetButton.SetActive(false);
+        barButton.SetActive(true);
 
-		// TODO: Add space relateded scripts / objects / ...
-	}
+        // TODO: Add space relateded scripts / objects / ...
+    }
 
 	public void DeactivateSpaceState() {
 		// TODO: Add space relateded scripts / objects / ...
@@ -149,8 +149,8 @@ public class StateChange : MonoBehaviour {
 		Camera_State cameraState = Camera.main.GetComponent<Camera_State>();
 		cameraState.ZoomToBar();
 
-        leftButton.SetActive(true);
         barButton.SetActive(false);
+        leftButton.SetActive(true);
         planetButton.SetActive(true);
     }
 
