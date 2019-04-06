@@ -92,12 +92,14 @@ public class RecipeHolder : MonoBehaviour, IPointerDownHandler, IPointerUpHandle
         holderScript.buyButton.onClick.AddListener(() => buyRecipe(holder));
         holderScript.rarety.text = recipe.Rarety + " recipe";
         holderScript.income.text = recipe.MinIncome + " - " + recipe.MaxIncome + " income per drink";
+        holderScript.cost = recipe.Price;
     }
 
     private void buyRecipe(GameObject window)
     {
         boughtTag.gameObject.SetActive(true);
         GameSystem.Instance.UnlockRecipe(recipeId);
+        GameSystem.Instance.SubMoney(recipe.Price);
         Destroy(window);
     }
 
