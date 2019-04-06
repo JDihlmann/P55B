@@ -523,34 +523,9 @@ Prefab:
       propertyPath: m_RootOrder
       value: 13
       objectReference: {fileID: 0}
-    - target: {fileID: 114473265983590920, guid: b7099e21e9e30db4fbc146432b697daf,
-        type: 2}
-      propertyPath: bar
-      value: 
-      objectReference: {fileID: 1672430738}
-    - target: {fileID: 114473265983590920, guid: b7099e21e9e30db4fbc146432b697daf,
-        type: 2}
-      propertyPath: exit
-      value: 
-      objectReference: {fileID: 436213469}
-    - target: {fileID: 114618446070653116, guid: b7099e21e9e30db4fbc146432b697daf,
-        type: 2}
-      propertyPath: spawnPoints.Array.data[0]
-      value: 
-      objectReference: {fileID: 1568180193}
-    - target: {fileID: 114618446070653116, guid: b7099e21e9e30db4fbc146432b697daf,
-        type: 2}
-      propertyPath: spawnPoints.Array.data[1]
-      value: 
-      objectReference: {fileID: 646003554}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b7099e21e9e30db4fbc146432b697daf, type: 2}
   m_IsPrefabAsset: 0
---- !u!1 &436213469 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1747024361477266, guid: fb8cf3f50b0f7654f9994291b2a2089e,
-    type: 2}
-  m_PrefabInternal: {fileID: 499465945}
 --- !u!1001 &499465945
 Prefab:
   m_ObjectHideFlags: 0
@@ -598,11 +573,6 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb8cf3f50b0f7654f9994291b2a2089e, type: 2}
   m_IsPrefabAsset: 0
---- !u!4 &646003554 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4087146127244394, guid: fb8cf3f50b0f7654f9994291b2a2089e,
-    type: 2}
-  m_PrefabInternal: {fileID: 499465945}
 --- !u!1 &839498942
 GameObject:
   m_ObjectHideFlags: 0
@@ -998,21 +968,11 @@ Prefab:
     - {fileID: 114661059574457724, guid: 1c82d30c796874f45aa5dc216878027f, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 1c82d30c796874f45aa5dc216878027f, type: 2}
   m_IsPrefabAsset: 0
---- !u!4 &1568180193 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4396706478844714, guid: fb8cf3f50b0f7654f9994291b2a2089e,
-    type: 2}
-  m_PrefabInternal: {fileID: 499465945}
 --- !u!1 &1579165162 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1310527333034798, guid: 80409d925e5fe4bc8933a28357a5a2cb,
     type: 2}
   m_PrefabInternal: {fileID: 238369915}
---- !u!1 &1672430738 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1666427670361208, guid: fb8cf3f50b0f7654f9994291b2a2089e,
-    type: 2}
-  m_PrefabInternal: {fileID: 499465945}
 --- !u!1 &1783923855
 GameObject:
   m_ObjectHideFlags: 0
