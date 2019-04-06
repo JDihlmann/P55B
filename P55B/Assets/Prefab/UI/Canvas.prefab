@@ -1872,6 +1872,7 @@ MonoBehaviour:
   itemHolderPrefab: {fileID: 1537474249628486, guid: 11fe92dc7adee43ea970b20915123db8,
     type: 2}
   grid: {fileID: 224526920221667016}
+  objectGrid: {fileID: 0}
 --- !u!114 &114164907708966062
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6345,7 +6346,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 678.3574, y: -85.5}
+  m_AnchoredPosition: {x: 678.3566, y: -85.5}
   m_SizeDelta: {x: 1356.7133, y: 91}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224345056645053800
@@ -6659,7 +6660,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 678.3574, y: -131}
+  m_AnchoredPosition: {x: 678.3566, y: -131}
   m_SizeDelta: {x: 1356.7133, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224549599606437818
