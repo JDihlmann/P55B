@@ -12,6 +12,8 @@ public class StateChange : MonoBehaviour {
 
     // UI GameObjects
     public GameObject planetButton;
+    public GameObject leftButton;
+    public GameObject barButton;
 
 	// Bar GameObjects
 	// TODO: Insert GameObjects 
@@ -75,7 +77,6 @@ public class StateChange : MonoBehaviour {
 			DeactivateState(currentState);
 			currentState = State.Bar; 
 		}
-
 		// TODO: Add bar relateded scripts / objects / ...
 	}
 
@@ -133,7 +134,11 @@ public class StateChange : MonoBehaviour {
 		}
 
 		Camera_State cameraState = Camera.main.GetComponent<Camera_State>();
-		cameraState.ZoomToSpace(); 
+		cameraState.ZoomToSpace();
+
+        leftButton.SetActive(false);
+        barButton.SetActive(true);
+        planetButton.SetActive(false);
 
 		// TODO: Add space relateded scripts / objects / ...
 	}
@@ -142,8 +147,12 @@ public class StateChange : MonoBehaviour {
 		// TODO: Add space relateded scripts / objects / ...
 
 		Camera_State cameraState = Camera.main.GetComponent<Camera_State>();
-		cameraState.ZoomToBar(); 
-	}
+		cameraState.ZoomToBar();
+
+        leftButton.SetActive(true);
+        barButton.SetActive(false);
+        planetButton.SetActive(true);
+    }
 
 	# endregion
 }
