@@ -11,7 +11,8 @@ public class ObjectProperties
 	//[Space]
 	[Header("Variables")]
 	public int objectId;
-	public Vector2Int objectPosition;
+	public int objectPositionX;
+	public int objectPositionY;
 	public float objectRotation;
 	#endregion
 
@@ -19,7 +20,8 @@ public class ObjectProperties
 	public ObjectProperties(int objectId, Vector2Int objectPosition, float objectRotation)
 	{
 		this.objectId = objectId;
-		this.objectPosition = objectPosition;
+		this.objectPositionX = objectPosition.x;
+		this.objectPositionY = objectPosition.y;
 		this.objectRotation = objectRotation;
 	}
 	#endregion

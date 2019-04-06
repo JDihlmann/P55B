@@ -94,7 +94,7 @@ public class ObjectGrid_Instantiate : MonoBehaviour {
 
 		foreach(ObjectProperties properties in GameSystem.Instance.objectList) {
 			int ID = properties.objectId; 
-			Vector2Int position = properties.objectPosition; 
+			Vector2Int position = new Vector2Int (properties.objectPositionX, properties.objectPositionY); 
 			float rotation = properties.objectRotation; 
 			
 			GameObject objectPrefab = GetGameObjectForId(ID);
@@ -124,6 +124,9 @@ public class ObjectGrid_Instantiate : MonoBehaviour {
 				}
 			}
 		}
+
+		// Save Game
+		GameSystem.SaveGameSystem(); 
 	}
 
 
