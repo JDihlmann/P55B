@@ -127,7 +127,7 @@ public class ObjectGrid_Instantiate : MonoBehaviour {
 	}
 
 
-	public void SpawnNewObjectWithID(int id) {
+	public void SpawnNewObjectWithID(int id, int price) {
         // TODO: ID should select right prefab
 		GameObject objectPrefab = GetGameObjectForId(id);
 
@@ -143,7 +143,7 @@ public class ObjectGrid_Instantiate : MonoBehaviour {
 
 		if (gameObjectCollider != null) {
 			objectGridPlacement = GetComponent<ObjectGrid_Placement>();
-			objectGridPlacement.MoveSpawnObjectAtCollider(gameObjectCollider); 
+			objectGridPlacement.MoveSpawnObjectAtCollider(gameObjectCollider, price); 
 		}
 	}
 

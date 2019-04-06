@@ -38,6 +38,10 @@ public class ObjectGrid_Placement : MonoBehaviour {
     // UI move object buttons
     public GameObject moveObjectButtons;
 
+	// New Object
+	private int newObjectPrice; 
+	private bool isNewObject = false;
+
 	void Start () {
 		objectGridOperations = GetComponent<ObjectGrid_Operations>(); 
 
@@ -228,6 +232,12 @@ public class ObjectGrid_Placement : MonoBehaviour {
 	# region Placement 
 
 	public void RemoveObjectOnGrid(GameObject obj, Vector2Int pos) {
+		if (isNewObject) {
+			// TODO: Send Money Back 
+			GameSystem.Instance.AddMoney(newObjectPrice);
+			isNewObject = false; 
+		}
+
 		Destroy(obj);
 		objectGridOperations.RemoveObject(pos);
 		UIHideAllButtons();
@@ -274,6 +284,8 @@ public class ObjectGrid_Placement : MonoBehaviour {
 			objMovement.MoveToGridTileWithOffset(tile, new Vector2Int(0,0));
 			objValues.placedPosition = posWithOffset;
 
+			isNewObject = false; 
+
 			return true;
 		}
 
@@ -281,6 +293,7 @@ public class ObjectGrid_Placement : MonoBehaviour {
 	}
 
 	public bool PlaceObjectOnGridWithRotation(GameObject obj, Vector2Int pos, Vector2Int offset, float degree) {
+
 		Object_Values objValues = obj.GetComponent<Object_Values>();
 
 		UIHideAllButtons();
@@ -312,6 +325,8 @@ public class ObjectGrid_Placement : MonoBehaviour {
 	}
 
 	public bool MoveObjectOnGrid(GameObject obj, Vector2Int fromPos, Vector2Int toPos, Vector2Int offset) {
+		isNewObject = false; 
+
 		Vector2Int posWithOffset = toPos - offset;
 		Object_Values objValues = obj.GetComponent<Object_Values>(); 
 		Object_Movement objMovement = obj.GetComponent<Object_Movement>();
@@ -349,7 +364,7 @@ public class ObjectGrid_Placement : MonoBehaviour {
 
 	# region Spawn 
 	
-	public void MoveSpawnObjectAtCollider(GameObject collider) {
+	public void MoveSpawnObjectAtCollider(GameObject collider, int price) {
 
 		TryPlacingObjectOnGrid(); 
 
@@ -360,7 +375,9 @@ public class ObjectGrid_Placement : MonoBehaviour {
 		hitObjectParentValues.previousOccupiedSpace = (Vector2Int[])hitObjectParentValues.occupiedSpace.Clone();
 		hitObjectParentPlaced = false; 
 
-		// TODO: Possible that object despawns ?
+		isNewObject = true; 
+
+		newObjectPrice = price; 
 
 		initalClickHitObject = true; 
 	}
