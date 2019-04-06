@@ -450,15 +450,18 @@ public class Customer : MonoBehaviour
 		int bestValue = 400;
 		for (int i = 0; i < GameSystem.Instance.recipeList.Count; i++)
 		{
-			int currentValue = 0;
-			for (int k = 0; k < 4; k++)
+			if (GameSystem.Instance.recipeList[i].recipeId != -1)
 			{
-				currentValue += Mathf.Abs(customerPreference[k] - GameSystem.Instance.recipeList[i].recipeStats[k]);
-			}
-			if (currentValue <= bestValue)
-			{
-				bestValue = currentValue;
-				selectedRecipe = GameSystem.Instance.recipeList[i];
+				int currentValue = 0;
+				for (int k = 0; k < 4; k++)
+				{
+					currentValue += Mathf.Abs(customerPreference[k] - GameSystem.Instance.recipeList[i].recipeStats[k]);
+				}
+				if (currentValue <= bestValue)
+				{
+					bestValue = currentValue;
+					selectedRecipe = GameSystem.Instance.recipeList[i];
+				}
 			}
 		}
 		drinkValue = bestValue;
