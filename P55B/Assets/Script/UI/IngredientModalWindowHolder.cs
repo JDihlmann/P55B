@@ -39,14 +39,17 @@ public class IngredientModalWindowHolder : MonoBehaviour {
             GameObject holder = Instantiate(ingredientBuy, grid);
             holder.transform.GetChild(1).GetComponent<Text>().text = (buyAmountIngredients[i]).ToString();
             holder.transform.GetChild(3).GetChild(0).GetComponent<Text>().text = (buyAmountIngredients[i] * itemPrice).ToString();
+            holder.GetComponent<BuyIngredientHolder>().price = buyAmountIngredients[i] * itemPrice;
             int amount = buyAmountIngredients[i];
-            holder.GetComponent<Button>().onClick.AddListener(() => buyIngredients(amount));
+            int price = buyAmountIngredients[i] * itemPrice;
+            holder.GetComponent<Button>().onClick.AddListener(() => buyIngredients(amount, price));
         }
     }
 
-    void buyIngredients(int amount)
+    void buyIngredients(int amount, int price)
     {
         holderScript.amount.text = (GameSystem.Instance.ingredientAmount[id] + amount).ToString();
         GameSystem.Instance.AddIngredient(id, amount);
+        GameSystem.Instance.SubMoney(price);
     }
 }
