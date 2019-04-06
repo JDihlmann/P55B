@@ -12,6 +12,8 @@ public class InregdientsUI : MonoBehaviour {
 
     public Transform grid;
 
+    public GameObject modalWindow;
+
 	// Use this for initialization
 	void Start () {
         ingredientsUI = this;
@@ -24,13 +26,27 @@ public class InregdientsUI : MonoBehaviour {
             GameObject holder = Instantiate(ingredientHolderPrefab, grid);
             IngredientHolder holderScript = holder.GetComponent<IngredientHolder>();
             holderScript.name.text = ingredientList[i].Name;
-            holderScript.amount.text = "50";
+            holderScript.amount.text = (GameSystem.Instance.ingredientAmount[i]).ToString();
             holderScript.price.text = ingredientList[i].Price + "$ each";
             holderScript.image.sprite = Resources.Load<Sprite>("Sprites/" + ingredientList[i].Image);
+            int tempInt = ingredientList[i].Price;
+            string tempString = ingredientList[i].Name;
+            int tempId = ingredientList[i].ID;
+            holderScript.button.onClick.AddListener(() => openModal(tempInt, tempString, holderScript, tempId));
             //holderScript.ingredientName.text = ingredientList[i].IngredientName;
             //holderScript.ingredientCount.text = ingredientList[i].Count.ToString();
             //holderScript.ingredientImage.color = ingredientList[i].Color;
             //holderScript.ingredientID = ingredientList[i].IngredientID;
         }
+    }
+
+    void openModal(int itemPrice, string ingredient, IngredientHolder holderScript, int id)
+    {
+        modalWindow.transform.SetAsLastSibling();
+        GameObject holder = Instantiate(modalWindow, this.gameObject.transform.parent);
+        holder.GetComponent<IngredientModalWindowHolder>().itemPrice = itemPrice;
+        holder.GetComponent<IngredientModalWindowHolder>().ingredient = ingredient;
+        holder.GetComponent<IngredientModalWindowHolder>().holderScript = holderScript;
+        holder.GetComponent<IngredientModalWindowHolder>().id = id;
     }
 }
