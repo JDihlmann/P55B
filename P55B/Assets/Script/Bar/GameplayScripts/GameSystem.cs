@@ -233,10 +233,16 @@ public class GameSystem : MonoBehaviour
 		workerUnlocks = new int[4];
 		recipeUnlocks[0] = true;
 		recipeUnlocks[1] = true;
-		workerUnlocks[0] = 1;
 		recipeList = new List<Recipe>(9)
 				{
-					new Recipe(1)
+					new Recipe(1),
+					new Recipe(0),
+					new Recipe(0),
+					new Recipe(0),
+					new Recipe(0),
+					new Recipe(0),
+					new Recipe(0),
+					new Recipe(0)
 				};
 		ingredientAmount = new int[4];
 		money = 0;
