@@ -501,25 +501,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f23b56a39a03c4446bf0d527a9feb5de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ingredient1Left: {fileID: 1157401313667950, guid: fb21813df548d094ea2d2cfcced8b057,
+  ingredient1Left: {fileID: 1609448215490788, guid: a0db722034ddc784bb230657b3fa0989,
     type: 2}
-  ingredient1Right: {fileID: 1601714821365584, guid: 7e2432c76b8d3084798d789d5aae87ef,
+  ingredient1Right: {fileID: 1903317510384896, guid: 4a2fe018a447d504f9568b2473f46384,
     type: 2}
-  ingredient2Left: {fileID: 1157401313667950, guid: fb21813df548d094ea2d2cfcced8b057,
+  ingredient2Left: {fileID: 1991940583871724, guid: e3b38d1fc2ca72c4db25e7d33afe603d,
     type: 2}
-  ingredient2Right: {fileID: 1601714821365584, guid: 7e2432c76b8d3084798d789d5aae87ef,
+  ingredient2Right: {fileID: 1016327371525410, guid: f4b77ab97477f9e4fa53f90eb9bc818d,
     type: 2}
-  ingredient3Left: {fileID: 1157401313667950, guid: fb21813df548d094ea2d2cfcced8b057,
+  ingredient3Left: {fileID: 1900615568336730, guid: fb7706aa382ce6d499cee698d819dae4,
     type: 2}
-  ingredient3Right: {fileID: 1601714821365584, guid: 7e2432c76b8d3084798d789d5aae87ef,
+  ingredient3Right: {fileID: 1418071686035690, guid: d824ee6c7d630954a84d6e100350678f,
     type: 2}
-  ingredient4Left: {fileID: 1157401313667950, guid: fb21813df548d094ea2d2cfcced8b057,
+  ingredient4Left: {fileID: 1480530687278396, guid: 5cf5281c9b23bf145b133e02aa830b92,
     type: 2}
-  ingredient4Right: {fileID: 1601714821365584, guid: 7e2432c76b8d3084798d789d5aae87ef,
+  ingredient4Right: {fileID: 1726393837476332, guid: c865c85b27fcd484aa641b5c79485191,
     type: 2}
-  ingredient5Left: {fileID: 1157401313667950, guid: fb21813df548d094ea2d2cfcced8b057,
+  ingredient5Left: {fileID: 1511755668952404, guid: 03d705af6669b494d9733b04bd201107,
     type: 2}
-  ingredient5Right: {fileID: 1601714821365584, guid: 7e2432c76b8d3084798d789d5aae87ef,
+  ingredient5Right: {fileID: 1917993036404602, guid: 9721965bbb62ec34f931f4965897ff35,
     type: 2}
   cam: {fileID: 20275239371377792, guid: 1c82d30c796874f45aa5dc216878027f, type: 2}
   spawnTime: 1
