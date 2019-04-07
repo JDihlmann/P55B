@@ -77,6 +77,7 @@ public class StateChange : MonoBehaviour {
 			currentState = State.UI; 
 		}
 
+		Time.timeScale = 0;
 		// TODO: Add ui relateded scripts / objects / ...
 
 	}
@@ -91,8 +92,10 @@ public class StateChange : MonoBehaviour {
             currentState = State.Build;
             ActivateBuildState();
         }
-        // TODO: Add ui relateded scripts / objects / ...
-    }
+
+		Time.timeScale = 1;
+		// TODO: Add ui relateded scripts / objects / ...
+	}
 
 	# endregion
 
@@ -107,6 +110,7 @@ public class StateChange : MonoBehaviour {
         secondBarButton.SetActive(false);
         buildButton.SetActive(true);
 
+		Time.timeScale = 1;
         // TODO: Add bar relateded scripts / objects / ...
     }
 
@@ -132,7 +136,9 @@ public class StateChange : MonoBehaviour {
         secondBarButton.SetActive(true);
         buildButton.SetActive(false);
 
+		Time.timeScale = 0;
 		// Customer verschwinden
+		GamePlaySystem.Instance.gameObject.SetActive(false);
 	}
 
 	public void DeactivateBuildState() {
@@ -146,8 +152,9 @@ public class StateChange : MonoBehaviour {
         // show planet button
         planetButton.SetActive(true);
 
-        // NavMesh
-        // Customer appear
+		// Customer appear
+		Time.timeScale = 1;
+		GamePlaySystem.Instance.gameObject.SetActive(true);
 
 		// Save all objects on grid 
 		ObjectGrid_Instantiate objectGridInstantiate = objectGrid.GetComponent<ObjectGrid_Instantiate>();
@@ -171,8 +178,9 @@ public class StateChange : MonoBehaviour {
         leftButton.SetActive(false);
         planetButton.SetActive(false);
 
-        // TODO: Add space relateded scripts / objects / ...
-    }
+		Time.timeScale = 1;
+		// TODO: Add space relateded scripts / objects / ...
+	}
 
 	public void DeactivateSpaceState() {
 		// TODO: Add space relateded scripts / objects / ...
