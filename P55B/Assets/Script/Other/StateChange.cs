@@ -14,6 +14,8 @@ public class StateChange : MonoBehaviour {
     public GameObject planetButton;
     public GameObject leftButton;
     public GameObject barButton;
+    public GameObject secondBarButton;
+    public GameObject buildButton;
 
 	// Bar GameObjects
 	// TODO: Insert GameObjects 
@@ -89,8 +91,12 @@ public class StateChange : MonoBehaviour {
 			DeactivateState(currentState);
 			currentState = State.Bar; 
 		}
-		// TODO: Add bar relateded scripts / objects / ...
-	}
+
+        secondBarButton.SetActive(false);
+        buildButton.SetActive(true);
+
+        // TODO: Add bar relateded scripts / objects / ...
+    }
 
 	public void DeactivateBarState() {
 		// TODO: Add bar relateded scripts / objects / ...
@@ -111,6 +117,8 @@ public class StateChange : MonoBehaviour {
 
         // hide planet button
         planetButton.SetActive(false);
+        secondBarButton.SetActive(true);
+        buildButton.SetActive(false);
 
 		// Customer verschwinden
 	}
