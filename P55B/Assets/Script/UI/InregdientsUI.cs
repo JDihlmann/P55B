@@ -19,6 +19,7 @@ public class InregdientsUI : MonoBehaviour {
         ingredientsUI = this;
         ingredientList = IngredientManager.GetIngredients();
         FillList();
+        Debug.Log("start");
 	}
 
     void FillList() {
@@ -37,6 +38,14 @@ public class InregdientsUI : MonoBehaviour {
             //holderScript.ingredientCount.text = ingredientList[i].Count.ToString();
             //holderScript.ingredientImage.color = ingredientList[i].Color;
             //holderScript.ingredientID = ingredientList[i].IngredientID;
+        }
+    }
+
+    private void Update()
+    {
+        for (int i = 0; i < ingredientList.Count; i++)
+        {
+            grid.transform.GetChild(i).GetComponent<IngredientHolder>().amount.text = (GameSystem.Instance.ingredientAmount[i]).ToString();
         }
     }
 
