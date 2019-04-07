@@ -55,7 +55,7 @@ public class CustomerSpawner : MonoBehaviour
 	{
 		int spawnPointIndex = Random.Range(0, spawnPoints.Count);
 
-		int random = Random.Range(0, 10);
+		int random = Random.Range(0, 50);
 		if (random == 6)
 		{
 			random = Random.Range(9, 13);
