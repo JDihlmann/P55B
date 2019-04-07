@@ -69,7 +69,7 @@ public class IngredientSpawner : MonoBehaviour {
 
     private void chooseIngredient()
     {
-        int index = Random.Range(0, 5);
+        int index = Random.Range(0, 7);
         switch (index)
         {
             case 0:
@@ -84,7 +84,7 @@ public class IngredientSpawner : MonoBehaviour {
             case 3:
                 SpawnObject(ingredient4Left, ingredient4Right);
                 break;
-            case 4:
+            case 4: case 5: case 6:
                 SpawnObject(ingredient5Left, ingredient5Right);
                 break;
             default:
