@@ -1,15 +1,71 @@
 fileFormatVersion: 2
-guid: 9ebd835cf5d87524cafca56fa4c0113b
+guid: 9a893892c7b7e1e4dbac166bc9bebe62
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
+    100000: Body
+    100002: Cape
+    100004: Cape_Ornament
+    100006: //RootNode
+    100008: Eye_Inner_Left
+    100010: Eye_Inner_Right
+    100012: Eye_Outer_Left
+    100014: Eye_Outer_Right
+    100016: Foot_Left
+    100018: Foot_Right
+    100020: Hat
+    100022: Head
+    100024: Nose
+    400000: Body
+    400002: Cape
+    400004: Cape_Ornament
+    400006: //RootNode
+    400008: Eye_Inner_Left
+    400010: Eye_Inner_Right
+    400012: Eye_Outer_Left
+    400014: Eye_Outer_Right
+    400016: Foot_Left
+    400018: Foot_Right
+    400020: Hat
+    400022: Head
+    400024: Nose
     2100000: lambert1
-    2100002: lambert8
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: pCube5
+    2300000: Body
+    2300002: Cape
+    2300004: Cape_Ornament
+    2300006: Eye_Inner_Left
+    2300008: Eye_Inner_Right
+    2300010: Eye_Outer_Left
+    2300012: Eye_Outer_Right
+    2300014: Foot_Left
+    2300016: Foot_Right
+    2300018: Hat
+    2300020: Head
+    2300022: Nose
+    3300000: Body
+    3300002: Cape
+    3300004: Cape_Ornament
+    3300006: Eye_Inner_Left
+    3300008: Eye_Inner_Right
+    3300010: Eye_Outer_Left
+    3300012: Eye_Outer_Right
+    3300014: Foot_Left
+    3300016: Foot_Right
+    3300018: Hat
+    3300020: Head
+    3300022: Nose
+    4300000: Head
+    4300002: Nose
+    4300004: Cape
+    4300006: Cape_Ornament
+    4300008: Body
+    4300010: Eye_Inner_Left
+    4300012: Eye_Outer_Left
+    4300014: Foot_Left
+    4300016: Foot_Right
+    4300018: Eye_Inner_Right
+    4300020: Eye_Outer_Right
+    4300022: Hat
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -41,7 +97,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 100
+    globalScale: 10
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
