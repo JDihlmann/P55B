@@ -53,7 +53,7 @@ public class Customer : MonoBehaviour
 		popupSystem = gameObject.GetComponent<PopupSystem>();
 		agent = gameObject.GetComponent<NavMeshAgent>();
 		agent.updateRotation = false;
-		InitializeCustomer(0);
+		InitializeCustomer(customerId);
 		AudioManager.Instance.Play("PortalOut");
 	}
 
@@ -206,14 +206,48 @@ public class Customer : MonoBehaviour
 		waitingMaximum = Random.Range(5f, 10f);
 		pathTries = 0;
 		path = new NavMeshPath();
+
+		int remainder = 100;
+		int random = 0;
 		switch (customerId)
 		{
-			case 0: // Standard (Random distribution)
-				customerName = "Kevin";
-				int remainder = 100;
+			// 0 - Sweet, 1 - Sour, 2 - Salty, 3 - Bitter.In Percent.
+
+			case 0: // Standard Blue: salty, bitter, sour
+				customerName = "Blue";
+				random = Random.Range(40, 71);
+				remainder -= random;
+				customerPreference[2] = random;
+				random = Random.Range(Mathf.CeilToInt(0.5f * remainder), remainder + 1);
+				remainder -= random;
+				customerPreference[3] = random;
+				customerPreference[1] = remainder;
+				break;
+			case 1: // Standard Green: sour, bitter, salty
+				customerName = "Green";
+				random = Random.Range(40, 71);
+				remainder -= random;
+				customerPreference[1] = random;
+				random = Random.Range(Mathf.CeilToInt(0.5f * remainder), remainder + 1);
+				remainder -= random;
+				customerPreference[3] = random;
+				customerPreference[2] = remainder;
+				break;
+			case 2: // Standard Orange: sweet, sour
+				customerName = "Orange";
+				random = Random.Range(40, 51);
+				remainder -= random;
+				customerPreference[0] = random;
+				random = Random.Range(40, 51);
+				remainder -= random;
+				customerPreference[1] = random;
+				customerPreference[Random.Range(2, 4)] = remainder;
+				break;
+			case 3: // Sim (Random distribution)
+				customerName = "Sims";
 				for (int i = 0; i < 3; i++)
 				{
-					int random = Random.Range(0, remainder);
+					random = Random.Range(0, remainder + 1);
 					remainder -= random;
 					customerPreference[i] = random;
 				}
@@ -227,6 +261,36 @@ public class Customer : MonoBehaviour
 						customerPreference[i] = customerPreference[index];
 						customerPreference[index] = temp;
 					}
+				}
+				break;
+			case 4: // Angel (Sweet)
+				customerName = "Angel";
+				random = Random.Range(50, 101);
+				remainder -= random;
+				customerPreference[0] = random;
+				random = Mathf.FloorToInt(remainder / 3);
+				remainder -= random;
+				customerPreference[1] = random;
+				random = Mathf.FloorToInt(remainder / 3);
+				remainder -= random;
+				customerPreference[3] = random;
+				customerPreference[2] = remainder;
+				break;
+			case 5: // Devil (bitter, sour)
+				customerName = "Devil";
+				random = Random.Range(40, 51);
+				remainder -= random;
+				customerPreference[3] = random;
+				random = Random.Range(40, 51);
+				remainder -= random;
+				customerPreference[1] = random;
+				customerPreference[Random.Range(3, 5)] = remainder;
+				break;
+			case 6: // Style (neutral)
+				customerName = "Style";
+				for (int i = 0; i < 4; i++)
+				{
+					customerPreference[i] = 25;
 				}
 				break;
 			default:

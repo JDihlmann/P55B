@@ -261,7 +261,11 @@ public class GameSystem : MonoBehaviour
 					new Recipe(-1)
 				};
 		ingredientAmount = new int[4];
-		money = 0;
+		for (int i = 0; i < 4; i++)
+		{
+			ingredientAmount[i] = 10;
+		}
+		money = 100;
 		happiness = 0;
 		objectList = new List<ObjectProperties>();
 	}

@@ -6,7 +6,7 @@ public class CustomerSpawner : MonoBehaviour
 {
 	#region Variables
 	[Header("Components")]
-	public GameObject customerPrefab;
+	public GameObject[] customerPrefab;
 	[Space]
 	[Header("Variables")]
 	public List<GameObject> customerList = new List<GameObject>();
@@ -55,7 +55,17 @@ public class CustomerSpawner : MonoBehaviour
 	{
 		int spawnPointIndex = Random.Range(0, spawnPoints.Count);
 
-		GameObject newCustomer = Instantiate(customerPrefab, spawnPoints[spawnPointIndex].position, new Quaternion(0.0f, 0.0f, 0.0f, 1.0f));
+		int random = Random.Range(0, 10);
+		if (random == 6)
+		{
+			random = Random.Range(9, 13);
+		}
+		else
+		{
+			random = Random.Range(0, 9);
+		}
+
+		GameObject newCustomer = Instantiate(customerPrefab[random], spawnPoints[spawnPointIndex].position, new Quaternion(0.0f, 0.0f, 0.0f, 1.0f));
 		newCustomer.transform.parent = gameObject.transform;
 		customerList.Add(newCustomer);
 	}
@@ -87,11 +97,11 @@ public class CustomerSpawner : MonoBehaviour
 
 		if (!lockMaximum)
 		{
-			if (happiness < Mathf.Pow(2, spawnMaximum - 1))
+			if (happiness < Mathf.Pow(2, spawnMaximum - 1) + 5 * (spawnMaximum - 1))
 			{
 				spawnMaximum -= 1;
 			}
-			else if (happiness >= Mathf.Pow(2, spawnMaximum))
+			else if (happiness >= Mathf.Pow(2, spawnMaximum) + 5 * spawnMaximum)
 			{
 				spawnMaximum += 1;
 			}

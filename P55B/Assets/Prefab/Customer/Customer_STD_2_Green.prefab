@@ -1143,7 +1143,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   popupSystem: {fileID: 0}
   customerName: 
-  customerId: 0
+  customerId: 1
   customerPreference: 00000000000000000000000000000000
   drinkValue: 0
   selectedRecipe:
