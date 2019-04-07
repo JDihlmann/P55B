@@ -98,14 +98,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c5c9868daf29834d83b611a8d772f56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  customerPrefab: {fileID: 1216449300660918, guid: 5fc55a1fd915ebb45a5c149cb7a5c490,
-    type: 2}
+  customerPrefab:
+  - {fileID: 1652342676749752, guid: b49d6e0e889c776439090ef3c816599e, type: 2}
+  - {fileID: 1311352334278928, guid: 6deb561400d17474ba66a14bc393e1f0, type: 2}
+  - {fileID: 1255590640415924, guid: 556d987659bddbc40988dba3477a90b9, type: 2}
+  - {fileID: 1950060387381724, guid: 22250fd892d77034f8834ef3b9130119, type: 2}
+  - {fileID: 1210086842681126, guid: 4e66b9891df37f24cb551687d3610de7, type: 2}
+  - {fileID: 1784962728057140, guid: 1b7bd97fbe69f1c4c9c1e0582ef2198c, type: 2}
+  - {fileID: 1269896872626720, guid: 4461f6cbec2ed314bae9f28074b6a20d, type: 2}
+  - {fileID: 1159317552240722, guid: 4cbe7b3d55e3ddd40b78817329ad78bf, type: 2}
+  - {fileID: 1204121150936244, guid: 2fb5d5ccd6b1d5e458bceaa2ab6baa5a, type: 2}
+  - {fileID: 1852600858865472, guid: a5f57a408491916409baad4ea3e1913f, type: 2}
+  - {fileID: 1295907270800096, guid: 795b48e62fb5ef247a70421fc107e149, type: 2}
+  - {fileID: 1545605347416940, guid: af4d716fa598ef647a9efc967e4283a3, type: 2}
+  - {fileID: 1409377953338186, guid: 5fac7ec2522a34641aac094c37d4bd84, type: 2}
   customerList: []
   leavingCustomerList: []
   spawnMaximum: 1
   spawnDelay: 2
   spawnPoints: []
-  lockMaximum: 1
+  lockMaximum: 0
 --- !u!114 &114883609176794892
 MonoBehaviour:
   m_ObjectHideFlags: 1

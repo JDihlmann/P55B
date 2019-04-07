@@ -48,7 +48,7 @@
       "HappinessFactor": 10,
       "Description": "Rusty chair",
       "Bought": false,
-      "Image": "Plant"
+      "Image": "item4"
     },
     {
       "ItemName": "PLANET",
@@ -58,7 +58,7 @@
       "HappinessFactor": 10,
       "Description": "Rusty chair",
       "Bought": false,
-      "Image": "Plant"
+      "Image": "item5"
     },
     {
       "ItemName": "PLANET",
@@ -68,7 +68,7 @@
       "HappinessFactor": 10,
       "Description": "Rusty chair",
       "Bought": false,
-      "Image": "Plant"
+      "Image": "item6"
     },
     {
       "ItemName": "PLANET",
@@ -78,7 +78,7 @@
       "HappinessFactor": 10,
       "Description": "Rusty chair",
       "Bought": false,
-      "Image": "Plant"
+      "Image": "item7"
     },
     {
       "ItemName": "PLANET",
@@ -88,7 +88,7 @@
       "HappinessFactor": 10,
       "Description": "Rusty chair",
       "Bought": false,
-      "Image": "Plant"
+      "Image": "item8"
     },
     {
       "ItemName": "PLANET",
@@ -98,7 +98,7 @@
       "HappinessFactor": 10,
       "Description": "Rusty chair",
       "Bought": false,
-      "Image": "Plant"
+      "Image": "item9"
     },
     {
       "ItemName": "PLANET",
@@ -108,7 +108,7 @@
       "HappinessFactor": 10,
       "Description": "Rusty chair",
       "Bought": false,
-      "Image": "Plant"
+      "Image": "item10"
     },
     {
       "ItemName": "PLANET",
@@ -118,7 +118,7 @@
       "HappinessFactor": 10,
       "Description": "Rusty chair",
       "Bought": false,
-      "Image": "Plant"
+      "Image": "item11"
     },
     {
       "ItemName": "PLANET",
@@ -128,7 +128,7 @@
       "HappinessFactor": 10,
       "Description": "Rusty chair",
       "Bought": false,
-      "Image": "Plant"
+      "Image": "item12"
     },
     {
       "ItemName": "PLANET",
@@ -138,7 +138,27 @@
       "HappinessFactor": 10,
       "Description": "Rusty chair",
       "Bought": false,
-      "Image": "Plant"
+      "Image": "item13"
+    },
+    {
+      "ItemName": "PLANET",
+      "ItemID": 13,
+      "Cost": 5,
+      "Color": "Color.red",
+      "HappinessFactor": 10,
+      "Description": "Rusty chair",
+      "Bought": false,
+      "Image": "item14"
+    },
+    {
+      "ItemName": "PLANET",
+      "ItemID": 13,
+      "Cost": 5,
+      "Color": "Color.red",
+      "HappinessFactor": 10,
+      "Description": "Rusty chair",
+      "Bought": false,
+      "Image": "item15"
     }
   ]
 }

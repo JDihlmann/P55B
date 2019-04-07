@@ -24,6 +24,7 @@ public class ItemHolder : MonoBehaviour, IPointerDownHandler, IPointerUpHandler 
     private float requiredHoldTime = 1f;
 
     public ObjectGrid_Instantiate objectGrid;
+    public StateChange changer;
 
     public UnityEvent onLongClick;
 
@@ -38,6 +39,7 @@ public class ItemHolder : MonoBehaviour, IPointerDownHandler, IPointerUpHandler 
         //happinessFactor.text = item.HappinessFactor.ToString();
         sprite = Resources.Load<Sprite>("Sprites/"+item.Image);
         image.sprite = sprite;
+        image.preserveAspect = true;
         Price.text = item.Cost.ToString();
     }
 
@@ -69,8 +71,10 @@ public class ItemHolder : MonoBehaviour, IPointerDownHandler, IPointerUpHandler 
                 if (GameSystem.Instance.money - item.Cost >= 0)
                 {
                     this.gameObject.transform.parent.parent.parent.parent.parent.gameObject.SetActive(false);
+                    changer.ActivateBuildState();
                     objectGrid.SpawnNewObjectWithID(itemID, item.Cost);
                     GameSystem.Instance.SubMoney(item.Cost);
+                    GameSystem.Instance.AddHappiness(item.HappinessFactor);
                 }
             }
         }
@@ -89,6 +93,9 @@ public class ItemHolder : MonoBehaviour, IPointerDownHandler, IPointerUpHandler 
         ModalWindowHolder holderScript = holder.GetComponent<ModalWindowHolder>();
         holderScript.titel.text = item.ItemName;
         holderScript.image.sprite = sprite;
+        holderScript.price.text = item.Cost.ToString();
+        holderScript.happinessFactor.text = item.HappinessFactor.ToString();
+        holderScript.description.text = item.Description;
         //holderScript.image.SetNativeSize();
         holderScript.image.preserveAspect = true;
     }

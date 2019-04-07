@@ -52,7 +52,7 @@ public class IngredientSpawner : MonoBehaviour {
         spawnpoint2.x = spawnpoint2.x * 1.5f;
         spawnpoint4.x = spawnpoint2.x * 1.5f;
         spawnpoint6.x = spawnpoint2.x * 1.5f;
-        spawnPointsRight =  new Vector3[]{spawnpoint1, spawnpoint3, spawnpoint5, spawnpoint7 };
+        spawnPointsRight =  new Vector3[]{ spawnpoint3, spawnpoint5, spawnpoint7 };
         spawnPointsLeft = new Vector3[] {spawnpoint2, spawnpoint4, spawnpoint6,};
         spawnDelay = 1.3f;
     }
@@ -69,7 +69,7 @@ public class IngredientSpawner : MonoBehaviour {
 
     private void chooseIngredient()
     {
-        int index = Random.Range(0, 5);
+        int index = Random.Range(0, 7);
         switch (index)
         {
             case 0:
@@ -84,7 +84,7 @@ public class IngredientSpawner : MonoBehaviour {
             case 3:
                 SpawnObject(ingredient4Left, ingredient4Right);
                 break;
-            case 4:
+            case 4: case 5: case 6:
                 SpawnObject(ingredient5Left, ingredient5Right);
                 break;
             default:

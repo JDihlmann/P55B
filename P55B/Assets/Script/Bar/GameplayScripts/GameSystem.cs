@@ -167,11 +167,19 @@ public class GameSystem : MonoBehaviour
 	public void SubMoney(int amount)
 	{
 		money -= amount;
+		if (money < 0)
+		{
+			money = 0;
+		}
 	}
 
 	public void SetMoney(int amount)
 	{
 		money = amount;
+		if (money < 0)
+		{
+			money = 0;
+		}
 	}
 	#endregion
 
@@ -184,11 +192,19 @@ public class GameSystem : MonoBehaviour
 	public void SubHappiness(int amount)
 	{
 		happiness -= amount;
+		if (happiness < 0)
+		{
+			happiness = 0;
+		}
 	}
 
 	public void SetHappiness(int amount)
 	{
 		happiness = amount;
+		if (happiness < 0)
+		{
+			happiness = 0;
+		}
 	}
 	#endregion
 
@@ -245,7 +261,11 @@ public class GameSystem : MonoBehaviour
 					new Recipe(-1)
 				};
 		ingredientAmount = new int[4];
-		money = 0;
+		for (int i = 0; i < 4; i++)
+		{
+			ingredientAmount[i] = 10;
+		}
+		money = 100;
 		happiness = 0;
 		objectList = new List<ObjectProperties>();
 	}
