@@ -21,12 +21,14 @@ public class MachineStatsHolder : MonoBehaviour {
 
     private Sprite statSprite;
 
+    public GameObject cantBuy;
+
     private void Start()
     {
         currentStat = GameSystem.Instance.workerUnlocks[machineStat.ID];
         id = machineStat.ID;
         name.text = machineStat.Name;
-        price.text = machineStat.Steps[currentStat+1].Price.ToString();
+        price.text = machineStat.Steps[currentStat].Price.ToString();
         statSprite = Resources.Load<Sprite>("Sprites/MachineStatIce");
         Sprite nostat = Resources.Load<Sprite>("Sprites/NoStat");
         for (int i = 0; i < currentStat; i++)
@@ -42,21 +44,32 @@ public class MachineStatsHolder : MonoBehaviour {
         this.GetComponent<Button>().onClick.AddListener(updateStat);
     }
 
+    private void Update()
+    {
+        if(currentStat + 1 <= machineStat.Steps.Count)
+        {
+            cantBuy.SetActive(!(GameSystem.Instance.money - machineStat.Steps[currentStat].Price >= 0));
+            this.gameObject.GetComponent<Button>().interactable = GameSystem.Instance.money - machineStat.Steps[currentStat].Price >= 0;
+        }
+    }
+
     private void updateStat()
     {
 
-        if (currentStat == machineStat.Steps.Count - 1)
+        statGrid.GetChild(currentStat).GetComponent<Image>().sprite = statSprite;
+        GameSystem.Instance.SubMoney(machineStat.Steps[currentStat].Price);
+
+        currentStat += 1;
+
+        if (currentStat == machineStat.Steps.Count)
         {
             price.text = "";
             this.GetComponent<Button>().onClick.RemoveListener(updateStat);
+            this.gameObject.GetComponent<Button>().interactable = false;
         } else 
         {
-            price.text = machineStat.Steps[currentStat + 1].Price.ToString();
+            price.text = machineStat.Steps[currentStat].Price.ToString();
         }
-
-        statGrid.GetChild(currentStat).GetComponent<Image>().sprite = statSprite;
-
-        currentStat += 1;
 
         GameSystem.Instance.UpgradeWorker(machineStat.ID);
     }

@@ -7,7 +7,7 @@
       "MinIncome": 2,
       "MaxIncome": 5,
       "Description": "Rusty table",
-      "Image": "Chair",
+      "Image": "Drink1",
       "Rarety": "common",
       "Ingredients": [0],
       "Amount":  [5]
@@ -19,7 +19,7 @@
       "MinIncome": 2,
       "MaxIncome": 5,
       "Description": "Rusty table",
-      "Image": "Chair",
+      "Image": "Drink2",
       "Rarety": "common",
       "Ingredients": [ 0 ],
       "Amount": [ 5 ]
@@ -31,7 +31,7 @@
       "MinIncome": 2,
       "MaxIncome": 5,
       "Description": "Rusty table",
-      "Image": "Chair",
+      "Image": "Drink3",
       "Rarety": "common",
       "Ingredients": [ 0 ],
       "Amount": [ 5 ]
@@ -43,7 +43,19 @@
       "MinIncome": 2,
       "MaxIncome": 5,
       "Description": "Rusty table",
-      "Image": "Chair",
+      "Image": "Drink4",
+      "Rarety": "common",
+      "Ingredients": [ 0 ],
+      "Amount": [ 5 ]
+    },
+    {
+      "Name": "PINA COLADA 4",
+      "ID": 4,
+      "Price": 500,
+      "MinIncome": 2,
+      "MaxIncome": 5,
+      "Description": "Rusty table",
+      "Image": "Drink5",
       "Rarety": "common",
       "Ingredients": [ 0 ],
       "Amount": [ 5 ]

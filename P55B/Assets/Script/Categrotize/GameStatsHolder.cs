@@ -10,6 +10,6 @@ public class GameStatsHolder : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-        money.text = GameManager.GetMoney().ToString();
+        money.text = GameSystem.Instance.money.ToString();
 	}
 }

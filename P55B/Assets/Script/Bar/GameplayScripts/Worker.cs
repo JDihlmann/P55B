@@ -22,7 +22,8 @@ public class Worker : MonoBehaviour
 			{
 				for (int i = 0; i < GamePlaySystem.Instance.orderingCustomerList.Count; i++)
 				{
-					if (GameSystem.Instance.recipeList.Contains(GamePlaySystem.Instance.orderingCustomerList[i].selectedRecipe))
+					// if (GameSystem.Instance.recipeList.Contains(GamePlaySystem.Instance.orderingCustomerList[i].selectedRecipe))
+					if(GamePlaySystem.Instance.IngredientCost(GamePlaySystem.Instance.orderingCustomerList[i].selectedRecipe))
 					{
 						servicedCustomer = GamePlaySystem.Instance.orderingCustomerList[i];
 						GamePlaySystem.Instance.orderingCustomerList.RemoveAt(i);
@@ -33,7 +34,6 @@ public class Worker : MonoBehaviour
 						break;
 					}
 				}
-
 			}
 		}
 		if (isIdle)
