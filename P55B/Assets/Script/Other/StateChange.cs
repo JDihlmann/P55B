@@ -7,8 +7,10 @@ public class StateChange : MonoBehaviour {
 	// Enum possible states
 	public enum State {UI, Bar, Build, Space};
 
-	// Current state
-	public State currentState;
+    // Current state
+    public State currentState;
+
+    public State lastState;
 
     // UI GameObjects
     public GameObject planetButton;
@@ -70,7 +72,8 @@ public class StateChange : MonoBehaviour {
 
 	public void ActivateUIState() {
 		if(currentState != State.UI) {
-			DeactivateState(currentState);
+            lastState = currentState;
+            DeactivateState(currentState);
 			currentState = State.UI; 
 		}
 
@@ -79,8 +82,17 @@ public class StateChange : MonoBehaviour {
 	}
 
 	public void DeactivateUIState() {
-		// TODO: Add ui relateded scripts / objects / ...
-	}
+        if(lastState == State.Bar)
+        {
+            currentState = State.Bar;
+            ActivateBarState();
+        } else if(lastState == State.Build)
+        {
+            currentState = State.Build;
+            ActivateBuildState();
+        }
+        // TODO: Add ui relateded scripts / objects / ...
+    }
 
 	# endregion
 
