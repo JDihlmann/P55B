@@ -35,14 +35,15 @@ public class Blackhole : MonoBehaviour {
 			movement.StopMovement();
 
             // Increment counter:
+            int amount = Random.Range(5, 11);
             if (ingredient.index == 4)
             {
                 destroyedIngredient = Random.Range(0, 4);
-                GameSystem.Instance.AddIngredient(destroyedIngredient, -1);
+                GameSystem.Instance.AddIngredient(destroyedIngredient, -amount);
             }
             else
             {
-                GameSystem.Instance.AddIngredient(ingredient.index, 1);
+                GameSystem.Instance.AddIngredient(ingredient.index, amount);
             }
 			// Save Counter
 			GameSystem.SaveGameSystem();
