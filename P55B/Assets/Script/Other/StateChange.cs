@@ -31,9 +31,21 @@ public class StateChange : MonoBehaviour {
 
 	}
 
-	# region General Changes
+    private void Update()
+    {
+        if(!Camera.main.GetComponent<Camera_State>().zoom && currentState == State.Space)
+        {
+            barButton.SetActive(true);
+        } else if (!Camera.main.GetComponent<Camera_State>().zoom && currentState != State.Build)
+        {
+            leftButton.SetActive(true);
+            planetButton.SetActive(true);
+        }
+    }
 
-	public void DeactivateState(State state) {
+    #region General Changes
+
+    public void DeactivateState(State state) {
 		switch (state) {
 			case State.UI: 
 				DeactivateUIState();
@@ -138,7 +150,6 @@ public class StateChange : MonoBehaviour {
 
         leftButton.SetActive(false);
         planetButton.SetActive(false);
-        barButton.SetActive(true);
 
         // TODO: Add space relateded scripts / objects / ...
     }
@@ -150,8 +161,6 @@ public class StateChange : MonoBehaviour {
 		cameraState.ZoomToBar();
 
         barButton.SetActive(false);
-        leftButton.SetActive(true);
-        planetButton.SetActive(true);
     }
 
 	# endregion
