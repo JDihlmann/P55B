@@ -14,10 +14,12 @@ public class Hover : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		float delta = Mathf.Sin((Time.time + offset)*2); 
-		Vector3 pos = transform.position;
+		if(Time.timeScale == 1) {
+			float delta = Mathf.Sin((Time.time + offset)*2); 
+			Vector3 pos = transform.position;
 
-		pos.y += (delta * lower_offset) * 0.0008f;
-		transform.position = pos; 
+			pos.y += (delta * lower_offset) * 0.0008f;
+			transform.position = pos; 
+		}
 	}
 }
