@@ -4,25 +4,25 @@
       "ID": 0,
       "Name": "QUBI",
       "Price": 5,
-      "Image": "Qubi"
+      "Image": "ingredient1"
     },
     {
       "ID": 1,
       "Name": "FLOLI",
       "Price": 2,
-      "Image": "Qubi"
+      "Image": "ingredient2"
     },
     {
       "ID": 2,
       "Name": "FLOLI",
       "Price": 5,
-      "Image": "Qubi"
+      "Image": "ingredient3"
     },
     {
       "ID": 3,
       "Name": "FLOLI",
       "Price": 5,
-      "Image": "Qubi"
+      "Image": "ingredient4"
     }
   ]
 }
