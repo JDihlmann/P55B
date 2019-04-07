@@ -16,6 +16,7 @@
 }
   
 .background {
+    min-height: 1000px;
     background: radial-gradient(ellipse at top, rgba(47,37,88,1) 40%, rgba(10,30,57,1) 100%) ;
     z-index:0;
 }
