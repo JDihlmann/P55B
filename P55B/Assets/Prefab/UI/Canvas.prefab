@@ -1820,6 +1820,7 @@ MonoBehaviour:
     type: 2}
   grid: {fileID: 224526920221667016}
   objectGrid: {fileID: 0}
+  changer: {fileID: 0}
 --- !u!114 &114174739974818898
 MonoBehaviour:
   m_ObjectHideFlags: 1

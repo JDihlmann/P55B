@@ -24,6 +24,7 @@ public class ItemHolder : MonoBehaviour, IPointerDownHandler, IPointerUpHandler 
     private float requiredHoldTime = 1f;
 
     public ObjectGrid_Instantiate objectGrid;
+    public StateChange changer;
 
     public UnityEvent onLongClick;
 
@@ -70,6 +71,7 @@ public class ItemHolder : MonoBehaviour, IPointerDownHandler, IPointerUpHandler 
                 if (GameSystem.Instance.money - item.Cost >= 0)
                 {
                     this.gameObject.transform.parent.parent.parent.parent.parent.gameObject.SetActive(false);
+                    changer.ActivateBuildState();
                     objectGrid.SpawnNewObjectWithID(itemID, item.Cost);
                     GameSystem.Instance.SubMoney(item.Cost);
                 }
