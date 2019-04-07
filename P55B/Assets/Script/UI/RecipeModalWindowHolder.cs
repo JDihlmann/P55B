@@ -8,6 +8,7 @@ public class RecipeModalWindowHolder : MonoBehaviour {
     public Text title;
     public Button background;
     public Image image;
+    public Text description;
     public List<int> amount;
     public List<int> ingredients;
     public Text price;

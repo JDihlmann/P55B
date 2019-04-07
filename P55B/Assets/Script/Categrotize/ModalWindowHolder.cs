@@ -9,7 +9,9 @@ public class ModalWindowHolder : MonoBehaviour {
     public Text titel;
     public Button background;
     public Image image;
-    //public Text happinessFactor;
+    public Text happinessFactor;
+    public Text price;
+    public Text description;
 
     void Start()
     {
