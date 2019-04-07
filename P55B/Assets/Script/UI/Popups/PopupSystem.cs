@@ -56,10 +56,26 @@ public class PopupSystem : MonoBehaviour
 
 	private void UpdateInteraction()
 	{
-		canvas.transform.LookAt(canvas.transform.position + camera.transform.rotation * Vector3.forward, camera.transform.rotation * Vector3.up);
-		percentageDone = (1 - currentTimer / startingTimer);
-		circleFill.fillAmount = percentageDone;
-		percentageText.text = Mathf.Round(percentageDone * 100) + "%";
+		if (canvas == null)
+		{
+			StopInteraction();
+		}
+		else
+		{
+			canvas.transform.LookAt(canvas.transform.position + camera.transform.rotation * Vector3.forward, camera.transform.rotation * Vector3.up);
+			percentageDone = (1 - currentTimer / startingTimer);
+			circleFill.fillAmount = percentageDone;
+			UpdateColor();
+			percentageText.text = Mathf.Round(percentageDone * 100) + "%";
+		}
+	}
+
+	private void UpdateColor()
+	{
+		if (happiness == 0)
+		{
+
+		}
 	}
 
 	private void StopInteraction()

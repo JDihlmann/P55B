@@ -172,7 +172,10 @@ public class Customer : MonoBehaviour
 	{
 		if (agent.velocity.sqrMagnitude > Mathf.Epsilon)
 		{
-			transform.rotation = Quaternion.LookRotation(agent.velocity.normalized);
+			if (agent.velocity.normalized != Vector3.zero)
+			{
+				transform.rotation = Quaternion.LookRotation(agent.velocity.normalized);
+			}
 		}
 		else
 		{
@@ -193,13 +196,13 @@ public class Customer : MonoBehaviour
 	}
 
 	#region SystemMethods
-	public void InitializeCustomer(int newId)
+	private void InitializeCustomer(int newId)
 	{
 		actionTimer = Random.Range(0f, 2f);
 		atDestination = false;
 		customerId = newId;
 		currentState = CustomerState.ENTER;
-		happiness = 100;
+		happiness = 80;
 		happinessLossRate = Random.Range(2f, 4f);
 		isWaiting = false;
 		waitingTimer = 0f;
@@ -284,7 +287,7 @@ public class Customer : MonoBehaviour
 				random = Random.Range(40, 51);
 				remainder -= random;
 				customerPreference[1] = random;
-				customerPreference[Random.Range(3, 5)] = remainder;
+				customerPreference[Random.Range(2, 4)] = remainder;
 				break;
 			case 6: // Style (neutral)
 				customerName = "Style";
@@ -299,7 +302,7 @@ public class Customer : MonoBehaviour
 		}
 	}
 
-	public void GenerateOffset()
+	private void GenerateOffset()
 	{
 		int random1 = Random.Range(0, 2); // X or Z axis
 		int random2 = Random.Range(0, 2); // +1 or -1
@@ -330,7 +333,7 @@ public class Customer : MonoBehaviour
 	#endregion
 
 	#region GameplayMethods
-	public void SetNewDestination()
+	private void SetNewDestination()
 	{
 		switch (currentState)
 		{
@@ -366,7 +369,7 @@ public class Customer : MonoBehaviour
 		}
 	}
 
-	public void GoToDestination()
+	private void GoToDestination()
 	{
 		actionTimer = Random.Range(1f, 1.5f);
 		if (CalculateNewPath() == true)
@@ -425,7 +428,7 @@ public class Customer : MonoBehaviour
 		}
 	}
 
-	public bool CalculateNewPath()
+	private bool CalculateNewPath()
 	{
 		if(destination == GamePlaySystem.Instance.bar)
 		{
@@ -485,22 +488,7 @@ public class Customer : MonoBehaviour
 				currentState = CustomerState.LEAVE;
 				break;
 			case CustomerState.LEAVE:
-				if (happiness <= 33)
-				{
-					GameSystem.Instance.SubHappiness(1);
-					if (happiness <= 15)
-					{
-						GameSystem.Instance.SubHappiness(1);
-					}
-				}
-				else if (happiness >= 75)
-				{
-					GameSystem.Instance.AddHappiness(1);
-					if (happiness >= 90)
-					{
-						GameSystem.Instance.AddHappiness(1);
-					}
-				}
+				CalculateHappiness();
 				GamePlaySystem.Instance.DestroyCustomer(gameObject);
 				break;
 			default:
@@ -511,7 +499,7 @@ public class Customer : MonoBehaviour
 
 	public void SelectDrink()
 	{
-		int bestValue = 400;
+		int bestValue = 201;
 		for (int i = 0; i < GameSystem.Instance.recipeList.Count; i++)
 		{
 			if (GameSystem.Instance.recipeList[i].recipeId != -1)
@@ -530,6 +518,50 @@ public class Customer : MonoBehaviour
 		}
 		drinkValue = bestValue;
 		// Debug.Log(selectedRecipe.recipeName + " with value " + bestValue);
+	}
+
+	private void CalculateHappiness()
+	{
+		if (happiness <= 33)
+		{
+			GameSystem.Instance.SubHappiness(1);
+			if (customerId == 5)
+			{
+				GameSystem.Instance.SubHappiness(1);
+				for (int i = 0; i < 5; i++)
+				{
+					GameSystem.Instance.SubIngredient(Random.Range(0, 5), 1);
+				}
+			}
+			if (happiness <= 15)
+			{
+				GameSystem.Instance.SubHappiness(1);
+				if (customerId == 5)
+				{
+					GameSystem.Instance.SubHappiness(1);
+					for (int i = 0; i < 5; i++)
+					{
+						GameSystem.Instance.SubIngredient(Random.Range(0, 5), 1);
+					}
+				}
+			}
+		}
+		else if (happiness >= 75)
+		{
+			GameSystem.Instance.AddHappiness(1);
+			if (customerId == 4)
+			{
+				GameSystem.Instance.AddHappiness(1);
+			}
+			if (happiness >= 90)
+			{
+				GameSystem.Instance.AddHappiness(1);
+				if (customerId == 4)
+				{
+					GameSystem.Instance.AddHappiness(1);
+				}
+			}
+		}
 	}
 
 	private void OnTriggerEnter(Collider other)

@@ -142,6 +142,10 @@ public class GameSystem : MonoBehaviour
 		else
 		{
 			ingredientAmount[id] -= amount;
+			if (ingredientAmount[id] < 0)
+			{
+				ingredientAmount[id] = 0;
+			}
 		}
 	}
 
@@ -154,6 +158,10 @@ public class GameSystem : MonoBehaviour
 		else
 		{
 			ingredientAmount[id] = amount;
+			if (ingredientAmount[id] < 0)
+			{
+				ingredientAmount[id] = 0;
+			}
 		}
 	}
 	#endregion

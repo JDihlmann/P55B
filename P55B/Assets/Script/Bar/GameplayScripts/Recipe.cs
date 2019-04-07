@@ -45,7 +45,7 @@ public class Recipe
 				recipeIngredientCost = new int[4];
 				for (int i = 0; i < 4; i++)
 				{
-					recipeStats[i] = 25;
+					recipeStats[i] = 12;
 					recipeIngredientCost[i] = 1;
 				}
 				break;
@@ -53,10 +53,10 @@ public class Recipe
 				recipeName = "Gremonade";
 				recipeDescription = "When life gives you gremons...";
 				recipeUnlockCost = 100;
-				recipePrice = 15;
+				recipePrice = 20;
 				recipeCraftTime = 3;
 				recipeStats = new int[] { 0, 50, 35, 15 };
-				recipeIngredientCost = new int[] { 0, 6, 4, 2 };
+				recipeIngredientCost = new int[] { 0, 3, 2, 1 };
 				break;
 			case 2:
 				recipeName = "Cöfi";
@@ -65,16 +65,19 @@ public class Recipe
 				recipePrice = 25;
 				recipeCraftTime = 6;
 				recipeStats = new int[] { 15, 35, 0, 50 };
-				recipeIngredientCost = new int[] { 2, 4, 0, 6 };
+				recipeIngredientCost = new int[] { 1, 2, 0, 4 };
 				break;
 			case 3:
 				recipeName = "New Basic+";
 				recipeDescription = "Nearly the same as The Basic but more expensive and strenuous thus it has to be better, right?!";
 				recipeUnlockCost = 500;
-				recipePrice = 20;
+				recipePrice = 30;
 				recipeCraftTime = 4;
-				recipeStats = new int[] { 25, 25, 25, 25 };
-				recipeIngredientCost = new int[] { 5, 5, 5, 5};
+				for (int i = 0; i < 4; i++)
+				{
+					recipeStats[i] = 25;
+					recipeIngredientCost[i] = 3;
+				}
 				break;
 			default:
 				Debug.Log("Recipe not found.");
