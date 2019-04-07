@@ -542,6 +542,18 @@ public class Customer : MonoBehaviour
 					atDestination = true;
 				}
 				break;
+			case CustomerState.ORDER:
+				if (other.tag == "Bar")
+				{
+					atDestination = true;
+				}
+				break;
+			case CustomerState.WAITING:
+				if (other.tag == "Bar")
+				{
+					atDestination = true;
+				}
+				break;
 			case CustomerState.SEATING:
 				if (other.gameObject == destination)
 				{
