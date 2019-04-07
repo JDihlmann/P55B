@@ -71,7 +71,7 @@ public class KeyboardInput : MonoBehaviour {
 
 		if (Input.GetKeyDown("space")) {
 			stateChange.ActivateBarState(); 
-			objectGridInstantiate.SpawnNewObjectWithID(4, 0);
+			objectGridInstantiate.SpawnNewObjectWithID(4, 0, 0);
 		}
 
 

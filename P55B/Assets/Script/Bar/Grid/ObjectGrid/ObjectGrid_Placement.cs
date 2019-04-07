@@ -39,7 +39,9 @@ public class ObjectGrid_Placement : MonoBehaviour {
     public GameObject moveObjectButtons;
 
 	// New Object
-	private int newObjectPrice; 
+	bool spawnObject = false; 
+	private int newObjectPrice;
+	private int newObjectHapiness;  
 	private bool isNewObject = false;
 
 	void Start () {
@@ -64,7 +66,11 @@ public class ObjectGrid_Placement : MonoBehaviour {
 	private void MouseDown() {
 		if (initalClick) {
 			initalClick = false;
-			initalClickHitObject = DidRaycastHitObject(); 
+
+			if(!spawnObject) {
+				initalClickHitObject = DidRaycastHitObject();
+			}
+			spawnObject = false; 
 
 			if (initalClickHitObject) {
 				bool IsDiffrentObject = (hitObjectParent != hitObject.transform.parent.gameObject);
@@ -115,6 +121,7 @@ public class ObjectGrid_Placement : MonoBehaviour {
 	}
 
 	private void MouseUp() {
+		spawnObject = false; 
 		if (initalClickHitObject) {
 			Vector2Int fromPos = hitObjectParentValues.placedPosition;
 
@@ -235,6 +242,7 @@ public class ObjectGrid_Placement : MonoBehaviour {
 		if (isNewObject) {
 			// TODO: Send Money Back 
 			GameSystem.Instance.AddMoney(newObjectPrice);
+			GameSystem.Instance.SubHappiness(newObjectHapiness); 
 			isNewObject = false; 
 		}
 
@@ -364,7 +372,9 @@ public class ObjectGrid_Placement : MonoBehaviour {
 
 	# region Spawn 
 	
-	public void MoveSpawnObjectAtCollider(GameObject collider, int price) {
+	public void MoveSpawnObjectAtCollider(GameObject collider, int price, int hapiness) {
+
+		spawnObject = true; 
 
 		TryPlacingObjectOnGrid(); 
 
@@ -378,6 +388,7 @@ public class ObjectGrid_Placement : MonoBehaviour {
 		isNewObject = true; 
 
 		newObjectPrice = price; 
+		newObjectHapiness = hapiness; 
 
 		initalClickHitObject = true; 
 	}
