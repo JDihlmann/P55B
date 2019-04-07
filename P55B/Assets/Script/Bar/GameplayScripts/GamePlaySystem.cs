@@ -51,7 +51,7 @@ public class GamePlaySystem : MonoBehaviour
 
 	public void Update()
 	{
-		if (Input.GetKeyUp(KeyCode.Space))
+		if (Input.GetKeyUp(KeyCode.F1))
 		{
 			GameSystem.Instance.UpgradeWorker(1);
 			for (int i = 0; i < 4; i++)
@@ -157,14 +157,9 @@ public class GamePlaySystem : MonoBehaviour
 				ingredientAmount[i] -= selectedRecipe.recipeIngredientCost[i];
 			}
 			GameSystem.Instance.ingredientAmount = ingredientAmount;
-			Debug.Log("GOGO");
 			return true;
 		}
-		else
-		{
-			Debug.Log("Nicht genug ingredients");
-			return false;
-		}
+		return false;
 	}
 	#endregion
 }

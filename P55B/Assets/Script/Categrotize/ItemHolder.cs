@@ -63,7 +63,7 @@ public class ItemHolder : MonoBehaviour, IPointerDownHandler, IPointerUpHandler 
         CantBuy.gameObject.SetActive(!(GameSystem.Instance.money - item.Cost >= 0));
         if (pointerDown)
         {
-            pointerDownTimer += Time.deltaTime;
+            pointerDownTimer += Time.unscaledDeltaTime;
             Debug.Log(pointerDownTimer);
             if (pointerDownTimer >= requiredHoldTime)
             {
