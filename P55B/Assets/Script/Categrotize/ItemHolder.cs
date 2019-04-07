@@ -74,6 +74,7 @@ public class ItemHolder : MonoBehaviour, IPointerDownHandler, IPointerUpHandler 
                     changer.ActivateBuildState();
                     objectGrid.SpawnNewObjectWithID(itemID, item.Cost);
                     GameSystem.Instance.SubMoney(item.Cost);
+                    GameSystem.Instance.AddHappiness(item.HappinessFactor);
                 }
             }
         }
