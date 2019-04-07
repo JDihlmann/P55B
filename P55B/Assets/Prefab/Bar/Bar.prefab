@@ -15220,10 +15220,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c61bcf7b44b4d224a8a51ff82f3ffa60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  df_Chair: {fileID: 0}
-  df_CouchS: {fileID: 0}
+  df_Chair: {fileID: 1980257795766844, guid: 5adcde9c820e9e545bc4b5e561df61bd, type: 2}
+  df_CouchS: {fileID: 1629997846034180, guid: 5ff894029414f7b4d894d9690de40c73, type: 2}
   df_CouchL: {fileID: 0}
-  df_Tabel: {fileID: 0}
+  df_Tabel: {fileID: 1721968565489690, guid: 02329aa3c0c1d1c4891252eff6ad6c86, type: 2}
   s1_Chair_Purple: {fileID: 1095436220130688, guid: 8570043be17f83944984fbd151fb874d,
     type: 2}
   s1_Chair_Red: {fileID: 1095436220130688, guid: cfcfe46fb3342e34f83e12ee614a924f,

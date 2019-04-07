@@ -13,10 +13,9 @@ public class ObjectGrid_Instantiate : MonoBehaviour {
 	public Vector2Int[,] integerObjectGrid;
 
 	// S1 objects
-	public GameObject df_Chair;
-	public GameObject df_CouchS;
-	public GameObject df_CouchL;
-	public GameObject df_Tabel;
+	public GameObject s0_Chair;
+	public GameObject s0_CouchS;
+	public GameObject s0_Tabel;
 	public GameObject s1_Chair_Purple;
 	public GameObject s1_Chair_Red;
 	public GameObject s1_Chair_Yellow;
@@ -106,6 +105,8 @@ public class ObjectGrid_Instantiate : MonoBehaviour {
 				objectGridPlacement.PlaceObjectOnGridWithRotation(gameObject, position, Vector2Int.zero, rotation);
 			} 
 		}
+
+		GamePlaySystem.Instance.UpdateSeatList();
 	}
 
 	public void SaveObjects () {
@@ -127,6 +128,9 @@ public class ObjectGrid_Instantiate : MonoBehaviour {
 
 		// Save Game
 		GameSystem.SaveGameSystem(); 
+
+		// Update Seat List
+		GamePlaySystem.Instance.UpdateSeatList();
 	}
 
 
@@ -152,14 +156,12 @@ public class ObjectGrid_Instantiate : MonoBehaviour {
 
 	private GameObject GetGameObjectForId(int id) {
 		switch (id) {
-			case 0: 
-				return df_Chair;
 			case 1: 
-				return df_CouchS;
+				return s0_Chair;
 			case 2: 
-				return df_CouchL;
+				return s0_CouchS;
 			case 3: 
-				return df_Tabel;
+				return s0_Tabel;
 			case 4: 
 				return s1_Chair_Yellow;
 			case 5: 
@@ -261,5 +263,7 @@ public class ObjectGrid_Instantiate : MonoBehaviour {
 		objectGridPlacement.PlaceObjectOnGridWithRotation(couchs1, new Vector2Int(1,5), Vector2Int.zero, 270);
 		
 		objectGridPlacement.PlaceObjectOnGridWithRotation(couchl1, new Vector2Int(1,8), Vector2Int.zero, 0);
+
+		GamePlaySystem.Instance.UpdateSeatList();
 	}
 }
