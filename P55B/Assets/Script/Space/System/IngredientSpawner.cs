@@ -52,7 +52,7 @@ public class IngredientSpawner : MonoBehaviour {
         spawnpoint2.x = spawnpoint2.x * 1.5f;
         spawnpoint4.x = spawnpoint2.x * 1.5f;
         spawnpoint6.x = spawnpoint2.x * 1.5f;
-        spawnPointsRight =  new Vector3[]{spawnpoint1, spawnpoint3, spawnpoint5, spawnpoint7 };
+        spawnPointsRight =  new Vector3[]{ spawnpoint3, spawnpoint5, spawnpoint7 };
         spawnPointsLeft = new Vector3[] {spawnpoint2, spawnpoint4, spawnpoint6,};
         spawnDelay = 1.3f;
     }
