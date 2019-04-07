@@ -22,6 +22,8 @@ public class Recipe
 			case -1:
 				recipeName = "None";
 				recipeDescription = "Do you really want to serve nothing to your customer?";
+				recipeStats = new int[4];
+				recipeIngredientCost = new int[4];
 				/*
 				recipeUnlockCost = 0;
 				recipePrice = 0;
