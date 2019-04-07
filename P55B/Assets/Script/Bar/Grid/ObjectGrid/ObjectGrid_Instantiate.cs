@@ -52,7 +52,7 @@ public class ObjectGrid_Instantiate : MonoBehaviour {
 		// Are loaded (No SEO does not help here)
 		if(runOnce) {
 			LoadObjects();
-			TestBar(); 
+			// TestBar(); 
 			runOnce = false; 
 		}
 	}
@@ -102,7 +102,9 @@ public class ObjectGrid_Instantiate : MonoBehaviour {
 			if (objectPrefab != null) {
 				GameObject gameObject = Instantiate(objectPrefab, Vector3.zero, Quaternion.identity);
 				gameObject.transform.parent = transform;
-				objectGridPlacement.PlaceObjectOnGridWithRotation(gameObject, position, Vector2Int.zero, rotation);
+				if(!objectGridPlacement.PlaceObjectOnGridWithRotation(gameObject, position, Vector2Int.zero, rotation)) {
+					Destroy(gameObject); 
+				}
 			} 
 		}
 
