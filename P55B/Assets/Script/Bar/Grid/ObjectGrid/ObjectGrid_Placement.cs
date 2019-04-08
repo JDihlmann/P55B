@@ -244,6 +244,13 @@ public class ObjectGrid_Placement : MonoBehaviour {
 			GameSystem.Instance.AddMoney(newObjectPrice);
 			GameSystem.Instance.SubHappiness(newObjectHapiness); 
 			isNewObject = false; 
+		} else {
+			Object_Values value = obj.GetComponent<Object_Values>();
+
+			if(value != null) { 
+				GameSystem.Instance.AddMoney(IngredientManager.GetItems()[value.ID].Cost *1/3);
+				GameSystem.Instance.SubHappiness(IngredientManager.GetItems()[value.ID].HappinessFactor);
+			}
 		}
 
 		Destroy(obj);

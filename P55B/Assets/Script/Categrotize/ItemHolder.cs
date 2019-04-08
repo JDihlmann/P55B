@@ -64,7 +64,7 @@ public class ItemHolder : MonoBehaviour, IPointerDownHandler, IPointerUpHandler 
         if (pointerDown)
         {
             pointerDownTimer += Time.unscaledDeltaTime;
-            Debug.Log(pointerDownTimer);
+            // Debug.Log(pointerDownTimer);
             if (pointerDownTimer >= requiredHoldTime)
             {
                 Reset();
