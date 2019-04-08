@@ -217,6 +217,7 @@ MonoBehaviour:
     Bought: 0
     Image: 
   objectGrid: {fileID: 0}
+  changer: {fileID: 0}
   onLongClick:
     m_PersistentCalls:
       m_Calls:
@@ -309,7 +310,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: e36272a74018243fbbdc0ace8115f996, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 585f614a6b46049cca1849bb57cf93de, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

@@ -28,7 +28,7 @@ public class ItemsUI : MonoBehaviour
 
     void FillList()
     {
-        for (int i = 0; i < itemsList.Count; i++)
+        for (int i = 1; i < itemsList.Count; i++)
         {
             Debug.Log(itemsList[i]);
             GameObject holder = Instantiate(itemHolderPrefab, grid);
