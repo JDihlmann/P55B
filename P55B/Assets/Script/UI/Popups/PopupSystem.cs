@@ -8,12 +8,13 @@ public class PopupSystem : MonoBehaviour
 {
 	#region Variables
 	[Header("Components")]
+	public GameObject popupPrefab;
 	public Canvas canvas;
 	public GameObject progressBar;
 	public GameObject popupManager;
 	public TextMeshProUGUI percentageText;
 	public Image circleFill;
-	private Camera camera;
+	private Camera mainCamera;
 	[Space]
 	[Header("Variables")]
 	public bool isInteracting;
@@ -26,11 +27,15 @@ public class PopupSystem : MonoBehaviour
 	#region Methods
 	void Start()
     {
-		camera = Camera.main;
+		mainCamera = Camera.main;
 	}
 
     void Update()
     {
+		if (canvas != null)
+		{
+			canvas.transform.LookAt(canvas.transform.position + mainCamera.transform.rotation * Vector3.forward, mainCamera.transform.rotation * Vector3.up);
+		}
 		if (isInteracting)
 		{
 			if (currentTimer > 0)
@@ -50,7 +55,10 @@ public class PopupSystem : MonoBehaviour
 		startingTimer = time;
 		currentTimer = time;
 		UpdateInteraction();
-		progressBar.SetActive(true);
+		if (progressBar != null)
+		{
+			progressBar.SetActive(true);
+		}
 		isInteracting = true;
 	}
 
@@ -62,7 +70,6 @@ public class PopupSystem : MonoBehaviour
 		}
 		else
 		{
-			canvas.transform.LookAt(canvas.transform.position + camera.transform.rotation * Vector3.forward, camera.transform.rotation * Vector3.up);
 			percentageDone = (1 - currentTimer / startingTimer);
 			circleFill.fillAmount = percentageDone;
 			UpdateColor();
@@ -72,21 +79,46 @@ public class PopupSystem : MonoBehaviour
 
 	private void UpdateColor()
 	{
-		if (happiness == 0)
+		if (happiness >= 85)
 		{
-
+			circleFill.color = new Color32(0, 255, 0, 255);
+		}
+		else if (happiness < 85 && happiness >= 33)
+		{
+			int temp = Mathf.RoundToInt(255 - 5 * (happiness - 33));
+			circleFill.color = new Color32((byte)temp, 255, 0, 255);
+		}
+		else
+		{
+			int temp = Mathf.RoundToInt(9 * happiness);
+			if (temp > 255)
+			{
+				temp = 255;
+			}
+			circleFill.color = new Color32(255, (byte) temp, 0, 255);
 		}
 	}
 
 	private void StopInteraction()
 	{
-		progressBar.SetActive(false);
+		if (progressBar != null)
+		{
+			progressBar.SetActive(false);
+		}
 		isInteracting = false;
 	}
 
 	public void UpdateCustomerHappiness(float happiness)
 	{
 		this.happiness = happiness;
+	}
+
+	public void CreatePopup(int id)
+	{
+		GameObject newPopup = Instantiate(popupPrefab, popupManager.transform.position, new Quaternion(0.0f, 0.0f, 0.0f, 1.0f));
+		newPopup.transform.SetParent(popupManager.transform, false);
+		newPopup.GetComponent<Popup>().id = id;
+		// popupManager
 	}
 	#endregion
 }

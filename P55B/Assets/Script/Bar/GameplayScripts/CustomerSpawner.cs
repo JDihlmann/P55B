@@ -97,11 +97,11 @@ public class CustomerSpawner : MonoBehaviour
 
 		if (!lockMaximum)
 		{
-			if (happiness < Mathf.Pow(2, spawnMaximum - 1) + 5 * (spawnMaximum - 1))
+			if (happiness < Mathf.Pow(1.5f, spawnMaximum - 1) + 5 * (spawnMaximum - 1))
 			{
 				spawnMaximum -= 1;
 			}
-			else if (happiness >= Mathf.Pow(2, spawnMaximum) + 5 * spawnMaximum)
+			else if (happiness >= Mathf.Pow(1.5f, spawnMaximum) + 5 * spawnMaximum)
 			{
 				spawnMaximum += 1;
 			}

@@ -59,6 +59,8 @@ public class Customer : MonoBehaviour
 
 	void Update()
 	{
+		popupSystem.UpdateCustomerHappiness(happiness);
+
 		if (isWaiting)
 		{
 			if (waitingTimer < waitingMaximum)
@@ -79,6 +81,7 @@ public class Customer : MonoBehaviour
 					GamePlaySystem.Instance.LeavingCustomer(gameObject);
 					isWaiting = false;
 					destination = null;
+					popupSystem.CreatePopup(1);
 				}
 				else
 				{
@@ -203,7 +206,7 @@ public class Customer : MonoBehaviour
 		customerId = newId;
 		currentState = CustomerState.ENTER;
 		happiness = 80;
-		happinessLossRate = Random.Range(2f, 4f);
+		happinessLossRate = Random.Range(4f, 8f);
 		isWaiting = false;
 		waitingTimer = 0f;
 		waitingMaximum = Random.Range(5f, 10f);
@@ -268,6 +271,7 @@ public class Customer : MonoBehaviour
 				break;
 			case 4: // Angel (Sweet)
 				customerName = "Angel";
+				happinessLossRate = Random.Range(2f, 4f);
 				random = Random.Range(50, 101);
 				remainder -= random;
 				customerPreference[0] = random;
@@ -281,6 +285,7 @@ public class Customer : MonoBehaviour
 				break;
 			case 5: // Devil (bitter, sour)
 				customerName = "Devil";
+				happinessLossRate = Random.Range(8f, 10f);
 				random = Random.Range(40, 51);
 				remainder -= random;
 				customerPreference[3] = random;
@@ -471,10 +476,11 @@ public class Customer : MonoBehaviour
 			case CustomerState.WAITING:
 				isWaiting = true;
 				destination = null;
+				popupSystem.CreatePopup(0);
 				currentState = CustomerState.SEATING;
 				break;
 			case CustomerState.SEATING:
-				drinkTimer = Random.Range(5f, 10f);
+				drinkTimer = Random.Range(10f, 20f);
 				if (atDestination)
 				{
 					popupSystem.StartInteraction(drinkTimer);
@@ -485,10 +491,10 @@ public class Customer : MonoBehaviour
 				GamePlaySystem.Instance.AddSeatToList(destination);
 				GamePlaySystem.Instance.LeavingCustomer(gameObject);
 				destination = null;
+				CalculateHappiness();
 				currentState = CustomerState.LEAVE;
 				break;
 			case CustomerState.LEAVE:
-				CalculateHappiness();
 				GamePlaySystem.Instance.DestroyCustomer(gameObject);
 				break;
 			default:
@@ -544,6 +550,11 @@ public class Customer : MonoBehaviour
 						GameSystem.Instance.SubIngredient(Random.Range(0, 5), 1);
 					}
 				}
+				popupSystem.CreatePopup(2);
+			}
+			else
+			{
+				popupSystem.CreatePopup(3);
 			}
 		}
 		else if (happiness >= 75)
@@ -560,6 +571,11 @@ public class Customer : MonoBehaviour
 				{
 					GameSystem.Instance.AddHappiness(1);
 				}
+				popupSystem.CreatePopup(4);
+			}
+			else
+			{
+				popupSystem.CreatePopup(5);
 			}
 		}
 	}

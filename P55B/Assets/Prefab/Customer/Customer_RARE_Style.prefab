@@ -1203,6 +1203,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ef607a8744fe594e86c361636f12869, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  popupPrefab: {fileID: 1264353304498340, guid: 5a0aca7324c904740b12a7322bb3fe76,
+    type: 2}
   canvas: {fileID: 223796212723066904}
   progressBar: {fileID: 1349354188105350}
   popupManager: {fileID: 1927836358941550}

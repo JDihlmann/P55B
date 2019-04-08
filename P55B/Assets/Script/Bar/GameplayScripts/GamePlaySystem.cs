@@ -8,6 +8,7 @@ public class GamePlaySystem : MonoBehaviour
 
 	#region Variables
 	//[Header("Components")]
+	public Sprite[] popupImage;
 	private CustomerSpawner spawner;
 	//[Space]
 	[Header("Variables")]

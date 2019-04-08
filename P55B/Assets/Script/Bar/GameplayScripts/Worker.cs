@@ -117,7 +117,6 @@ public class Worker : MonoBehaviour
 		AudioManager.Instance.Play("Cash" + Random.Range(1,4));
 		
 		GameSystem.Instance.money += sum;
-		
 		// Debug.Log("Customer pays " + customer.selectedRecipe.recipePrice);
 	}
 	#endregion

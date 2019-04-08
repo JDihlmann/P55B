@@ -82,6 +82,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66ac88a38bf06fa43921b3b6b1cadd02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  popupImage:
+  - {fileID: 21300000, guid: 453421f82f6ee45088495dd8c8b29f24, type: 3}
+  - {fileID: 21300000, guid: 56fa9a9f88036254794cb00285ec61ab, type: 3}
+  - {fileID: 21300000, guid: baf41c2c48d622948bc93eb03481e6a7, type: 3}
+  - {fileID: 21300000, guid: 5cb832165cebecd46a73c7107316b85d, type: 3}
+  - {fileID: 21300000, guid: 42da2db40431f944a8ff9708300488a6, type: 3}
+  - {fileID: 21300000, guid: 915a265b2bef5f8419c8a9036b9d24de, type: 3}
   customerList: []
   orderingCustomerList: []
   availableSeatList: []
