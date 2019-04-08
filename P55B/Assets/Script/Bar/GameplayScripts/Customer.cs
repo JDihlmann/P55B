@@ -82,6 +82,7 @@ public class Customer : MonoBehaviour
 					isWaiting = false;
 					destination = null;
 					popupSystem.CreatePopup(1);
+					CalculateHappiness();
 				}
 				else
 				{
@@ -480,7 +481,7 @@ public class Customer : MonoBehaviour
 				currentState = CustomerState.SEATING;
 				break;
 			case CustomerState.SEATING:
-				drinkTimer = Random.Range(10f, 20f);
+				drinkTimer = Random.Range(15f, 30f);
 				if (atDestination)
 				{
 					popupSystem.StartInteraction(drinkTimer);

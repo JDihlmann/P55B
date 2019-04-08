@@ -44,9 +44,9 @@ public class CustomerSpawner : MonoBehaviour
 				isSpawning = true;
 			}
 		}
-		if (spawnMaximum < 1)
+		if (spawnMaximum < 3)
 		{
-			spawnMaximum = 1;
+			spawnMaximum = 3;
 		}
 	}
 

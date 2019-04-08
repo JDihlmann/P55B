@@ -121,7 +121,7 @@ MonoBehaviour:
   - {fileID: 1409377953338186, guid: 5fac7ec2522a34641aac094c37d4bd84, type: 2}
   customerList: []
   leavingCustomerList: []
-  spawnMaximum: 1
+  spawnMaximum: 3
   spawnDelay: 2
   spawnPoints: []
   lockMaximum: 0
