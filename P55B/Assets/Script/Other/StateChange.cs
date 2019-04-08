@@ -32,6 +32,8 @@ public class StateChange : MonoBehaviour {
 	void Start () {
 		// TODO: Choose Initial State
 		// !!! BUILD SCRIPT MUST BE ENABLED TO LOAD OBJECTS !!! -> DEACTIVATE AFTER STARTUP 
+		currentState = State.Bar;
+		// DeactivateBuildState(); 
 
 	}
 

@@ -35,6 +35,9 @@ public class ObjectGrid_Instantiate : MonoBehaviour {
 	// Placement component
 	private ObjectGrid_Placement objectGridPlacement; 
 
+	// State Changer 
+	public GameObject stateChanger; 
+
 	// Run Once
 	private bool runOnce = true; 
 
@@ -53,6 +56,7 @@ public class ObjectGrid_Instantiate : MonoBehaviour {
 		if(runOnce) {
 			LoadObjects();
 			// TestBar(); 
+			stateChanger.GetComponent<StateChange>().DeactivateBuildState();
 			runOnce = false; 
 		}
 	}

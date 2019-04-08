@@ -416,6 +416,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 114784612088903552, guid: fb8cf3f50b0f7654f9994291b2a2089e,
+        type: 2}
+      propertyPath: stateChanger
+      value: 
+      objectReference: {fileID: 2114579957}
     - target: {fileID: 114102466919599968, guid: fb8cf3f50b0f7654f9994291b2a2089e,
         type: 2}
       propertyPath: moveObjectButtons
