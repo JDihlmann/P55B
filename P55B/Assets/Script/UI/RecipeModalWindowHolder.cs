@@ -40,7 +40,7 @@ public class RecipeModalWindowHolder : MonoBehaviour {
 
     private void Update()
     {
-        cantBuy.SetActive(!(GameSystem.Instance.money - cost >= 0));
+        cantBuy.SetActive(!(GameSystem.Instance.money - cost >= 0) || GameSystem.Instance.recipeUnlocks[id]);
         buyButton.GetComponent<Button>().interactable = GameSystem.Instance.money - cost >= 0;
     }
 
