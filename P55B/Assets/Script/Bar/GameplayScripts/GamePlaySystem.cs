@@ -17,8 +17,6 @@ public class GamePlaySystem : MonoBehaviour
 	public List<GameObject> availableSeatList = new List<GameObject>();
 	public GameObject bar;
 	public GameObject exit;
-
-	private float tempSeater = 1f;
 	#endregion
 
 	#region Methods
@@ -68,11 +66,6 @@ public class GamePlaySystem : MonoBehaviour
 		{
 			GameSystem.Instance.SubTime(0.25f);
 		}
-		if (tempSeater > 0.75f)
-		{
-			tempSeater -= Time.deltaTime;
-			UpdateSeatList();
-		}
 	}
 
 	public void AddCustomerToList(Customer customer)
@@ -93,6 +86,14 @@ public class GamePlaySystem : MonoBehaviour
 	public void DestroyCustomer(GameObject customer)
 	{
 		spawner.DeleteCustomer(customer);
+	}
+
+	public void ResetCustomerDestination()
+	{
+		foreach (GameObject customer in spawner.customerList)
+		{
+			customer.GetComponent<Customer>().ResetDestination();
+		}
 	}
 
 	public void AddOrderToList(Customer customer)
