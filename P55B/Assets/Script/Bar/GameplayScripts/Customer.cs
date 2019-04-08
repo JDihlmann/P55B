@@ -127,7 +127,7 @@ public class Customer : MonoBehaviour
 					}
 					else
 					{
-						if (pathTries >= 0)
+						if (pathTries >= 1)
 						{
 							drinkTimer -= Time.deltaTime;
 							happiness -= happinessLossRate * Time.deltaTime;
@@ -375,6 +375,13 @@ public class Customer : MonoBehaviour
 		}
 	}
 
+	public void ResetDestination()
+	{
+		atDestination = false;
+		destination = null;
+		pathTries = 0;
+	}
+
 	private void GoToDestination()
 	{
 		actionTimer = Random.Range(1f, 1.5f);
@@ -481,7 +488,7 @@ public class Customer : MonoBehaviour
 				currentState = CustomerState.SEATING;
 				break;
 			case CustomerState.SEATING:
-				drinkTimer = Random.Range(15f, 30f);
+				drinkTimer = Random.Range(12f, 26f);
 				if (atDestination)
 				{
 					popupSystem.StartInteraction(drinkTimer);
