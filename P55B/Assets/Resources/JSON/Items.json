@@ -142,7 +142,7 @@
     },
     {
       "ItemName": "PLANET",
-      "ItemID": 13,
+      "ItemID": 14,
       "Cost": 5,
       "Color": "Color.red",
       "HappinessFactor": 10,
@@ -152,7 +152,7 @@
     },
     {
       "ItemName": "PLANET",
-      "ItemID": 13,
+      "ItemID": 15,
       "Cost": 5,
       "Color": "Color.red",
       "HappinessFactor": 10,
