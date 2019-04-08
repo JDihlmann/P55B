@@ -426,6 +426,11 @@ Prefab:
       propertyPath: moveObjectButtons
       value: 
       objectReference: {fileID: 889926955}
+    - target: {fileID: 23918466270431994, guid: fb8cf3f50b0f7654f9994291b2a2089e,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb8cf3f50b0f7654f9994291b2a2089e, type: 2}
   m_IsPrefabAsset: 0
@@ -1146,6 +1151,10 @@ Prefab:
         type: 2}
       propertyPath: m_AnchoredPosition.x
       value: 678.3574
+      objectReference: {fileID: 0}
+    - target: {fileID: 1552310302495720, guid: 80409d925e5fe4bc8933a28357a5a2cb, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80409d925e5fe4bc8933a28357a5a2cb, type: 2}
