@@ -4,6 +4,14 @@
     font-family: 'Roboto', sans-serif;
 }
 
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
 .background, .stars {
     position:absolute;
     top:0;
@@ -14,13 +22,13 @@
     height:100%;
     display:block;
 }
-  
+
 .background {
     min-height: 1000px;
     background: radial-gradient(ellipse at top, rgba(47,37,88,1) 40%, rgba(10,30,57,1) 100%) ;
     z-index:0;
 }
-  
+
 .stars {
     background: transparent url(http://www.script-tutorials.com/demos/360/images/stars.png) repeat top center;
     z-index:1;
@@ -33,7 +41,7 @@
     width: 100%;
     height: 350px;
 
-    background-color: clear; 
+    background-color: clear;
 }
 
 #logo {
@@ -57,27 +65,27 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    
+
     filter: drop-shadow(0px 0px 10px #000000);
 }
 
 #bottom {
     position: absolute;
 
-    height: 40px; 
+    height: 40px;
     width: 100%;
 
     bottom: 0;
 
-    background-color: transparent; 
+    background-color: transparent;
 }
 
 #from {
     position: absolute;
-    top: 10px; 
+    top: 10px;
     left: 20px;
 
-    color: white; 
+    color: white;
 }
 
 .name {
@@ -87,9 +95,9 @@
 
 #git{
     position: absolute;
-    top: 10px; 
+    top: 10px;
     right: 20px;
 
-    color: white; 
+    color: white;
     text-decoration: none
 }
