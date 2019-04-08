@@ -32,6 +32,8 @@ public class StateChange : MonoBehaviour {
 	void Start () {
 		// TODO: Choose Initial State
 		// !!! BUILD SCRIPT MUST BE ENABLED TO LOAD OBJECTS !!! -> DEACTIVATE AFTER STARTUP 
+		currentState = State.Bar;
+		// DeactivateBuildState(); 
 
 	}
 
@@ -156,7 +158,7 @@ public class StateChange : MonoBehaviour {
 		// Customer appear
 		Time.timeScale = 1;
 		GamePlaySystem.Instance.gameObject.SetActive(true);
-
+		GamePlaySystem.Instance.ResetCustomerDestination();
 		// Save all objects on grid 
 		ObjectGrid_Instantiate objectGridInstantiate = objectGrid.GetComponent<ObjectGrid_Instantiate>();
 		objectGridInstantiate.SaveObjects();

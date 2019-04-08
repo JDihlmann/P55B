@@ -15248,6 +15248,7 @@ MonoBehaviour:
   s1_Tabel_Yellow: {fileID: 1250474341391020, guid: e97a9b374d8fb6442ab9beeeee92a5b1,
     type: 2}
   emptyIntObjectElement: {x: -1, y: -1}
+  stateChanger: {fileID: 0}
 --- !u!114 &114791997161047178
 MonoBehaviour:
   m_ObjectHideFlags: 1
