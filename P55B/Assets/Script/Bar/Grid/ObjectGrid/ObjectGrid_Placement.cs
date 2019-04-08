@@ -259,6 +259,9 @@ public class ObjectGrid_Placement : MonoBehaviour {
 	}
 
 	public void TryPlacingObjectOnGrid() {
+		if(hitObjectParentPlaced)
+			return; 
+
 		UIHideAllButtons();
 
 		if(hitObjectParent == null || hitTilePosition == null)
