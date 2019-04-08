@@ -9,7 +9,6 @@ public class Recipe
 	public int recipeId;
 	public int[] recipeStats = new int[4]; // 0-Sweet, 1-Sour, 2-Salty, 3-Bitter. In Percent.
 	public string recipeDescription;
-	public int recipeUnlockCost;
 	public int[] recipeIngredientCost = new int[4];
 	public int recipePrice;
 	public int recipeCraftTime;
@@ -38,7 +37,6 @@ public class Recipe
 			case 0:
 				recipeName = "The Basic";
 				recipeDescription = "A little bit of everything to please any specimens likings. Every tavern should list this drink so that no guest dries out.";
-				recipeUnlockCost = 0;
 				recipePrice = 10;
 				recipeCraftTime = 2;
 				recipeStats = new int[4];
@@ -52,7 +50,6 @@ public class Recipe
 			case 1:
 				recipeName = "Gremonade";
 				recipeDescription = "When life gives you gremons...";
-				recipeUnlockCost = 100;
 				recipePrice = 20;
 				recipeCraftTime = 3;
 				recipeStats = new int[] { 0, 50, 35, 15 };
@@ -61,7 +58,6 @@ public class Recipe
 			case 2:
 				recipeName = "Cöfi";
 				recipeDescription = "Bitter but refreshing. Many people insist on only being able to converse in the morning after chugging one or two cups of Cöfi.";
-				recipeUnlockCost = 300;
 				recipePrice = 25;
 				recipeCraftTime = 6;
 				recipeStats = new int[] { 15, 35, 0, 50 };
@@ -70,7 +66,6 @@ public class Recipe
 			case 3:
 				recipeName = "New Basic+";
 				recipeDescription = "Nearly the same as The Basic but more expensive and strenuous thus it has to be better, right?!";
-				recipeUnlockCost = 500;
 				recipePrice = 30;
 				recipeCraftTime = 4;
 				for (int i = 0; i < 4; i++)

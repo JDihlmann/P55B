@@ -79,9 +79,9 @@ public class GameSystem : MonoBehaviour
 	#region Worker
 	public void UpgradeWorker(int id)
 	{
-		if (id > workerUnlocks.Length)
+		if (id < 0 || id > 3)
 		{
-			Debug.Log("Error worker upgrade ID out of index");
+			Debug.Log("Error worker ID out of index: " + id);
 		}
 		else
 		{
@@ -123,9 +123,9 @@ public class GameSystem : MonoBehaviour
 	#region Ingredients
 	public void AddIngredient(int id, int amount)
 	{
-		if (id > ingredientAmount.Length)
+		if (id < 0 || id > 3)
 		{
-			Debug.Log("Error ingredient ID out of index");
+			Debug.Log("Error ingredient ID out of index: " + id);
 		}
 		else
 		{
@@ -135,9 +135,9 @@ public class GameSystem : MonoBehaviour
 
 	public void SubIngredient(int id, int amount)
 	{
-		if (id > ingredientAmount.Length)
+		if (id < 0 || id > 3)
 		{
-			Debug.Log("Error ingredient ID out of index");
+			Debug.Log("Error ingredient ID out of index: " + id);
 		}
 		else
 		{
@@ -151,9 +151,9 @@ public class GameSystem : MonoBehaviour
 
 	public void SetIngredient(int id, int amount)
 	{
-		if (id > ingredientAmount.Length)
+		if (id < 0 || id > 3)
 		{
-			Debug.Log("Error ingredient ID out of index");
+			Debug.Log("Error ingredient ID out of index: " + id);
 		}
 		else
 		{

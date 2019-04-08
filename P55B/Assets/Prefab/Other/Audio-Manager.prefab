@@ -130,4 +130,4 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
-  muted: 1
+  muted: 0
