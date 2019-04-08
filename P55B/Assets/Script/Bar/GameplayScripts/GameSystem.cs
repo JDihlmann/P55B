@@ -271,17 +271,17 @@ public class GameSystem : MonoBehaviour
 		ingredientAmount = new int[4];
 		for (int i = 0; i < 4; i++)
 		{
-			ingredientAmount[i] = 10;
+			ingredientAmount[i] = 2;
 		}
 		money = 100;
-		happiness = 0;
+		happiness = 10;
 		objectList = new List<ObjectProperties>(7)
 				{
-					new ObjectProperties(1, new Vector2Int(1, 6), 180),
+					//new ObjectProperties(1, new Vector2Int(1, 6), 180),
 					new ObjectProperties(3, new Vector2Int(1, 7), 0),
 					new ObjectProperties(1, new Vector2Int(1, 8), 0),
 					new ObjectProperties(3, new Vector2Int(7, 2), 0),
-					new ObjectProperties(2, new Vector2Int(7, 3), 0),
+					//new ObjectProperties(2, new Vector2Int(7, 3), 0),
 					new ObjectProperties(2, new Vector2Int(8, 1), 180),
 					new ObjectProperties(3, new Vector2Int(8, 2), 0)
 				};

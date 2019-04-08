@@ -6,145 +6,125 @@
       "Steps": [
         {
           "ID": 0,
-          "Price": 10,
+          "Price": 25,
           "Factor": 1
         },
         {
           "ID": 1,
-          "Price": 40,
+          "Price": 50,
           "Factor": 3
         },
         {
           "ID": 2,
-          "Price": 80,
+          "Price": 250,
           "Factor": 5
         },
         {
           "ID": 3,
-          "Price": 80,
+          "Price": 500,
           "Factor": 5
         },
         {
           "ID": 4,
-          "Price": 80,
+          "Price": 1000,
           "Factor": 5
         },
         {
           "ID": 5,
-          "Price": 80,
+          "Price": 1500,
           "Factor": 5
         },
         {
           "ID": 6,
-          "Price": 80,
-          "Factor": 5
-        }
-      ]
-    },
-    {
-      "ID": 2,
-      "Name": "Update Speed",
-      "Steps": [
-        {
-          "ID": 0,
-          "Price": 10,
-          "Factor": 1
-        },
-        {
-          "ID": 1,
-          "Price": 40,
-          "Factor": 3
-        },
-        {
-          "ID": 2,
-          "Price": 80,
-          "Factor": 5
-        },
-        {
-          "ID": 3,
-          "Price": 80,
-          "Factor": 5
-        },
-        {
-          "ID": 4,
-          "Price": 80,
-          "Factor": 5
-        },
-        {
-          "ID": 5,
-          "Price": 80,
-          "Factor": 5
-        },
-        {
-          "ID": 6,
-          "Price": 80,
-          "Factor": 5
-        }
-      ]
-    },
-    {
-      "ID": 3,
-      "Name": "Update multitasking",
-      "Steps": [
-        {
-          "ID": 0,
-          "Price": 10,
-          "Factor": 1
-        },
-        {
-          "ID": 1,
-          "Price": 40,
-          "Factor": 3
-        },
-        {
-          "ID": 2,
-          "Price": 80,
-          "Factor": 5
-        },
-        {
-          "ID": 3,
-          "Price": 80,
+          "Price": 2000,
           "Factor": 5
         }
       ]
     },
     {
       "ID": 1,
-      "Name": "Update Quality",
+      "Name": "Update Speed",
       "Steps": [
         {
           "ID": 0,
-          "Price": 10,
+          "Price": 50,
           "Factor": 1
         },
         {
           "ID": 1,
-          "Price": 40,
+          "Price": 200,
           "Factor": 3
         },
         {
           "ID": 2,
-          "Price": 80,
+          "Price": 500,
           "Factor": 5
         },
         {
           "ID": 3,
-          "Price": 80,
+          "Price": 1000,
           "Factor": 5
         },
         {
           "ID": 4,
-          "Price": 80,
+          "Price": 1500,
           "Factor": 5
         },
         {
           "ID": 5,
-          "Price": 80,
+          "Price": 2000,
+          "Factor": 5
+        }
+      ]
+    },
+    {
+      "ID": 3,
+      "Name": "Update Quality",
+      "Steps": [
+        {
+          "ID": 0,
+          "Price": 50,
+          "Factor": 1
+        },
+        {
+          "ID": 1,
+          "Price": 200,
+          "Factor": 3
+        },
+        {
+          "ID": 2,
+          "Price": 500,
           "Factor": 5
         },
         {
-          "ID": 6,
-          "Price": 80,
+          "ID": 3,
+          "Price": 1000,
+          "Factor": 5
+        },
+        {
+          "ID": 4,
+          "Price": 1500,
+          "Factor": 5
+        }
+      ]
+    },
+    {
+      "ID": 2,
+      "Name": "Update multitasking",
+      "Steps": [
+        {
+          "ID": 0,
+          "Price": 200,
+          "Factor": 1
+        },
+        {
+          "ID": 1,
+          "Price": 500,
+          "Factor": 3
+        },
+        {
+          "ID": 2,
+          "Price": 2000,
           "Factor": 5
         }
       ]

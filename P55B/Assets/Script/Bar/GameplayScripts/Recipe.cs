@@ -37,7 +37,7 @@ public class Recipe
 			case 0:
 				recipeName = "The Basic";
 				recipeDescription = "A little bit of everything to please any specimens likings. Every tavern should list this drink so that no guest dries out.";
-				recipePrice = 10;
+				recipePrice = 15;
 				recipeCraftTime = 2;
 				recipeStats = new int[4];
 				recipeIngredientCost = new int[4];
@@ -53,7 +53,7 @@ public class Recipe
 				recipePrice = 20;
 				recipeCraftTime = 3;
 				recipeStats = new int[] { 0, 50, 35, 15 };
-				recipeIngredientCost = new int[] { 0, 3, 2, 1 };
+				recipeIngredientCost = new int[] { 0, 3, 2, 0 };
 				break;
 			case 2:
 				recipeName = "Cöfi";
@@ -61,7 +61,7 @@ public class Recipe
 				recipePrice = 25;
 				recipeCraftTime = 6;
 				recipeStats = new int[] { 15, 35, 0, 50 };
-				recipeIngredientCost = new int[] { 1, 2, 0, 4 };
+				recipeIngredientCost = new int[] { 2, 0, 0, 3 };
 				break;
 			case 3:
 				recipeName = "New Basic+";

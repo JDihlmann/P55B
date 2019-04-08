@@ -58,6 +58,14 @@ public class GamePlaySystem : MonoBehaviour
 				GameSystem.Instance.ingredientAmount[i] += 1;
 			}
 		}
+		if (Input.GetKeyUp(KeyCode.Q))
+		{
+			GameSystem.Instance.AddMoney(20);
+		}
+		if (Input.GetKeyUp(KeyCode.W))
+		{
+			GameSystem.Instance.AddHappiness(3);
+		}
 		if (Input.GetKeyUp(KeyCode.KeypadPlus))
 		{
 			GameSystem.Instance.AddTime(0.25f);
