@@ -8,7 +8,7 @@
       "HappinessFactor": 3,
       "Description": "Rusty table",
       "Bought": false,
-      "Image": "Chair"
+      "Image": "item"
     },
     {
       "ItemName": "PLANET",
@@ -18,7 +18,7 @@
       "HappinessFactor": 10,
       "Description": "Rusty chair",
       "Bought": false,
-      "Image": "Plant"
+      "Image": "item1"
     },
     {
       "ItemName": "PLANET",
@@ -28,7 +28,7 @@
       "HappinessFactor": 10,
       "Description": "Rusty chair",
       "Bought": false,
-      "Image": "Plant"
+      "Image": "item2"
     },
     {
       "ItemName": "PLANET",
@@ -38,7 +38,7 @@
       "HappinessFactor": 10,
       "Description": "Rusty chair",
       "Bought": false,
-      "Image": "Plant"
+      "Image": "item3"
     },
     {
       "ItemName": "PLANET",
