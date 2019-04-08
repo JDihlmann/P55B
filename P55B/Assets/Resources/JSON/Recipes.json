@@ -27,7 +27,7 @@
     {
       "Name": "CÖFI",
       "ID": 2,
-      "Price": 500,
+      "Price": 250,
       "MinIncome": 2,
       "MaxIncome": 5,
       "Description": "Bitter but refreshing. Many people insist on only being able to converse in the morning after chugging a Cöfi.",
@@ -39,7 +39,7 @@
     {
       "Name": "NEW BASIC+",
       "ID": 3,
-      "Price": 500,
+      "Price": 750,
       "MinIncome": 2,
       "MaxIncome": 5,
       "Description": "Nearly the same as The Basic but more expensive and strenuous thus it has to be better, right?!",
@@ -51,7 +51,7 @@
     {
       "Name": "PONE CULADE",
       "ID": 4,
-      "Price": 500,
+      "Price": 999,
       "MinIncome": 2,
       "MaxIncome": 5,
       "Description": "Rusty table",
