@@ -21,11 +21,26 @@ header{
   justify-content: center;
 }
 
-section{
+#logo-box{
+  top:0px;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+section, #sonderfall{
   width: 100%;
   position: relative;
   padding: 100px 40px;
   box-sizing: border-box;
+}
+
+#sonderfall{
+  margin-top: 50px;
+  padding-bottom: 0px;
 }
 
 content{
@@ -34,30 +49,46 @@ content{
 }
 
 .text:nth-child(odd){
-  margin-right: 100px;
-  margin-top: 40px;
+  margin-right: 150px;
+  margin-left: 100px;
+  margin-top: 0px;
 }
 
 .text:nth-child(even){
-  margin-left: 100px;
-  margin-top: 40px;
+  margin-left: 150px;
+  margin-right: 100px;
+  margin-top: 0px;
 }
 
-.text h2{
+.text h2, h1{
   margin-bottom: 30px;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+h2{
+  font-size: 27px;
+}
+
+h1{
+  font-size: 40px;
+  line-height: 50px;
+  margin-top: 50px;
 }
 
 .text p{
   color: #828181;
-}
-
-.full-height{
-  height: 100%;
-  padding: 0px;
+  line-height: 24px;
+  font-weight: 300;
 }
 
 section:nth-child(even){
   background: #efefef;
+}
+
+.full-height{
+  /* height: 130%; */
+  padding: 0px;
+  background: none !important;
 }
 
 #stars{
