@@ -488,7 +488,7 @@ public class Customer : MonoBehaviour
 				currentState = CustomerState.SEATING;
 				break;
 			case CustomerState.SEATING:
-				drinkTimer = Random.Range(12f, 26f);
+				drinkTimer = Random.Range(10f, 20f) *  (1 - (GameSystem.Instance.workerUnlocks[3] * 0.15f));
 				if (atDestination)
 				{
 					popupSystem.StartInteraction(drinkTimer);
@@ -544,7 +544,7 @@ public class Customer : MonoBehaviour
 				GameSystem.Instance.SubHappiness(1);
 				for (int i = 0; i < 5; i++)
 				{
-					GameSystem.Instance.SubIngredient(Random.Range(0, 5), 1);
+					GameSystem.Instance.SubIngredient(Random.Range(0, 4), 1);
 				}
 			}
 			if (happiness <= 15)
@@ -555,7 +555,7 @@ public class Customer : MonoBehaviour
 					GameSystem.Instance.SubHappiness(1);
 					for (int i = 0; i < 5; i++)
 					{
-						GameSystem.Instance.SubIngredient(Random.Range(0, 5), 1);
+						GameSystem.Instance.SubIngredient(Random.Range(0, 4), 1);
 					}
 				}
 				popupSystem.CreatePopup(2);

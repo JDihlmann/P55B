@@ -3,7 +3,7 @@
     {
       "ID": 0,
       "Name": "QUBI",
-      "Price": 5,
+      "Price": 2,
       "Image": "ingredient1"
     },
     {
@@ -15,13 +15,13 @@
     {
       "ID": 2,
       "Name": "RAGLI",
-      "Price": 5,
+      "Price": 2,
       "Image": "ingredient3"
     },
     {
       "ID": 3,
       "Name": "AMBRI",
-      "Price": 5,
+      "Price": 2,
       "Image": "ingredient4"
     }
   ]
