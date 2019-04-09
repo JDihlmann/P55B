@@ -220,6 +220,10 @@ section:nth-child(even){
   width: 40%;
 }
 
+.lila{
+  background: #c5a0fd!important;
+}
+
 footer {
   width: 100%;
   padding: 10px 10px;
