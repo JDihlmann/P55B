@@ -218,6 +218,7 @@ section:nth-child(even){
 
 .iPhone{
   width: 40%;
+  flex: 1 0 auto;
 }
 
 .lila{
