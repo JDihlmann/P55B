@@ -240,3 +240,41 @@ footer {
     color: #fff;
     text-decoration: none
 }
+
+@media (max-width: 1050px) {
+  content{
+    flex-direction: column;
+    align-items: center;
+  }
+  .second{
+    flex-direction: column-reverse;
+  }
+  .iPhone{
+    margin-top: 30px;
+    width: 376px;
+  }
+  section{
+    padding: 70px 40px;
+  }
+  .text:nth-child(even), .text:nth-child(odd){
+    margin: 0px;
+    width: 630px;
+  }
+  #video{
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+@media (max-width: 700px) {
+  .text:nth-child(even), .text:nth-child(odd){
+    margin: 0px;
+    width: 100%;
+  }
+  #logo{
+    width: 100%;
+  }
+  #call-to-action .btn {
+    font-size: 25px;
+  }
+}
