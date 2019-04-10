@@ -47,7 +47,7 @@ While the player is not in the bar view, no customers are in the bar, so he does
 All the relevant data of the game, like the position and type of objects in the bar, the recipe and worker unlocks, the amount of ingredients and the money and happiness is collected and can be edited by a central script. This script saves the Data in a binary save file and loads it from there at game start too. 
 
 ## Disclaimer
-All the models and the interface of the game are designed by us (Maya and Substance student license), only the graphics for ingredients, drinks and some buttons are from [Freepik](https://de.freepik.com/) and [Flaticon](https://www.flaticon.com/). Additionally the soundtrack is also created by us and solely the sound effects are from [Freesound](https://freesound.org/).
+All the models and the interface of the game are designed by us (Maya and Substance student license), only the graphics for ingredients, drinks and some buttons are from [Freepik](https://de.freepik.com/) and [Flaticon](https://www.flaticon.com/). Additionally the soundtrack is created by us and solely the sound effects are from [Freesound](https://freesound.org/).
 
 ## Contributing
 Feel free to fork and create branches. This is a non comercial students project.\
