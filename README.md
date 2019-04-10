@@ -5,7 +5,7 @@
 Is a game created for mobile platforms with the unity engine. The player manages a small bar in the outskirts of the universe. The goal of the player is to increase the popularity of the bar, so more customers come in and thus he gains more money to realize his own dream of the bar. He is able to collect ingredient, customize, manage and upgrade the bar. 
 
 <p align="center">
-  <img src="https://github.com/JDihlmann/P55B/blob/master/docs/P55B.png">
+  <img width="100%" src="https://github.com/JDihlmann/P55B/blob/master/docs/P55B.gif">
 </p>
 
  ### Gameplay / Story 
