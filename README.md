@@ -4,12 +4,12 @@
 
 Is a game created for mobile platforms with the unity engine. The player manages a small bar in the outskirts of the universe. The goal of the player is to increase the popularity of the bar, so more customers come in and thus he gains more money to realize his own dream of the bar. He is able to collect ingredient, customize, manage and upgrade the bar. 
 
+ ## Gameplay / Story 
+For further information related to story and gameplay check out our [website](https://jdihlmann.github.io/P55B/) or one of our videos [teaser](https://youtu.be/nEvUj5SVUBU) / [trailer](https://youtu.be/n8DB6euExGA).
+
 <p align="center">
   <img width="100%" src="https://github.com/JDihlmann/P55B/blob/master/docs/P55B.gif">
 </p>
-
- ### Gameplay / Story 
-For further information related to story and gameplay check out our [website](https://jdihlmann.github.io/P55B/) or one of our videos [teaser](https://youtu.be/nEvUj5SVUBU) / [trailer](https://youtu.be/n8DB6euExGA).
 
 ## Requirements
 * **Unity Engine Version:** 2018.2.1.18f1
