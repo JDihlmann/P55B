@@ -54,7 +54,7 @@ Feel free to fork and create branches. This is a non comercial students project.
 We can't guarantee for any functionality thus wont take resposibility.
 
 ## Meta
-Mia - [miaiam](https://github.com/miaiam)\
-Lukas - [kiusah](https://github.com/kiusah)\
-Mike - [thecrusticroc](https://github.com/thecrusticroc)\
+Mia Wölm - [miaiam](https://github.com/miaiam)\
+Lukas Gehre - [kiusah](https://github.com/kiusah)\
+Mike Fu - [thecrusticroc](https://github.com/thecrusticroc)\
 Jan-Niklas Dihlmann - [JDihlmann](https://github.com/JDihlmann)
