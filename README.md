@@ -41,7 +41,7 @@ We designed a minimalistic and clear UI so that it fits the bar setting and is e
 The UI is created dynamically using a JSON file. This way it is easy to manage all the different objects in the game without the need to edit the Canvas Object in Unity. For example changing the name, price, image etc. of an object adding a new object to the game is realized by just changing the related keys in the JSON file. When the game starts every JSON file will initialize a list with the respective objects and for every object the UI will add a prefab changing its text or image to the values from the list. Furthermore the UI is fully responsive so that it looks good on every mobile screen.
 
 ### State Changing
-While the player is not in the bar view, no customers are in the bar, so he doesn’t have to stress about his ingredient stock running dry.This is achieved by a GameStateChanger, which disables and enables different parts of the game depending on the mode the player is in.  
+While the player is not in the bar view, no customers are in the bar, so he doesn’t have to stress about his ingredient stock running dry. This is achieved by a GameStateChanger, which disables and enables different parts of the game depending on the mode the player is in.  
 
 ### Saving 
 All the relevant data of the game, like the position and type of objects in the bar, the recipe and worker unlocks, the amount of ingredients and the money and happiness is collected and can be edited by a central script. This script saves the Data in a binary save file and loads it from there at game start too. 
